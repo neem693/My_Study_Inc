@@ -1,0 +1,9 @@
+package vo;
+
+public class DeptVo {
+	
+	
+	int deptno;
+	String dname,loc;
+
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script>
+	//$(function(){})//이것도 ready이다.
+
+	$(document).ready(function() {
+		$("#bt_find").click(function() {
+			var sajob = $("#sajob").val();
+			var deptno = $("#deptno").val();
+			$.ajax({
+				url : "sawon/job_dept_list.do",
+				data : {
+					'sajob' : sajob,
+					'deptno' : deptno
+				},
+				success : function(result) {
+					$("#disp").html(result);
+				}
+			})
+
+		});
+	});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	부서번호:
+	<select id="deptno">
+		<option selected="selected" value="0">전체보기</option>
+		<option value="10">10번</option>
+		<option value="20">20번</option>
+		<option value="30">30번</option>
+		<option value="40">40번</option>
+	</select> 직위:
+	<select id="sajob">
+		<option selected="selected" value="all">전체보기</option>
+		<option value="부장">부장</option>
+		<option value="과장">과장</option>
+		<option value="대리">대리</option>
+		<option value="사원">사원</option>
+	</select>
+
+	<input id="bt_find" type="button" value="검색">
+	<hr>
+	<div id="disp"></div>
+
+</body>
+</html>

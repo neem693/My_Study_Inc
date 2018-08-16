@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<script src="js/reg_exp.js"></script>
+<script type="text/javascript">
+	function send(f) {
+
+		var jumin = f.jumin.value;
+
+		if (reg_jumin.test(jumin) == false) {
+			var wtf = document.getElementById("wtf");
+			wtf.innerHTML = "주민번호 형식에 어긋납니다. 다시 한번 적어주세요";
+			return;
+		}
+
+		f.method = "POST";
+		f.action = "jumin.do"
+		f.submit();
+	}
+</script>
+
+</head>
+
+
+<body>
+	<form>
+
+		<label>주민번호</label><input name="jumin" size="20"></span><input
+			type="button" onclick="send(this.form)" value="알려줘"><span
+			id="wtf">
+	</form>
+</body>
+</html>

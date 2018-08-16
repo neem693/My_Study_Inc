@@ -1,0 +1,41 @@
+/*
+
+--일련번호관리객체
+
+*/
+
+
+
+
+create table board(
+
+idx int, --일련번호
+id	varchar2(100), 		--작성자 아이디
+name varchar2(100), 	--작성자 이름
+subject varchar2(100), 	--제목
+content clob, 			--내용
+pwd	varchar2(100),		--비밀번호
+ip varchar2(100), 		--ip
+regdate date, 			--작성일자
+readhit int, 			--조회수
+--답변형게시판관리속성
+ref 	int,			--주인글 번호
+step 	int,			--수식적 순서
+depth 	int 			--수평적 순서
+)
+
+
+alter table board
+add constraint pk_board_idx primary key(idx)
+
+
+--외래키 지정
+alter table board
+add constraint fk_board_id foreign key(id) references member(id)
+
+select * from member;
+
+insert into board values(seq_board_idx.nextVal,'hong','홍길동','내가1등','제곧내',1234,'127.0.0.1',sysdate,0,seq_board_idx.currVal,0,0)
+--답글쓰기 인서트 문
+select * from board
+

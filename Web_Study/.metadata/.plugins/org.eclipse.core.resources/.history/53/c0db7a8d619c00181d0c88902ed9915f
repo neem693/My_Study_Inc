@@ -1,0 +1,29 @@
+package dao;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import service.MyBatisConnector;
+import vo.CommentVo;
+
+public class CommentDao {
+	
+//single-ton pattern: 1개의 객체만 생성해서 서비스하자
+	SqlSessionFactory factory;
+static CommentDao single = null;
+
+public static CommentDao getInstance() {
+	if (single == null)
+		single = new CommentDao();
+	return single;
+}
+
+public CommentDao() {
+	// TODO Auto-generated constructor stub
+	factory = MyBatisConnector.getInstance().getSqlSessionFactory();
+}
+
+public int insert(CommentVo vo) {
+	
+}
+
+}

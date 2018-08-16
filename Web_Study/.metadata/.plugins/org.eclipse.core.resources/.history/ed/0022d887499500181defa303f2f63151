@@ -1,0 +1,5 @@
+select * from gogek;
+
+ select * from gogek where goaddr like '¼­¿ï%'
+ 
+ select * from gogek;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function send_original(f){
+	//값의 유효성 체크
+	
+	//서버로 전송(대상)
+	
+	f.action = "insert_person.jsp";
+	//지정된 action으로 전송
+	f.submit();
+}
+function send(f){
+	//값의 유효성 체크
+	
+	//서버로 전송(대상)
+	
+	f.action = "Test_bean.jsp";
+	//지정된 action으로 전송
+	f.submit();
+}
+function send2(f){
+	//값의 유효성 체크
+	
+	//서버로 전송(대상)
+	
+	f.action = "insert_person2.jsp";
+	//지정된 action으로 전송
+	f.submit();
+}
+</script>
+</head>
+<body>
+	<form>
+		이름:<input name="name" value = "홍길동"><br> 나이:<input name="age" value= "20"><br>
+		전화:<input name="tel" value = "010-1111-1111"><br> 
+		<input type="button"
+			value="전송하기" onclick="send_original(this.form);" >
+		<input type="button"
+			value="전송하기(낱개로받기)" onclick="send(this.form);" >
+			<input type = "button" value = "전송하기(객체로받기)" onclick="send2(this.form);">
+
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#disp {
+	padding: 20px;
+	width: 400px;
+	height: 400px;
+	background-color: black;
+	color: white;
+	font-size: large;
+}
+</style>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	var div;
+	var reg_exp = /^[1-9]{1}$/;
+	var cal = function() {
+
+		var dan = $("#dan").val();
+		console.log(typeof(16 + "Volvo"));
+		dan = parseInt(dan);
+
+		if (reg_exp.test(dan) == false) {
+			alert("1~9사이의 한자리 숫자를 입력하세요");
+			$("#dan").val("");
+			$("#dan").focus();
+			return;
+		}
+		var result = "<p>";
+		for (var i = 1; i < 10; i++) {
+			if (i % 2 == 1) {
+				result += "<span style = 'color:yellow;'>";
+			} else
+				result += "<span style = 'color:gray;'>";
+
+			result += (dan + " * " + i + " = " + dan * i + "<br>");
+			result += "</span>";
+		}
+		result += "</p>";
+		$("#disp").html(result);
+		div = $("#disp");
+		console.log("디버그");
+	}
+	$(document).ready(function() {
+
+		$("#bt_result").on("click", cal);
+
+	});
+</script>
+</head>
+<body>
+
+	단:
+	<input id="dan">
+	<input type="button" id="bt_result" value="확인">
+	<div id="disp">여기에 구구단 출력하세요</div>
+
+
+</body>
+</html>

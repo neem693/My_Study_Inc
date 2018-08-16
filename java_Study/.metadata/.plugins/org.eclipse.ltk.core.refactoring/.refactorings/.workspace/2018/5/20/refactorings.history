@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;2018_0515_배열sort&apos; to &apos;2018_0515_객체배열sort&apos;&#x0D;&#x0A;- Original element: &apos;2018_0515_배열sort&apos;&#x0D;&#x0A;- Renamed element: &apos;2018_0515_배열sort&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;2018_0515_배열sort&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=2018_0515_배열sort" name="2018_0515_객체배열sort" references="true" stamp="1526352956666" version="1.0"/>
+</session>

@@ -1,0 +1,10 @@
+package vo;
+
+public class DeptVo {
+	int deptno;
+	String dname;
+	String loc;
+	
+	List sa_list;
+
+}

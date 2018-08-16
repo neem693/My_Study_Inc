@@ -1,0 +1,18 @@
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript&lt;/h2&gt;
+
+&lt;h3&gt;The window.location object&lt;/h3&gt;
+
+&lt;input type="button" value="Load new document" onclick="newDoc()"&gt;
+
+&lt;script&gt;
+function newDoc() {
+    window.location.assign("https://www.w3schools.com")
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* div{
+	border : 1px solid black;
+	background-color: #fffce1;
+}
+ */
+
+.user{
+	padding: 25px;
+	text-align: center;
+	float: left;
+	//border: 1px solid black;
+	width: 30%;
+	box-sizing: border-box;
+}
+
+#main_box{
+	width: 50%;
+	min-height: 600px;
+	background-color: #fffce1;
+	margin: 0px auto;
+	padding-top: 20px;
+}
+
+#main_box>h1{
+	font-size:20pt;
+	font-weight: bold;
+	color: #391ce3;
+	text-align: center;
+}
+
+#main_box>hr{
+	border: none;
+	height: 30px;
+}
+.box_style{
+	border:1px solid black;
+	width: 100%;
+}
+
+.id{
+	font-weight: bold;
+	text-align: inherit;
+	
+}
+.ip,.date{
+	//border: 1px solid black;
+	//float:right;
+}
+.content_style{
+	border-left: 1px solid black;
+	padding: 25px;
+	float: right;
+	//border:1px solid black;
+	width:70%;
+	box-sizing: border-box;
+	
+}
+
+
+.empty_style{
+	text-align: center;
+	font-weight: 900;
+	font-size: 70px;
+	padding-top: 50px;
+}
+
+.pwd{
+	clear: both;
+}
+.searched{
+	background-color: red;
+	color: yellow;
+}

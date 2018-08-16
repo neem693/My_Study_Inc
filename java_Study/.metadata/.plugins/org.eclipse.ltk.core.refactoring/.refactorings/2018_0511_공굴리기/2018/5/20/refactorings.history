@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MyConst.java&apos; to &apos;2018_0514_제네릭_컬렉션/src/mymain&apos;&#x0D;&#x0A;- Original project: &apos;2018_0511_공굴리기&apos;&#x0D;&#x0A;- Destination element: &apos;2018_0514_제네릭_컬렉션/src/mymain&apos;&#x0D;&#x0A;- Original element: &apos;mymain.MyConst.java&apos;" description="Copy compilation unit" destination="=2018_0514_제네릭_컬렉션/src&lt;mymain" element1="/src&lt;mymain{MyConst.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1526283758730" units="1" version="1.0"/>
+</session>

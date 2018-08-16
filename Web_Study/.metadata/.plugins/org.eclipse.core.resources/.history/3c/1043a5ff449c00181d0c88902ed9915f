@@ -1,0 +1,13 @@
+/*
+
+--老访锅龋包府按眉
+
+*/
+
+
+create table comment_tb
+(
+	idx int,
+	id varchar2(100)
+
+)

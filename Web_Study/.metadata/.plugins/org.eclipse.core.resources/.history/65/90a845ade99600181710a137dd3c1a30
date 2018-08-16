@@ -1,0 +1,63 @@
+package action;
+
+import java.io.File;
+/**
+ * Servlet implementation class SungDeleteAction
+ */
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+
+/**
+ * Servlet implementation class SungDeleteAction
+ */
+@WebServlet("/shop/insert.do")
+public class ProductInsertAction extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String forward_page = "";
+		String dir = "/shop/images";
+		String saveDir = request.getServletContext().getRealPath(dir);
+		int size = 1024 * 1024 * 10;
+		 MultipartRequest mr = new MultipartRequest(request, saveDir, size, "utf-8", new DefaultFileRenamePolicy());
+		 String p_image_s="",p_image_l="";
+		 File fs = mr.getFile("p_image_s");
+		 File fl = mr.getFile("p_image_l");
+		 p_image_s = fs.getName();
+		 p_image_l = fl.getName();
+		 if(p_image_s.equals("")||p_image_l.equals("")) {
+			 forward_page = "insert_form.do?isFail=y";
+		 }else {
+			 p_image_s = filename;
+		 }
+		
+		 
+		 filename = fs.getName();
+		 
+		 
+			 
+		
+		
+	
+		RequestDispatcher disp = request.getRequestDispatcher(forward_page);
+		disp.forward(request, response);
+
+	}
+
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="">
+
+	<resultMap id="deptResult" type="vo.DeptVo">
+		<result property="deptno" column="deptno" />
+		<result property="dname" column="dname" />
+		<result property="loc" column="loc" />
+		<collection property="sa_list" 
+					column="{deptno=deptno}"
+					javaType="java.util.ArrayList" 
+					ofType="vo.Sawon"
+					select="sawon_deptno_list" />
+	</resultMap>
+
+	<select id="dept_list" resultMap="deptResult">
+		SELECT deptno,dname,loc FROM dept
+	</select>
+
+	<select id="select_sawon_deptno" resultType="vo.SawonVo">
+		SELECT sabun,saname FROM sawon WHERE deptno=#{ deptno }
+	</select>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

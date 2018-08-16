@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="onmousemove"/>
+			<item value="console"/>
+			<item value="block_w"/>
+			<item value="case"/>
+			<item value="user_goto"/>
+			<item value="timer"/>
+			<item value="src"/>
+			<item value="src/images/"/>
+			<item value="this"/>
+			<item value="client"/>
+			<item value="show_panel"/>
+			<item value="user_list"/>
+			<item value="socket"/>
+			<item value="heavy"/>
+			<item value="heady"/>
+		</list>
+		<list key="replacehistory">
+			<item value=".."/>
+			<item value=""/>
+			<item value="ImageIcon"/>
+			<item value="not_co_anwser"/>
+			<item value="(round)"/>
+			<item value="GameOver.ALL_COUNT"/>
+			<item value="character_ox"/>
+			<item value="ch_move_list.get(i)"/>
+			<item value="ch"/>
+			<item value="next_point"/>
+			<item value="current_point"/>
+			<item value="pan"/>
+			<item value="[countx]"/>
+			<item value="[counto]"/>
+			<item value="counto"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="288" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="391" key="DIALOG_HEIGHT"/>
+		<item value="672" key="DIALOG_X_ORIGIN"/>
+		<item value="165" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

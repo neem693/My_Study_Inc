@@ -1,0 +1,12 @@
+package vo;
+
+import java.util.List;
+
+public class DeptVo {
+	int deptno;
+	String dname;
+	String loc;
+	
+	List<SawonVo> sa_list;
+
+}

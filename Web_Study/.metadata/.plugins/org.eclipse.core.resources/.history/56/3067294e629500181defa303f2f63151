@@ -1,0 +1,9 @@
+package vo;
+
+import java.util.List;
+
+public class SawonYearVo {
+	int hire_year;
+	List<SawonVo> sa_season_list;
+
+}

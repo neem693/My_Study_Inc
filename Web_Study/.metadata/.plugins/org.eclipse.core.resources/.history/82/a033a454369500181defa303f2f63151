@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script>
+//$(function(){})//이것도 ready이다.
+
+$(document).ready(function(){
+	$("#bt_find").click(function(){
+		var deptno = $("#deptno").val();
+		$.ajax({
+			url: "sawon/list.do",
+			data:{
+				'deptno': deptno
+			},
+			success : function(result){
+				$("#disp").html(result);
+			}
+		})
+		
+		
+	});
+});
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	부서번호:
+	<select id="deptno">
+		<option selected="selected" value="0">전체보기</option>
+		<option value="10">10번</option>
+		<option value="20">20번</option>
+		<option value="30">30번</option>
+		<option value="40">40번</option>
+	</select>
+
+	<input id = "bt_find" type="button" value="검색">
+	<hr>
+	<div id="disp"></div>
+
+</body>
+</html>

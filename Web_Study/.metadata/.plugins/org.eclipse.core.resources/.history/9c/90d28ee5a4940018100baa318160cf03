@@ -1,0 +1,14 @@
+package dao;
+
+//single-ton pattern: 1개의 객체만 생성해서 서비스하자
+static GogekDbo single = null;
+
+public static GogekDbo getInstance() {
+	if (single == null)
+		single = new GogekDbo();
+	return single;
+}
+
+public GogekDbo() {
+	// TODO Auto-generated constructor stub
+}

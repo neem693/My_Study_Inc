@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function send_get(f) {
+		f.method = "get";
+		f.submit();
+	}
+	function send_post(f) {
+		f.method = "post";
+		f.submit();
+	}
+</script>
+</head>
+<body>
+
+	<form action="lifecycle.do">
+
+		아이디<input name="id"><br>
+		비밀번호<input type="password" name="pwd"><br> 
+		<input type="button" value="GET으로 요청하기" onclick="send_get(this.form)">
+		<input type="button" value="POST으로 요청하기" onclick="send_post(this.form)">
+	</form>
+
+</body>
+</html>

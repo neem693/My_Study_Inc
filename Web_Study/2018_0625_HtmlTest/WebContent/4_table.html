@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	empty-cells: show;
+	width: 50%;
+	margin: 0 auto;
+	width: 50%;
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid black;
+	text-align: center;
+}
+
+td {
+	padding: 10px 5px;
+}
+
+#dotted {
+	border-right: none;
+	border-left: 2px dotted black;
+}
+
+.full {
+	padding: 20px 5px;
+}
+
+/*tr:nth-child(even) {
+	background-color: #C0C0C0;
+}*/
+tr:nth-last-child(odd) {
+	background-color: #F5F5F5
+}
+</style>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>조회수</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>날씨가 덥네</td>
+			<td>홍길동</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>덥지는 않네</td>
+			<td>이길동</td>
+			<td>2</td>
+		</tr>
+	</table>
+
+	<hr>
+	테이블 행열 합치기
+	<hr>
+
+	<table>
+		<tr>
+			<th rowspan="2">구분</th>
+			<th colspan="3">1사분기</th>
+			<th colspan="3">2사분기</th>
+			<th colspan="3">3사분기</th>
+			<th colspan="3">4사분기</th>
+
+		</tr>
+		<tr>
+			<th>1월</th>
+			<th>2월</th>
+			<th>3월</th>
+			<th>4월</th>
+			<th>5월</th>
+			<th>6월</th>
+			<th>7월</th>
+			<th>8월</th>
+			<th>9월</th>
+			<th>10월</th>
+			<th>11월</th>
+			<th>12월</th>
+		</tr>
+		<tr>
+			<th>강남</th>
+			<td>1</td>
+			<td>2</td>
+			<td>5</td>
+
+			<td>6</td>
+			<td>7</td>
+			<td>5</td>
+
+			<td>12</td>
+			<td>21</td>
+			<td>5</td>
+
+			<td>11</td>
+			<td>8</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<th>강북</th>
+			<td>1</td>
+			<td>3</td>
+			<td>4</td>
+
+			<td>11</td>
+			<td>31</td>
+			<td>41</td>
+
+			<td>12</td>
+			<td>31</td>
+			<td>4</td>
+
+			<td>10</td>
+			<td>12</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<th>관악</th>
+			<td>11</td>
+			<td>41</td>
+			<td>33</td>
+
+			<td>10</td>
+			<td>14</td>
+			<td>13</td>
+
+			<td>21</td>
+			<td>4</td>
+			<td>8</td>
+
+			<td>11</td>
+			<td>41</td>
+			<td>33</td>
+
+		</tr>
+
+	</table>
+	<br>
+	<br>
+	<table>
+		<tr>
+			<td rowspan="4">사진</td>
+			<td colspan="5">이력서</td>
+		</tr>
+		<tr>
+			<td rowspan="2" colspan="1">성명</td>
+			<td width="45%" rowspan="2" colspan="3">(인)</td>
+			<td colspan="1">주민등록번호</td>
+
+		</tr>
+		<tr>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>생년월일</td>
+			<td colspan="4"></td>
+		</tr>
+		<tr>
+			<td>주소</td>
+			<td colspan="5"></td>
+		</tr>
+		<tr>
+			<td>호적관계</td>
+			<td>호주와의 관계</td>
+			<td colspan="2" width="25%"></td>
+			<td>호주성명</td>
+			<td colspan="2" width="25%"></td>
+		</tr>
+	</table>
+	<table style="border: none;">
+		<tr>
+			<td colspan="3">년월일</td>
+			<td width="50%">학력및 경력사항</td>
+			<td>발령청</td>
+		</tr>
+		<tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr>
+		<tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr><tr>
+			<td style="border-right: none;" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+			<td id="dotted" width="5%"></td>
+
+			<td></td>
+
+			<td class="full"></td>
+		</tr>
+
+
+	</table>
+
+
+
+</body>
+</html>

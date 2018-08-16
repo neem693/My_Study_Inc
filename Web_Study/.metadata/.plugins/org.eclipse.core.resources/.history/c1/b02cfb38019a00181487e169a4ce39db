@@ -1,0 +1,19 @@
+/*
+
+--일련번호관리객체
+
+*/
+
+
+create sequence seq_board_idx
+
+create table board{
+
+idx int, --일련번호
+id	varchar2(100), --작성자 아이디
+name varchar2(100), --작성자 이름
+subject varchar2(100), --제목
+content clob, --내용
+
+
+}

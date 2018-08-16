@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+
+	<!-- String sql = "select * from member"; -->
+	<select id="member_list" resultType="member">
+		select * from member
+	</select>
+
+
+	<select id="member_select_idx" parameterType="int"
+		resultType="member">
+		select * from member where idx = #{idx}
+	</select>
+
+
+	<select id="member_select_id" parameterType="String"
+		resultType="member">
+		
+		select * from member where id = #{id}
+		
+		
+		</select>
+
+<insert id="member_insert">
+insert into member values(seq_member_idx.nextVal,#{name},#{id},#{pwd},#{zipcode},#{addr},#{ip},sysdate)
+</insert>
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

@@ -1,0 +1,1 @@
+copy C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\2018_0725_PhotoGallery\image\* C:\My_Study\Web_Study\backup\photo_image

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Semi_project(network)&apos; to &apos;Semi_project(network_client)&apos;" description="Rename resource &apos;Semi_project(network)&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Semi_project(network)" name="Semi_project(network_client)" stamp="1529479927619" updateReferences="true"/>
+</session>

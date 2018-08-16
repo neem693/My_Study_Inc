@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>산술연산자</title>
+<script type = "text/javascript">
+
+var a = 10,b=3;
+document.write("--산술연산자--<br>");
+document.write( a + " + " + b + " = " + (a + b) +"<br>");
+document.write( a + " - " + b + " = " + (a - b) +"<br>");
+document.write( a + " * " + b + " = " + (a * b) +"<br>");
+document.write( a + " / " + b + " = " + (a / b) +"<br>");
+document.write( a + " % " + b + " = " + (a % b) +"<br>");
+
+document.write("--관계(비교)연산자--<br>");
+document.write( a + " == " + b + " => " + (a == b) +"<br>");
+document.write( a + " > " + b + " => " + (a > b) +"<br>");
+document.write( a + " >= " + b + " => " + (a >= b) +"<br>");
+document.write( a + " < " + b + " => " + (a < b) +"<br>");
+document.write( a + " <= " + b + " => " + (a <= b) +"<br>");
+var c = '10';
+document.write( a + " == " + c + " => " + (a == c) +"<br>");
+document.write( a + " === " + c + " => " + (a === c) +"<br>");
+
+document.write("--논리연산자--<br>");
+var year = prompt('출생년도를 입력하세요');
+//윤년 or 평년
+if((year%400==0)|| (year%4==0 && year%100 !=0))
+	document.write(year + '년도는 윤년<br>');
+else
+	document.write(year + '년도는 평년<br>');
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

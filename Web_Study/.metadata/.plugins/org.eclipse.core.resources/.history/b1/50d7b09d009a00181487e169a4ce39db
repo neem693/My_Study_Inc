@@ -1,0 +1,12 @@
+/*
+
+--老访锅龋包府按眉
+
+*/
+
+
+create sequence seq_board_idx
+
+create table board{
+
+}

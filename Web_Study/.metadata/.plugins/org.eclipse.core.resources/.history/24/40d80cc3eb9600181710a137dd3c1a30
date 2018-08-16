@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product">
+
+<select id="product_list" parameterType="String" resultType="product">
+select * from product where category = #{category}
+
+</select>
+
+<insert id = "product_insert" parameterType="product">
+insert into product values(seq_product_idx.nextVal,#{category}, #{p_name},
+#{p_name},#{p_company},#{p_price},#{p_saleprice},#{p_image_s},#{p_image_l},
+'바이오맥스 통풍 나일론-HGPU SHELL * 특수 충격 흡수 밑창 * 신발끈 메모리 버클 * 힐 락에 의한 신속한 신발끈 시스템 * 느린 메모리 포말에 의한 편안한 통풍성의 숨쉬는 라이너 * 쿨 통풍 시스템 * 통풍성의 인체공학적 신발밑창 * 손쉬운 엔트리 시스템(신기 편한 입구) * 몰디드 알루미늄 프레임 * 80mm 82a hyper dubbs 휠 * 강철 스페이서 * ABEC-5 베어링',sysdate);
+
+</insert>
+	
+	
+
+</mapper>

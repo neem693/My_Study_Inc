@@ -1,0 +1,21 @@
+package dao;
+
+public class Board_Dao {
+	
+	//single-ton pattern: 1개의 객체만 생성해서 서비스하자
+	static Board_Dao single = null;
+
+	public static Board_Dao getInstance() {
+		if (single == null)
+			single = new Board_Dao();
+		return single;
+	}
+
+	public Board_Dao() {
+		// TODO Auto-generated constructor stub
+		
+		
+		
+	}
+
+}

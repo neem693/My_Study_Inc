@@ -1,0 +1,17 @@
+package snippet;
+
+public class Snippet {
+	int idx = Integer.parseInt(request.getParameter("idx"));
+			
+			VisitVo vo= VisitDao.getInstance().selectOne(idx);
+			String content = vo.getContent().replaceAll("<br>", "\n");
+			vo.setContent(content);
+			request.setAttribute("vo", vo);
+			
+			
+	
+			String forward_page = "modify.jsp";
+			RequestDispatcher disp = request.getRequestDispatcher(forward_page);
+			disp.forward(request, response);
+}
+

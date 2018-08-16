@@ -1,0 +1,11 @@
+package vo;
+
+import java.util.Date;
+
+public class BoardVo {
+	
+	int idx,readhit,ref,step;
+	String id,name,subject,content,pwd,ip,regdate;
+	Date date;
+
+}

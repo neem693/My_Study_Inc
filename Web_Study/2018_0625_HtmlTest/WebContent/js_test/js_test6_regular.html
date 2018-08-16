@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/reg_exp.js"></script>
+<script type="text/javascript">
+	function send() {
+		//입력된 3개의 값을 읽어오기
+		//jQuery 표현 => $('#tel').val();
+		var tel = document.getElementById("tel").value;
+		var email = document.getElementById("email").value;
+		var jumin = document.getElementById("jumin").value;
+
+		//정규식
+
+		//전화번호 체크
+		if (reg_tel.test(tel) == false) {
+			alert("전화번호를 형식에 맞게 입력하세요");
+			document.getElementById("tel").value = '';
+			document.getElementById("tel").focus();
+			return;
+		}
+
+		if (reg_email.test(email) == false) {
+			alert("이메일을 형식에 맞게 입력하세요");
+			document.getElementById("email").value = '';
+			document.getElementById("email").focus();
+			return;
+		}
+		if (reg_jumin.test(jumin) == false) {
+			alert("주민번호를 형식에 맞게 입력하세요");
+			document.getElementById("jumin").value = '';
+			document.getElementById("jumin").focus();
+			return;
+		}
+	}
+</script>
+</head>
+<body>
+
+	전화번호:
+	<input id="tel" placeholder="xxx-xxxx-xxxx" value="010-123-2345">
+	<br> 이메일:
+	<input id="email" value="a@b.co.kr">
+	<br> 주민번호:
+	<input id="jumin">
+	<br>
+
+	<input type="button" value="전송" onclick="send();">
+
+</body>
+</html>

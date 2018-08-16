@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/reg_exp.js"></script>
+<script>
+	function send(f) {
+
+		var su1 = document.getElementById("su1").value;
+		var su2 = document.getElementById("su2").value;
+		var pro1 = document.getElementById("wtf1");
+		var pro2 = document.getElementById("wtf2");
+		if (reg_su.test(su1) == false) {
+		
+			pro1.innerHTML = "허허허허 숫자를 입력하라. 4자리로 허허허";
+			return;
+		}else{
+			pro1.innerHTML = "";
+		}
+		if (reg_su.test(su2) == false) {
+			
+			pro2.innerHTML = "허허허허 숫자를 입력하라. 4자리로 허허허";
+			return;
+		}else{
+			pro2.innerHTML = "";
+		}
+		f.method = "GET";
+		f.action = "calc.do";
+		f.submit();
+
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<label>수1</label><input id="su1" name="su1"><span id="wtf1"></span><br>
+		<label>수2</label><input id="su2" name="su2"><span id="wtf2"></span><br>
+		<input type="button" onclick="send(this.form)" value="계산해줘">
+	</form>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="visit">
+
+	<select id="select_visit_list" resultType="visit">
+		select * from visit
+		order by idx desc
+	</select>
+
+	<select id="select_visit_codition_list" parameterType="visit" resultType="visit">
+		select * from visit
+		<trim prefix="where" prefixOverrides="or">
+			<if test="name!=null">
+			LOWER(name) like '%' || LOWER(#{name}) || '%'
+			</if>
+			<if test="content!=null">
+			or LOWER(content) like '%' ||  LOWER(#{content}) ||'%' 
+			</if>
+		</trim>
+		order by idx desc
+	</select>
+
+	<insert id="insert_visit" parameterType="visit">
+		insert into visit
+		values(seq_visit_idx.nextVal,#{name},#{content},#{pwd},#{ip},sysdate)
+	</insert>
+
+	<delete id="delete_visit" parameterType="visit">
+		delete from visit where
+		idx = #{idx}
+	</delete>
+
+	<select id="selectone_visit" parameterType="int"
+		resultType="visit">
+		select * from visit where idx=#{idx}
+	</select>
+
+	<select id="count_visit" resultType="int">
+		select count(*) from visit
+	</select>
+
+	<update id="update_visit" parameterType="visit">
+		update visit set name
+		=#{name},content=#{content},pwd=#{pwd},ip=#{ip},regdate=sysdate where
+		idx=#{idx}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

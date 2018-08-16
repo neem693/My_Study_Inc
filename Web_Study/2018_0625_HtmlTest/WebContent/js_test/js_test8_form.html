@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+	function send1() {
+		console.log("call send1");
+		var f = document.forms[0];
+		
+		var id = f.id.value;
+		var pwd = f.pwd.value;
+		
+		if(id ==''){
+			alert('아이디를 입력하세요');
+			f.id.focus();//포커스 이동
+			return;
+		}
+		if(pwd ==''){
+			alert('비밀번호를 입력하세요');
+			f.pwd.focus();//포커스 이동
+			return;
+		}
+		
+		//f.action = 'login.do';
+		f.submit();
+		
+	}
+
+	function send2() {
+		console.log("call send2");
+	}
+
+	function send3() {
+		console.log("call send3");
+	}
+</script>
+</head>
+<body>
+	<form action="">
+		<table border="1">
+			<tr>
+				<th>아이디</th>
+				<td><input name="id" id="id"></td>
+			</tr>
+			<tr>
+				<th>비밀번호</th>
+				<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><input type="button"
+					value="폼체크1" onclick="send1();"> <input type="button"
+					value="폼체크2" onclick="send2();"> <input type="button"
+					value="폼체크3" onclick="send3();"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

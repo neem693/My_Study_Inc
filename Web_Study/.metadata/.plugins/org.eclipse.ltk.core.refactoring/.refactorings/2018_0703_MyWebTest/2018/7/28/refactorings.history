@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;intro.jsp&apos; to &apos;company&apos;" description="Move &apos;intro.jsp&apos; to &apos;company&apos;" destination="WebContent/content/company" element1="WebContent/content/intro.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1531462546284" updateReferences="true"/>
+</session>

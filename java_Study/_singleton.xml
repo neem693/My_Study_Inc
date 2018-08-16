@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="_singleton">	//single-ton pattern: 1개의 객체만 생성해서 서비스하자&#13;
+	static ${primary_type_name} single=null;&#13;
+	public static ${primary_type_name} getInstance(){&#13;
+		if(single==null)&#13;
+			single = new ${primary_type_name}();&#13;
+		return single;&#13;
+	}&#13;
+	&#13;
+	public ${primary_type_name}() {&#13;
+		// TODO Auto-generated constructor stub&#13;
+	}</template></templates>

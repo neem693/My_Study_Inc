@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<script>
+	function find() {
+
+		var deptno = $("#deptno").val();
+		var saname = $("#saname").val();
+
+		if (saname == '') {
+			alert("이름을 입력하세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			return;
+		}
+		
+		$.ajax({
+			url: 'sawon/search.do',
+			data: {
+				'deptno':deptno,
+				'saname':saname
+			},
+			success: function(result){
+				$('#disp').html(result);
+			}
+			
+		})		
+		
+
+	}
+</script>
+</head>
+<body>
+
+이름입력:
+	<input id="saname">
+	<input type="button" value="가져오기" onclick="find()">
+	<hr>
+	<div id="disp"></div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+package vo;
+
+public class ProductVo {
+	
+	int idx,p_price,p_saleprice;
+	
+	String category;
+	String p_num;
+	String p_name;
+	String p_company;
+	String p_image_s;
+	String p_image_l;
+	String p_content;
+	String p_date;
+
+}

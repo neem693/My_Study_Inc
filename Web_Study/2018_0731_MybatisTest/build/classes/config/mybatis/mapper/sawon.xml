@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="">
+
+	<resultMap id="result_sawon" type="vo.SawonVo">
+		<result property="sabun" column="sabun" javaType="int" />
+	</resultMap>
+
+
+	<select id="sawon_list" resultType="vo.SawonVo">
+		select * from sawon
+	</select>
+	<select id="sawon_list_deptno" parameterType="int"
+		resultType="vo.SawonVo">
+		select * from sawon where deptno = #{no}
+	</select>
+	<select id="sawon_list_sajob" parameterType="String"
+		resultType="vo.SawonVo">
+		select * from sawon where sajob = #{sajob}
+	</select>
+
+	<select id="deptno_sajob_select" parameterType="vo.SawonVo"
+		resultType="vo.SawonVo">
+		select * from sawon where sajob = #{sajob} and deptno =
+		#{deptno}
+	</select>
+	<select id="deptno_sajob_selectMap"
+		parameterType="java.util.Map" resultType="vo.SawonVo">
+		select * from sawon where
+		sajob = #{job} and deptno =
+		#{no}
+	</select>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

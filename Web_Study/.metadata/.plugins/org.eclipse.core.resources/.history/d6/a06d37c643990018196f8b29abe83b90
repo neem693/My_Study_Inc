@@ -1,0 +1,5 @@
+package action.cart;
+
+public class CartListAction {
+
+}

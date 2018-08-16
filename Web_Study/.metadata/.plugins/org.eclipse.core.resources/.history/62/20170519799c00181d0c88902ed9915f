@@ -1,0 +1,5 @@
+package action.comment;
+
+public class CommentDeleteAction {
+
+}

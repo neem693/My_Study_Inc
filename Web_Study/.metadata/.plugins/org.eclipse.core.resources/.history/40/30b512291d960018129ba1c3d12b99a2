@@ -1,0 +1,6 @@
+select * from VISIT
+
+commit;
+
+select * from visit
+where name like  '%1%'

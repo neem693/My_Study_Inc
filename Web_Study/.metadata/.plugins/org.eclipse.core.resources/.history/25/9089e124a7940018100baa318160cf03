@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<script>
+	function find() {
+
+		var addr = $("#addr").val();
+		
+
+		if (saname == '') {
+			alert("도시를 입력하세요");
+			return;
+		}
+		
+		$.ajax({
+			url: 'gogek/search.do',
+			data: {
+				'addr':addr,
+			},
+			success: function(result){
+				$('#disp').html(result);
+			}
+			
+		})		
+		
+
+	}
+</script>
+</head>
+<body>
+
+이름입력:
+	<select id="addr"><option value = "서울">서울</option></select>
+	<input type="button" value="가져오기" onclick="find()">
+	<hr>
+	<div id="disp"></div>
+
+
+
+
+</body>
+</html>

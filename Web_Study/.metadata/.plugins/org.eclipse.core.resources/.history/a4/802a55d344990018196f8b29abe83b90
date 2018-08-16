@@ -1,0 +1,44 @@
+package action.cart;
+
+
+/**
+ * Servlet implementation class SungDeleteAction
+ */
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
+
+import dao.CartDao;
+import sun.util.resources.cldr.fr.CalendarData_fr_TD;
+import vo.MemberVo;
+
+import javax.servlet.RequestDispatcher;
+
+/**
+ * Servlet implementation class SungDeleteAction
+ */
+@WebServlet("/shop/cart_list.do")
+public class CartListAction extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		List<CartVo> list = CartDao.getInstance().selectList((MemberVo)request.getSession().getAttribute("user"))
+
+		String forward_page = "cart_list.jsp";
+		RequestDispatcher disp = request.getRequestDispatcher(forward_page);
+		disp.forward(request, response);
+
+	}
+
+}

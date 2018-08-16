@@ -1,0 +1,18 @@
+/*
+
+--老访锅龋包府按眉
+
+*/
+
+
+create table comment_tb
+(
+	idx int CommentTb_IDX_PK primary key,
+	id varchar2(100),
+	name varchar2(100),
+	ip varchar2(100),
+	regdate date,
+	b_idx int constraint CommentTb_BIDX_FK references board(idx)
+	
+
+)

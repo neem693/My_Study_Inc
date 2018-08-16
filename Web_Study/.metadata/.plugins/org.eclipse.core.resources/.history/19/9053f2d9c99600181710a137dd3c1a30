@@ -1,0 +1,9 @@
+package vo;
+
+public class ProductVo {
+	
+	int idx,p_price,p_saleprice;
+	
+	String category;
+
+}

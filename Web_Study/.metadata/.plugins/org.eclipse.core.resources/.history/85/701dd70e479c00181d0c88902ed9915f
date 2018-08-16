@@ -1,0 +1,9 @@
+package vo;
+
+public class CommentVo {
+	
+	int idx;
+	String id,name,ip,content,regdate;
+	int b_idx;
+
+}

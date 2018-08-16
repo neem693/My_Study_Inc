@@ -1,0 +1,4 @@
+browser-choice=1
+browsers=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<web-browsers current\="1">\r\n<system/>\r\n<external location\="C\:\\Program Files\\Mozilla Firefox\\firefox.exe" name\="Firefox"/>\r\n<external location\="C\:\\Program Files\\Internet Explorer\\iexplore.exe" name\="Internet Explorer"/>\r\n</web-browsers>
+eclipse.preferences.version=1
+internalWebBrowserHistory=file\:///C\:/My_Study/Web_Study/2018_0625_HtmlTest/WebContent/logo1.png|*|file\:/C\:/My_Study/Web_Study/2018_0625_HtmlTest/WebContent/logo1.png|*|http\://localhost\:9090/2018_0625_HtmlTest/index.html|*|

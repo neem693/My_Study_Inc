@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "../js/reg_exp.js"></script>
+<script type="text/javascript">
+
+function get_su1(){
+	var su1 = document.getElementById("su1");
+
+	return Number(su1.value);
+}
+function get_su2(){
+	var su1 = document.getElementById("su1");
+	return Number(su2.value);
+}
+
+function add(){
+	
+	//연산된 결과값을 결과 창에 넣기
+	var su1 = get_su1();
+	var su2 = get_su2();
+	
+	
+	if(reg_su.test(su1)==false){
+		alert("수1자리에 1~4자리 까지 숫자로 입력하세요");
+		return;
+	}
+	if(reg_su.test(su2)==false){
+		alert("수2자리에 1~4자리 까지 숫자로 입력하세요");
+		return;
+	}
+	
+	
+	document.getElementById('res').value = su1 + su2;
+	
+}
+
+function minus(){
+	
+	//연산된 결과값을 결과 창에 넣기
+	var su1 = get_su1();
+	var su2 = get_su2();
+	
+	document.getElementById('res').value = su1 - su2;
+	
+}
+
+
+function multiply(){
+	
+	//연산된 결과값을 결과 창에 넣기
+	var su1 = get_su1();
+	var su2 = get_su2();
+	
+	document.getElementById('res').value = su1 * su2;
+	
+}
+
+function divide(){
+	//연산된 결과값을 결과 창에 넣기
+	var su1 = get_su1();
+	var su2 = get_su2();
+	
+	document.getElementById('res').value = su1/ su2;
+}
+
+
+</script>
+</head>
+<body>
+
+수1:<input id = "su1"><br>
+수2:<input id = "su2"><br>
+
+<input type = "button" value="+" onclick="add();">
+<input type = "button" value="-" onclick="minus();">
+<input type = "button" value="*" onclick="multiply();">
+<input type = "button" value="/" onclick="divide();">
+<br>
+
+결과:<input id = "res"><br>
+
+</body>
+</html>

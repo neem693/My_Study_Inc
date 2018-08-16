@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;OX문제.txt&apos; to &apos;semi_project(network_server)/src/utill&apos;&#x0D;&#x0A;- Original project: &apos;semi_project(network_server)&apos;&#x0D;&#x0A;- Destination element: &apos;semi_project(network_server)/src/utill&apos;&#x0D;&#x0A;- Original element: &apos;OX문제.txt&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="/src&lt;utill" element1="OX문제.txt" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1530250701741" units="0" version="1.0"/>
+</session>

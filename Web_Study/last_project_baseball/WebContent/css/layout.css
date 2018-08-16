@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+html{
+	height: 0px;
+}
+
+nav {
+	left: -335px;
+	margin: 0;
+	float: left;
+	position: fixed;
+	width: 400px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	height: 100%;
+	transition: left 0.5s;
+}
+
+nav.show_nav {
+	left: 0px;
+	transition: left 0.5s;
+}
+
+.small_bar {
+	padding: 10px 0;
+	display: block; //
+	border: 1px solid white;
+	text-align: center;
+	color: #ccccaa;
+	margin: 0;
+	box-sizing: border-box;
+	height: 25%;
+	font-size: 60px;
+	transition: color 0.5s;
+	cursor: pointer;
+}
+
+.small_bar:hover {
+	color: white;
+	transition: color 0.5s;
+}
+
+.fa>.nav_text {
+	margin: 0;
+	font-size: 15px;
+}
+
+.nav {
+	height: 400px;
+	float: right;
+}
+
+.target {
+	background-color: #82ff82;
+	color: black;
+}
+
+.login {
+	padding-top: 5px;
+	margin-left: 10px;
+	margin-top: 10px;
+	height: 100px;
+	width: 300px;
+	float: left;
+	border: 3px solid white;
+	border-left: none; border-right : none;
+	color: white;
+	border-right: none;
+	box-sizing: border-box;
+}
+
+#login_btn {
+	display: block;
+	width:100%;
+	background-color: white;
+	border: none;
+}
+
+#login_btn:hover{
+	background-color: #ccccaa;
+}
+
+.menu{
+	float: left;
+	width: 80%;
+	height:auto;
+	overflow: auto;
+}
+.menu h1{
+	border: 1px solid white;
+	background-color: #ccccaa;
+	border: 0px;
+	color: black;
+	margin:0px;
+	margin: 10px 0;
+}
+.bar_item{
+	margin:0px;
+	float:left;
+	border:1px solid white;
+	width: 25%;
+	background: #ccccaa;
+	color: black;
+	height: 75px;
+	padding-top: 15px;
+	box-sizing: border-box;
+	font-size: 30px;
+}
+
+
+
+

@@ -1,0 +1,8 @@
+package vo;
+
+public class SawonSeasonVo {
+	
+	String season;
+	List<SawonVo> sa_list;
+
+}

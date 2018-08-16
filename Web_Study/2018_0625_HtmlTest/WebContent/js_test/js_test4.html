@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var dan;
+	var result;
+	var ss;
+	function output_dan() {
+		dan = document.getElementById("dan");
+		result = document.getElementById("disp");
+		ss = document.getElementById("ss");
+		document.getElementById("ssss").innerHTML = ss.value;
+		text="";
+		var reg_ex = /^[2-9]{1}$/;
+		
+		if(reg_ex.test(dan.value)==false){
+			alert('2~9사이 1자리의 숫자값을 입력하세요');
+			dan.value="";
+			dan.focus();
+			
+			return;
+		}
+		
+	
+		for (var i = 1; i <= 9; i++) {
+			text += dan.value + "x" + i + "=" + (Number(dan.value) * i) + "<br>";
+		}
+		//document.write(result);
+		result.innerHTML = text;
+		dan.focus();
+	}
+	
+	
+</script>
+<style>
+div#disp {
+	width: 300px;
+	height: 400px;
+	background-color: black;
+	color: white;
+	font-size: 30px;
+	padding: 20px;
+}
+</style>
+</head>
+<body>
+	단:
+	<input id="dan">
+	<input id ="ss" type="button" value="출력" onclick="output_dan()">
+	<hr>
+	<div id="disp"></div>
+	<div id="ssss"></div>
+
+
+</body>
+</html>

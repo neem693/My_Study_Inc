@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*함수선언*/
+ 
+var g_msg = "Hi~~~";
+function test(){
+	var msg = '안녕하세요';
+	msg2 = '방가워요';
+	document.write('test call : ' + g_msg + "<br>");
+};
+
+function test2(){
+	document.write("test2 global call : " + g_msg+ "<br>");
+	document.write("test2 global call : " + msg2+ "<br>");
+}
+
+//호출
+test();
+test2();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

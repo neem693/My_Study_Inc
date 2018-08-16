@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="jdk.nashorn.internal.parser.JSONParser"/>
+<fullyQualifiedTypeName name="vo.MemberVo"/>
+<fullyQualifiedTypeName name="vo.ProductVo"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="myconst.MyConst.Board"/>
+<fullyQualifiedTypeName name="dao.Board_Dao"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="service.MyBatisConnector"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="vo.CommentVo"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="dao.CommentDao"/>
+<fullyQualifiedTypeName name="util.Paging"/>
+<fullyQualifiedTypeName name="myconst.MyConst"/>
+<fullyQualifiedTypeName name="myconst.MyConst.Comment"/>
+<fullyQualifiedTypeName name="vo.BoardVo"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="org.apache.catalina.ha.backend.Sender"/>
+<fullyQualifiedTypeName name="action.interface_.Action"/>
+<fullyQualifiedTypeName name="action.ListAction"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="action.DeleteAction"/>
+<fullyQualifiedTypeName name="action.InsertAction"/>
+<fullyQualifiedTypeName name="action.InsertForm"/>
+<fullyQualifiedTypeName name="action.MoCompAction"/>
+<fullyQualifiedTypeName name="action.CheckPwdAction"/>
+<fullyQualifiedTypeName name="action.PickOneAction"/>
+</qualifiedTypeNameHistroy>

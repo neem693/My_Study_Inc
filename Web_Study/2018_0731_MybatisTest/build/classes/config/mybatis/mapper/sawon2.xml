@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="">
+
+	<select id="sawon_year_list" resultMap="sawon_result_year">
+		select distinct to_number(to_char(sahire,'YYYY')) as hire_year, 
+		       distinct case  floor(to_number(to_char(sahire,'mm'))/3)
+		        when   1    then '봄'
+		        when   2    then '여름'
+		        when   3    then '가을'
+		        else '겨울'
+		    end as season
+		
+		from sawon
+		order by to_number(to_char(sahire,'YYYY'))
+	</select>
+
+	<resultMap type="vo.SawonYearVo" id="sawon_result_year">
+		<result property="hire_year" column="hire_year" />
+		<collection property="sa_season_list" select="select_season_list"
+			column="{year=hire_year}">
+		</collection>
+	</resultMap>
+	
+	<select id="select_season_list" resultMap="sawon_result_season">
+	select
+   distinct case  floor(to_number(to_char(sahire,'mm'))/3)
+        when   1    then '봄'
+        when   2    then '여름'
+        when   3    then '가을'
+        else '겨울'
+    end as season
+    from sawon
+    where to_number(to_char(sahire,'yyyy'))=#{year}
+	</select>
+	
+	<resultMap type="vo.SawonSeasonVo" id="sawon_result_season">
+		<result property="season" column="season" />
+		<collection property="sa_list" select="select_name_list"
+			column="season">
+		</collection>
+	</resultMap>
+	
+	<select id="select_name_list" resultType="vo.SawonVo">
+		select * from sawon where case  floor(to_number(to_char(sahire,'mm'))/3)
+        when   1    then '봄'
+        when   2    then '여름'
+        when   3    then '가을'
+        else '겨울'
+    end = #{season}
+	</select>
+	
+	
+	
+
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

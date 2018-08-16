@@ -1,0 +1,8 @@
+package vo;
+
+public class SawonYearVo {
+	
+	int hire_year;
+	List<SawonVo> sa_list;
+
+}

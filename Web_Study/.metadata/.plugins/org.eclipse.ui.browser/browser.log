@@ -1,0 +1,639 @@
+
+7월 13, 2018 10:40:18.88 NEW SESSION
+7월 13, 2018 10:40:18.88 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 13, 2018 10:40:18.88 [Parent 7256, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 13, 2018 10:40:18.88 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 13, 2018 10:40:18.88 [Child 3872, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 13, 2018 10:40:18.88 [Child 3872, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 13, 2018 13:27:28.55 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 13, 2018 13:27:28.60 [Child 6672, MediaPlayback #10] WARNING: bd5a39f580 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 13, 2018 13:27:28.60 [Child 6672, MediaPlayback #10] WARNING: Decoder=bd612556a0 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 13, 2018 13:27:31.96 [Child 6672, MediaPlayback #12] WARNING: bd6cb24a00 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 13, 2018 13:27:31.96 [Child 6672, MediaPlayback #12] WARNING: Decoder=bd6fc67e20 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 13, 2018 13:27:32.29 [Child 6672, MediaPlayback #10] WARNING: bd66236a00 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 13, 2018 13:27:32.29 [Child 6672, MediaPlayback #10] WARNING: Decoder=bd6e3e4b60 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 13, 2018 13:27:37.88 [Child 6672, MediaPlayback #10] WARNING: bd652e8340 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 13, 2018 13:27:37.90 [Child 6672, MediaPlayback #10] WARNING: Decoder=bd6fc67e20 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 13, 2018 13:30:01.53 [Child 6672, MediaPlayback #15] WARNING: bd6ddd2b80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 13, 2018 13:30:01.53 [Child 6672, MediaPlayback #15] WARNING: Decoder=bd687cad40 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 13, 2018 14:55:44.39 IPDL protocol error: Handler returned error code!
+7월 13, 2018 14:55:44.41 
+7월 13, 2018 14:55:44.41 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 13, 2018 14:55:44.42 
+7월 13, 2018 15:00:47.10 IPDL protocol error: Handler returned error code!
+7월 13, 2018 15:00:47.13 
+7월 13, 2018 15:00:47.16 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 13, 2018 15:00:47.16 
+7월 13, 2018 15:00:48.99 IPDL protocol error: Handler returned error code!
+7월 13, 2018 15:00:49.01 
+7월 13, 2018 15:00:49.01 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 13, 2018 15:00:49.04 
+7월 13, 2018 15:56:17.69 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 13, 2018 15:56:17.69 [Child 8256, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 13, 2018 15:56:17.71 [Child 8256, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+
+7월 20, 2018 13:55:36.31 NEW SESSION
+7월 20, 2018 13:55:36.40 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 20, 2018 13:55:36.48 [GPU 7220, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 20, 2018 13:55:36.48 
+7월 20, 2018 13:55:36.48 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+7월 20, 2018 13:55:36.48 
+7월 20, 2018 13:55:36.48 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+
+7월 23, 2018 14:09:56.07 NEW SESSION
+7월 23, 2018 14:09:56.08 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 23, 2018 14:09:56.08 [Parent 3996, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 14:09:56.08 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 23, 2018 14:09:56.08 [Child 7328, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 14:09:56.08 [Child 7328, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 16:38:32.41 
+7월 23, 2018 16:38:32.41 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 16:38:32.41 
+7월 23, 2018 16:38:32.41 
+7월 23, 2018 16:38:32.41 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 16:38:32.69 
+7월 23, 2018 16:38:47.62 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 23, 2018 16:38:47.64 [Child 9320, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 16:38:47.64 [Child 9320, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 18:50:22.18 
+7월 23, 2018 18:50:22.23 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 18:50:22.24 
+7월 23, 2018 18:50:22.24 
+7월 23, 2018 18:50:22.24 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 18:50:22.28 
+7월 23, 2018 20:45:14.10 
+7월 23, 2018 20:45:14.11 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 20:45:14.11 
+7월 23, 2018 20:45:14.11 
+7월 23, 2018 20:45:14.11 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 20:45:14.12 
+7월 23, 2018 20:45:14.22 
+7월 23, 2018 20:45:14.22 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 20:45:14.22 
+7월 23, 2018 20:45:14.22 
+7월 23, 2018 20:45:14.22 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 20:45:14.22 
+7월 23, 2018 20:46:01.19 
+7월 23, 2018 20:46:01.19 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 20:46:01.19 
+7월 23, 2018 20:46:01.20 
+7월 23, 2018 20:46:01.21 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 20:46:01.21 
+7월 23, 2018 20:46:01.51 
+7월 23, 2018 20:46:01.51 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 20:46:01.53 
+7월 23, 2018 20:46:01.53 
+7월 23, 2018 20:46:01.53 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 23, 2018 20:46:01.53 
+7월 23, 2018 20:48:10.67 [Parent 3996, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 20:48:11.06 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 23, 2018 20:48:11.06 [Child 8256, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 20:48:11.06 [Child 8256, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 20:48:11.99 [Parent 3996, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 20:48:12.03 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 23, 2018 20:48:12.03 [Child 5380, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 20:48:56.24 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 23, 2018 20:48:56.24 [Child 5996, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 20:48:56.24 [Child 5996, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 20:49:08.99 [Parent 3996, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 23, 2018 20:49:09.64 
+7월 23, 2018 20:49:09.64 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+7월 23, 2018 20:49:09.64 
+
+7월 24, 2018 14:12:55.24 NEW SESSION
+7월 24, 2018 14:12:55.24 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 24, 2018 14:12:55.32 [Child 3532, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 24, 2018 14:12:55.33 [Child 3532, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 24, 2018 14:44:14.45 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 24, 2018 14:44:14.45 [Child 9912, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 24, 2018 14:44:14.45 [Child 9912, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 24, 2018 14:44:24.36 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 24, 2018 14:44:24.36 [Child 5280, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 24, 2018 14:44:24.36 [Child 5280, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 24, 2018 15:51:49.93 IPDL protocol error: Handler returned error code!
+7월 24, 2018 15:51:49.94 
+7월 24, 2018 15:51:49.96 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 15:51:49.96 
+7월 24, 2018 15:51:51.61 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 24, 2018 15:51:51.61 [Child 1632, MediaPlayback #3] WARNING: fb3bb32b80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 24, 2018 15:51:51.61 [Child 1632, MediaPlayback #3] WARNING: Decoder=fb3ab41c00 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 15:51:53.03 IPDL protocol error: Handler returned error code!
+7월 24, 2018 15:51:53.05 
+7월 24, 2018 15:51:53.05 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 15:51:53.05 
+7월 24, 2018 15:51:53.71 [Child 1632, MediaPlayback #1] WARNING: fb39036ac0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 24, 2018 15:51:53.71 [Child 1632, MediaPlayback #1] WARNING: Decoder=fb3ab41c00 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 15:51:54.77 IPDL protocol error: Handler returned error code!
+7월 24, 2018 15:51:54.77 
+7월 24, 2018 15:51:54.77 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 15:51:54.77 
+7월 24, 2018 15:51:57.05 [Child 1632, MediaPlayback #1] WARNING: fb39036ac0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 24, 2018 15:51:57.06 [Child 1632, MediaPlayback #1] WARNING: Decoder=fb3ab41c00 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 15:52:54.11 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 24, 2018 15:52:54.16 [Child 6324, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 24, 2018 15:52:54.16 [Child 6324, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 24, 2018 15:53:40.40 IPDL protocol error: Handler returned error code!
+7월 24, 2018 15:53:40.40 
+7월 24, 2018 15:53:40.40 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 15:53:40.40 
+7월 24, 2018 15:53:41.07 [Child 1632, MediaPlayback #1] WARNING: fb340ae880 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 24, 2018 15:53:41.07 [Child 1632, MediaPlayback #1] WARNING: Decoder=fb3ab48000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 15:53:44.50 IPDL protocol error: Handler returned error code!
+7월 24, 2018 15:53:44.50 
+7월 24, 2018 15:53:44.50 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 15:53:44.50 
+7월 24, 2018 15:53:45.28 [Child 1632, MediaPlayback #3] WARNING: fb390dc4c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 24, 2018 15:53:45.28 [Child 1632, MediaPlayback #3] WARNING: Decoder=fb2aa4a400 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 15:53:46.22 IPDL protocol error: Handler returned error code!
+7월 24, 2018 15:53:46.22 
+7월 24, 2018 15:53:46.23 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 15:53:46.23 
+7월 24, 2018 15:53:47.28 [Child 1632, MediaPlayback #3] WARNING: fb390dc4c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 24, 2018 15:53:47.28 [Child 1632, MediaPlayback #3] WARNING: Decoder=fb2aa4a400 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 15:53:49.48 IPDL protocol error: Handler returned error code!
+7월 24, 2018 15:53:49.48 
+7월 24, 2018 15:53:49.48 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 15:53:49.50 
+7월 24, 2018 15:53:50.13 [Child 1632, MediaPlayback #2] WARNING: fb390dc880 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 24, 2018 15:53:50.14 [Child 1632, MediaPlayback #2] WARNING: Decoder=fb3ab95000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 15:54:39.79 [Child 1632, MediaPlayback #1] WARNING: fb30f3a940 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 24, 2018 15:54:39.80 [Child 1632, MediaPlayback #1] WARNING: Decoder=fb3ab95000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 16:01:57.15 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:01:57.15 
+7월 24, 2018 16:01:57.15 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:01:57.15 
+7월 24, 2018 16:17:38.47 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:17:38.47 
+7월 24, 2018 16:17:38.47 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:17:38.47 
+7월 24, 2018 16:17:40.13 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 24, 2018 16:17:40.13 [Child 8088, MediaPlayback #2] WARNING: 55be012b80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 24, 2018 16:17:40.13 [Child 8088, MediaPlayback #2] WARNING: Decoder=55be696400 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 16:22:12.56 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:22:12.56 
+7월 24, 2018 16:22:12.56 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:22:12.56 
+7월 24, 2018 16:22:23.07 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:22:23.07 
+7월 24, 2018 16:22:23.07 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:22:23.07 
+7월 24, 2018 16:22:25.04 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:22:25.04 
+7월 24, 2018 16:22:25.04 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:22:25.04 
+7월 24, 2018 16:22:49.58 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:22:49.58 
+7월 24, 2018 16:22:49.58 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:22:49.58 
+7월 24, 2018 16:23:13.88 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:23:13.88 
+7월 24, 2018 16:23:13.88 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:23:13.88 
+7월 24, 2018 16:24:41.56 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:24:41.56 
+7월 24, 2018 16:24:41.56 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:24:41.56 
+7월 24, 2018 16:25:01.87 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:25:01.87 
+7월 24, 2018 16:25:01.87 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:25:01.87 
+7월 24, 2018 16:25:27.42 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:25:27.42 
+7월 24, 2018 16:25:27.42 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:25:27.43 
+7월 24, 2018 16:25:34.87 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:25:34.87 
+7월 24, 2018 16:25:34.87 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:25:34.87 
+7월 24, 2018 16:25:39.65 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:25:39.66 
+7월 24, 2018 16:25:39.66 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:25:39.66 
+7월 24, 2018 16:25:41.12 [Child 8088, MediaPlayback #2] WARNING: 55b8070100 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 24, 2018 16:25:41.12 [Child 8088, MediaPlayback #2] WARNING: Decoder=55be69c000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 16:26:22.34 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:26:22.34 
+7월 24, 2018 16:26:22.35 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:26:22.35 
+7월 24, 2018 16:27:55.84 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:27:55.84 
+7월 24, 2018 16:27:55.84 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:27:55.84 
+7월 24, 2018 16:40:19.58 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:40:19.58 
+7월 24, 2018 16:40:19.58 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:40:19.58 
+7월 24, 2018 16:41:44.19 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:41:44.19 
+7월 24, 2018 16:41:44.19 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:41:44.19 
+7월 24, 2018 16:41:53.28 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:41:53.28 
+7월 24, 2018 16:41:53.28 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:41:53.28 
+7월 24, 2018 16:43:13.77 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:43:13.78 
+7월 24, 2018 16:43:13.78 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:43:13.78 
+7월 24, 2018 16:43:19.59 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:43:19.59 
+7월 24, 2018 16:43:19.59 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:43:19.59 
+7월 24, 2018 16:46:51.46 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:46:51.46 
+7월 24, 2018 16:46:51.46 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:46:51.47 
+7월 24, 2018 16:46:52.44 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:46:52.44 
+7월 24, 2018 16:46:52.44 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:46:52.44 
+7월 24, 2018 16:50:41.97 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:50:41.97 
+7월 24, 2018 16:50:41.98 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:50:41.98 
+7월 24, 2018 16:55:54.24 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:55:54.24 
+7월 24, 2018 16:55:54.24 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:55:54.24 
+7월 24, 2018 16:56:28.32 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:56:28.32 
+7월 24, 2018 16:56:28.32 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:56:28.32 
+7월 24, 2018 16:56:29.72 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:56:29.72 
+7월 24, 2018 16:56:29.72 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:56:29.72 
+7월 24, 2018 16:56:30.66 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:56:30.66 
+7월 24, 2018 16:56:30.66 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:56:30.66 
+7월 24, 2018 16:56:31.81 IPDL protocol error: Handler returned error code!
+7월 24, 2018 16:56:31.81 
+7월 24, 2018 16:56:31.81 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 24, 2018 16:56:31.81 
+7월 24, 2018 17:23:54.24 
+7월 24, 2018 17:23:54.30 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 24, 2018 17:23:54.30 
+7월 24, 2018 17:23:54.30 
+7월 24, 2018 17:23:54.30 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 24, 2018 17:23:54.30 
+7월 24, 2018 17:24:24.40 
+7월 24, 2018 17:24:24.45 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 24, 2018 17:24:24.45 
+7월 24, 2018 17:24:24.45 
+7월 24, 2018 17:24:24.45 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 24, 2018 17:24:24.45 
+7월 24, 2018 17:24:37.55 [Child 8088, MediaPlayback #3] WARNING: 55bb98d7c0 OpenCubeb() failed to init cubeb: file z:/build/build/src/dom/media/AudioStream.cpp, line 390
+7월 24, 2018 17:24:37.56 [Child 8088, MediaPlayback #3] WARNING: Decoder=55bc8fb6a0 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 24, 2018 17:26:32.08 [Child 8088, MediaPlayback #2] WARNING: Decoder=55bc8fb6a0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+7월 24, 2018 17:26:32.08 [Child 8088, MediaPlayback #1] WARNING: Decoder=55bc8fb6a0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+
+7월 26, 2018 13:31:55.59 NEW SESSION
+7월 26, 2018 13:31:55.59 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 26, 2018 13:31:55.74 [Child 8144, MediaPlayback #2] WARNING: 265604ab80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+7월 26, 2018 13:31:55.74 [Child 8144, MediaPlayback #2] WARNING: Decoder=264702b100 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+7월 26, 2018 13:31:57.41 
+7월 26, 2018 13:31:57.41 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 26, 2018 13:31:57.41 
+7월 26, 2018 13:31:57.41 
+7월 26, 2018 13:31:57.41 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 26, 2018 13:31:57.41 
+7월 26, 2018 13:38:59.66 
+7월 26, 2018 13:38:59.66 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 26, 2018 13:38:59.66 
+7월 26, 2018 13:39:29.54 [Child 8144, MediaPlayback #2] WARNING: Decoder=265dd892e0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+7월 26, 2018 13:39:29.55 [Child 8144, MediaPlayback #2] WARNING: Decoder=265dd892e0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+7월 26, 2018 13:39:29.57 [Child 8144, MediaPlayback #3] WARNING: Decoder=265dd892e0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+7월 26, 2018 13:39:29.58 [Child 8144, MediaPlayback #1] WARNING: Decoder=265dd892e0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+7월 26, 2018 13:39:29.58 [Child 8144, MediaPlayback #1] WARNING: Decoder=265dd892e0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+7월 26, 2018 13:39:29.60 [Child 8144, MediaPlayback #2] WARNING: Decoder=265dd892e0 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+7월 26, 2018 13:39:43.55 
+7월 26, 2018 13:39:43.55 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 26, 2018 13:39:43.55 
+7월 26, 2018 13:40:16.70 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 26, 2018 13:40:16.70 [Parent 9580, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 13:40:39.10 [Child 8144, MediaPlayback #2] WARNING: Decoder=264feb8980 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+7월 26, 2018 14:02:14.21 
+7월 26, 2018 14:02:14.21 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 26, 2018 14:02:14.21 
+7월 26, 2018 14:02:14.21 
+7월 26, 2018 14:02:14.22 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+7월 26, 2018 14:02:14.22 
+7월 26, 2018 14:02:43.65 [Parent 9580, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 14:11:13.28 [Parent 9580, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 14:11:13.28 [Child 8144, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 14:11:13.29 [Child 8144, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 14:11:13.32 [NPAPI 8284, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 14:11:13.32 [NPAPI 8284, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.40 [Parent 9580, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.40 [Parent 9580, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.41 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 26, 2018 16:10:59.41 [Child 7388, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.45 [Child 7388, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.45 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 26, 2018 16:10:59.45 [Child 4104, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.45 [Child 4104, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.48 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 26, 2018 16:10:59.48 [Child 4372, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.49 [Child 4372, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.55 [Parent 9580, Gecko_IOThread] WARNING: file z:/build/build/src/ipc/chromium/src/base/process_util_win.cc, line 188
+7월 26, 2018 16:10:59.69 [Parent 9580, Gecko_IOThread] WARNING: file z:/build/build/src/ipc/chromium/src/base/process_util_win.cc, line 188
+7월 26, 2018 16:10:59.69 [Parent 9580, Gecko_IOThread] WARNING: file z:/build/build/src/ipc/chromium/src/base/process_util_win.cc, line 188
+7월 26, 2018 16:10:59.70 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 26, 2018 16:10:59.70 [Child 5108, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.70 [Child 5108, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.70 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 26, 2018 16:10:59.70 [Child 2064, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:10:59.70 [Child 2064, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:11:00.38 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 26, 2018 16:11:00.38 [GPU 9208, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:44:56.36 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+7월 26, 2018 16:44:56.36 [Child 7620, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:44:56.36 [Child 7620, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+7월 26, 2018 16:48:00.12 IPDL protocol error: Handler returned error code!
+7월 26, 2018 16:48:00.12 
+7월 26, 2018 16:48:00.12 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 26, 2018 16:48:00.12 
+7월 26, 2018 16:48:01.91 IPDL protocol error: Handler returned error code!
+7월 26, 2018 16:48:01.91 
+7월 26, 2018 16:48:01.91 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 26, 2018 16:48:01.91 
+7월 26, 2018 16:48:03.53 IPDL protocol error: Handler returned error code!
+7월 26, 2018 16:48:03.54 
+7월 26, 2018 16:48:03.54 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 26, 2018 16:48:03.56 
+7월 26, 2018 16:48:06.91 IPDL protocol error: Handler returned error code!
+7월 26, 2018 16:48:06.91 
+7월 26, 2018 16:48:06.91 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 26, 2018 16:48:06.91 
+7월 26, 2018 16:50:20.47 IPDL protocol error: Handler returned error code!
+7월 26, 2018 16:50:20.47 
+7월 26, 2018 16:50:20.47 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 26, 2018 16:50:20.47 
+7월 26, 2018 16:50:22.68 IPDL protocol error: Handler returned error code!
+7월 26, 2018 16:50:22.68 
+7월 26, 2018 16:50:22.68 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 26, 2018 16:50:22.68 
+7월 26, 2018 16:50:24.03 IPDL protocol error: Handler returned error code!
+7월 26, 2018 16:50:24.03 
+7월 26, 2018 16:50:24.03 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 26, 2018 16:50:24.03 
+7월 26, 2018 16:50:29.04 IPDL protocol error: Handler returned error code!
+7월 26, 2018 16:50:29.04 
+7월 26, 2018 16:50:29.04 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 26, 2018 16:50:29.04 
+7월 26, 2018 16:50:30.36 IPDL protocol error: Handler returned error code!
+7월 26, 2018 16:50:30.37 
+7월 26, 2018 16:50:30.37 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+7월 26, 2018 16:50:30.37 
+
+8월 07, 2018 10:02:52.73 NEW SESSION
+8월 07, 2018 10:02:52.73 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 07, 2018 10:02:52.74 [Parent 3616, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 07, 2018 10:02:52.74 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 07, 2018 10:02:52.74 [Child 5596, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 07, 2018 10:02:52.74 [Child 5596, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 07, 2018 10:48:19.40 [Parent 3616, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 07, 2018 10:48:19.42 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 07, 2018 10:48:19.42 [Child 4960, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 07, 2018 10:48:19.42 [Child 4960, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 07, 2018 10:48:26.61 IPDL protocol error: Handler returned error code!
+8월 07, 2018 10:48:26.62 
+8월 07, 2018 10:48:26.62 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 07, 2018 10:48:26.62 
+8월 07, 2018 11:18:11.01 [Parent 3616, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 07, 2018 11:18:11.02 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 07, 2018 11:18:11.02 [Child 4720, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 07, 2018 11:18:11.02 [Child 4720, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 07, 2018 13:40:48.55 IPDL protocol error: Handler returned error code!
+8월 07, 2018 13:40:48.55 
+8월 07, 2018 13:40:48.55 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 07, 2018 13:40:48.55 
+8월 07, 2018 13:48:24.64 IPDL protocol error: Handler returned error code!
+8월 07, 2018 13:48:24.64 
+8월 07, 2018 13:48:24.64 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 07, 2018 13:48:24.64 
+8월 07, 2018 13:48:38.07 IPDL protocol error: Handler returned error code!
+8월 07, 2018 13:48:38.08 
+8월 07, 2018 13:48:38.08 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 07, 2018 13:48:38.08 
+8월 07, 2018 13:49:59.66 IPDL protocol error: Handler returned error code!
+8월 07, 2018 13:49:59.66 
+8월 07, 2018 13:49:59.66 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 07, 2018 13:49:59.66 
+8월 07, 2018 13:50:52.45 IPDL protocol error: Handler returned error code!
+8월 07, 2018 13:50:52.45 
+8월 07, 2018 13:50:52.45 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 07, 2018 13:50:52.45 
+8월 07, 2018 14:04:50.18 IPDL protocol error: Handler returned error code!
+8월 07, 2018 14:04:50.18 
+8월 07, 2018 14:04:50.18 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 07, 2018 14:04:50.18 
+8월 07, 2018 14:07:09.68 IPDL protocol error: Handler returned error code!
+8월 07, 2018 14:07:09.68 
+8월 07, 2018 14:07:09.68 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 07, 2018 14:07:09.68 
+8월 07, 2018 15:07:08.20 IPDL protocol error: Handler returned error code!
+8월 07, 2018 15:07:08.22 
+8월 07, 2018 15:07:08.22 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 07, 2018 15:07:08.22 
+8월 07, 2018 16:26:24.08 
+8월 07, 2018 16:26:24.08 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 07, 2018 16:26:24.10 
+8월 07, 2018 16:26:24.10 
+8월 07, 2018 16:26:24.10 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 07, 2018 16:26:24.10 
+8월 07, 2018 17:47:18.67 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 07, 2018 17:47:18.71 [Child 6796, Unnamed thread d047b51000] WARNING: d0493be880 StateCallback() state 1 cubeb error: file z:/build/build/src/dom/media/AudioStream.cpp, line 694
+
+8월 16, 2018 09:47:42.20 NEW SESSION
+8월 16, 2018 09:47:42.20 IPDL protocol error: Handler returned error code!
+8월 16, 2018 09:47:42.20 
+8월 16, 2018 09:47:42.20 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 09:47:42.20 
+8월 16, 2018 11:01:11.03 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 11:01:11.04 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 11:01:11.04 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 11:01:11.04 [Child 1528, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 11:01:11.04 [Child 1528, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 11:08:04.28 
+8월 16, 2018 11:08:04.28 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 16, 2018 11:08:04.28 
+8월 16, 2018 11:08:04.29 
+8월 16, 2018 11:08:04.29 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 16, 2018 11:08:04.29 
+8월 16, 2018 11:08:30.62 
+8월 16, 2018 11:08:30.62 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 16, 2018 11:08:30.62 
+8월 16, 2018 11:08:30.62 
+8월 16, 2018 11:08:30.62 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 16, 2018 11:08:30.62 
+8월 16, 2018 11:10:47.37 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 11:10:47.37 [Child 7148, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 11:10:47.37 [Child 7148, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 12:30:44.15 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 12:30:44.19 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 12:30:44.19 [Child 2912, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 12:30:44.19 [Child 2912, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 12:31:32.42 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 12:31:32.42 [Child 1136, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 12:31:32.42 [Child 1136, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 14:08:18.86 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 14:08:18.91 [Child 7464, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 14:08:18.91 [Child 7464, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 15:30:07.21 IPDL protocol error: Handler returned error code!
+8월 16, 2018 15:30:07.21 
+8월 16, 2018 15:30:07.21 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 15:30:07.21 
+8월 16, 2018 16:04:44.62 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 16:04:44.62 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 16:04:44.63 [Child 5076, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 16:04:44.63 [Child 5076, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 16:43:48.42 IPDL protocol error: Handler returned error code!
+8월 16, 2018 16:43:48.43 
+8월 16, 2018 16:43:48.43 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 16:43:48.43 
+8월 16, 2018 16:43:54.54 IPDL protocol error: Handler returned error code!
+8월 16, 2018 16:43:54.54 
+8월 16, 2018 16:43:54.55 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 16:43:54.55 
+8월 16, 2018 16:49:47.30 IPDL protocol error: Handler returned error code!
+8월 16, 2018 16:49:47.30 
+8월 16, 2018 16:49:47.30 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 16:49:47.30 
+8월 16, 2018 16:56:53.09 IPDL protocol error: Handler returned error code!
+8월 16, 2018 16:56:53.09 
+8월 16, 2018 16:56:53.09 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 16:56:53.09 
+8월 16, 2018 17:05:37.26 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:05:37.26 
+8월 16, 2018 17:05:37.26 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:05:37.26 
+8월 16, 2018 17:05:39.28 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:05:39.28 
+8월 16, 2018 17:05:39.28 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:05:39.28 
+8월 16, 2018 17:05:41.64 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:05:41.64 
+8월 16, 2018 17:05:41.64 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:05:41.64 
+8월 16, 2018 17:05:43.65 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:05:43.66 
+8월 16, 2018 17:05:43.66 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:05:43.66 
+8월 16, 2018 17:05:52.14 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:05:52.14 
+8월 16, 2018 17:05:52.14 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:05:52.15 
+8월 16, 2018 17:05:54.30 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:05:54.30 
+8월 16, 2018 17:05:54.30 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:05:54.30 
+8월 16, 2018 17:05:56.43 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:05:56.43 
+8월 16, 2018 17:05:56.43 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:05:56.43 
+8월 16, 2018 17:06:01.56 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:06:01.56 
+8월 16, 2018 17:06:01.56 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:06:01.56 
+8월 16, 2018 17:06:08.48 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:06:08.48 
+8월 16, 2018 17:06:08.48 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:06:08.48 
+8월 16, 2018 17:06:10.50 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:06:10.50 
+8월 16, 2018 17:06:10.51 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:06:10.51 
+8월 16, 2018 17:06:12.78 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:06:12.78 
+8월 16, 2018 17:06:12.78 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:06:12.78 
+8월 16, 2018 17:16:45.29 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:16:45.29 
+8월 16, 2018 17:16:45.29 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:16:45.29 
+8월 16, 2018 17:16:53.86 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:16:53.86 
+8월 16, 2018 17:16:53.87 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:16:53.87 
+8월 16, 2018 17:16:55.39 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:16:55.39 
+8월 16, 2018 17:16:55.39 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:16:55.39 
+8월 16, 2018 17:17:26.15 IPDL protocol error: Handler returned error code!
+8월 16, 2018 17:17:26.15 
+8월 16, 2018 17:17:26.15 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 16, 2018 17:17:26.15 
+8월 16, 2018 17:58:50.14 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 17:58:50.14 [Child 7724, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 18:46:52.60 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 18:46:52.60 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 18:46:52.60 [Child 652, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 18:46:52.60 [Child 652, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 18:51:20.13 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 18:51:20.13 [Child 5688, MediaPlayback #3] WARNING: 737de3040 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 18:51:20.13 [Child 5688, MediaPlayback #3] WARNING: Decoder=740972000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 18:51:20.14 [Child 5688, MediaPlayback #1] WARNING: 73e7da4c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 18:51:20.14 [Child 5688, MediaPlayback #1] WARNING: Decoder=740949000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 18:51:20.28 [Child 5688, MediaPlayback #1] WARNING: 741d36280 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 18:51:20.28 [Child 5688, MediaPlayback #1] WARNING: Decoder=74097b800 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 18:51:20.34 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 18:51:25.79 [Child 5688, MediaPlayback #2] WARNING: 743034e80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 18:51:25.79 [Child 5688, MediaPlayback #2] WARNING: Decoder=7430acb60 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 18:52:36.09 [Child 5688, MediaPlayback #3] WARNING: 728631ac0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 18:52:36.09 [Child 5688, MediaPlayback #3] WARNING: Decoder=733bd6a60 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 18:54:50.40 [Child 5688, MediaPlayback #4] WARNING: 728653e80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 18:54:50.40 [Child 5688, MediaPlayback #4] WARNING: Decoder=7287f4f20 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 18:56:40.69 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 18:56:40.76 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 18:56:45.74 [Child 5688, MediaPlayback #1] WARNING: 7279c5700 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 18:56:45.74 [Child 5688, MediaPlayback #1] WARNING: Decoder=7287f52e0 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 18:58:59.26 [Child 5688, MediaPlayback #3] WARNING: 7279c5400 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 18:58:59.29 [Child 5688, MediaPlayback #3] WARNING: Decoder=7287f54c0 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:00:04.88 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:00:04.91 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:00:09.88 [Child 5688, MediaPlayback #2] WARNING: 72864a580 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 19:00:09.88 [Child 5688, MediaPlayback #2] WARNING: Decoder=7287f43e0 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:02:19.41 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:02:24.42 [Child 5688, MediaPlayback #2] WARNING: 7288f7c40 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 19:02:24.42 [Child 5688, MediaPlayback #2] WARNING: Decoder=7286387a0 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:04:14.85 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:04:19.88 [Child 5688, MediaPlayback #1] WARNING: 72c2aaa00 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 19:04:19.88 [Child 5688, MediaPlayback #1] WARNING: Decoder=7286385c0 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:06:28.33 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:06:28.36 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:06:33.35 [Child 5688, MediaPlayback #3] WARNING: 7288f7280 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 19:06:33.35 [Child 5688, MediaPlayback #2] WARNING: Decoder=728638020 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:07:38.78 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:07:38.78 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:07:43.80 [Child 5688, MediaPlayback #4] WARNING: 72fb91280 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 19:07:43.81 [Child 5688, MediaPlayback #4] WARNING: Decoder=728638b60 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:09:53.03 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:09:58.07 [Child 5688, MediaPlayback #2] WARNING: 72fecef40 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 19:09:58.07 [Child 5688, MediaPlayback #4] WARNING: Decoder=728639100 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:11:53.42 [Child 5688, MediaPlayback #2] WARNING: 7301dd100 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 19:11:53.42 [Child 5688, MediaPlayback #3] WARNING: Decoder=7286392e0 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:14:01.54 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:14:01.57 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:14:01.57 [Parent 5384, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 16, 2018 19:14:06.58 [Child 5688, MediaPlayback #4] WARNING: 730015040 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 19:14:06.58 [Child 5688, MediaPlayback #4] WARNING: Decoder=7286387a0 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:15:34.85 [Child 5688, MediaPlayback #4] WARNING: 72fece340 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 19:15:34.85 [Child 5688, MediaPlayback #4] WARNING: Decoder=733230400 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:15:43.91 
+8월 16, 2018 19:15:43.91 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 16, 2018 19:15:43.91 
+8월 16, 2018 19:15:43.91 
+8월 16, 2018 19:15:43.91 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 16, 2018 19:15:43.92 
+8월 16, 2018 19:15:44.02 
+8월 16, 2018 19:15:44.02 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 16, 2018 19:15:44.02 
+8월 16, 2018 19:15:44.02 
+8월 16, 2018 19:15:44.02 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 16, 2018 19:15:44.03 
+8월 16, 2018 19:17:51.23 [Child 5688, MediaPlayback #3] WARNING: 72c211340 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 16, 2018 19:17:51.23 [Child 5688, MediaPlayback #3] WARNING: Decoder=733289c00 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 16, 2018 19:18:15.60 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 16, 2018 19:18:15.60 [Child 7872, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" content="width=device-width, initial-scale=1">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+	function find() {
+
+		var deptno = $("#deptno").val();
+		var saname = $("#saname").val();
+
+		if (saname == '') {
+			alert("이름을 입력하세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			return;
+		}
+		
+		$.ajax({
+			url: 'sawon/search.do',
+			data: {
+				'deptno':deptno,
+				'saname':saname
+			},
+			success: function(result){
+				$('#disp').html(result);
+			}
+			
+		})		
+		
+
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+	부서번호 입력:
+	<select id="deptno"><option value="0">전체보기</option>
+		<option value="10">10</option>
+		<option value="20">20</option>
+		<option value="30">30</option>
+		<option value="40">40</option>
+	</select> 이름입력:
+	<input id="saname">
+	<input type="button" value="가져오기" onclick="find()">
+	<hr>
+	<div id="disp"></div>
+
+
+</body>
+</html>

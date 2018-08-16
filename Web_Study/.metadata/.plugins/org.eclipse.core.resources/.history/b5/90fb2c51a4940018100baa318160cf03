@@ -1,0 +1,8 @@
+package vo;
+
+public class GogekVo {
+	
+	int gobun,godam;
+	String goname,goaddr,gojumin;
+
+}

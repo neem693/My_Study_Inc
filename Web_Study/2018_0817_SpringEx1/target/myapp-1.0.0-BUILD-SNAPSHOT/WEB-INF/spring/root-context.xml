@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="p1" class="vo.PersonVo">
+
+		<constructor-arg value="일길동" type="String" index="0"></constructor-arg>
+		<constructor-arg value="30" type="int" index="1"></constructor-arg>
+		<constructor-arg value="010-111-2222" type="String"
+			index="2"></constructor-arg>
+
+	</bean>
+	<bean id="p2" class="vo.PersonVo">
+		<property name="name" value="이길동"></property>
+		<property name="age" value="33"></property>
+		<property name="tel" value="010-222-1234"></property>
+	</bean>
+
+
+	<bean id="nameBean" class="java.lang.String">
+		<constructor-arg value="박길동"></constructor-arg>
+	</bean>
+
+	<bean id="ageBean" class="java.lang.Integer">
+		<constructor-arg value="33"></constructor-arg>
+	</bean>
+	<bean id="telBean" class="java.lang.String">
+		<constructor-arg value="010-333-3456"></constructor-arg>
+	</bean>
+
+	<bean id="p3" class="vo.PersonVo">
+		<property name="name" ref="nameBean"></property>
+		<property name="age" ref="ageBean"></property>
+		<property name="tel" ref="telBean"></property>
+		
+	</bean>
+
+
+</beans>

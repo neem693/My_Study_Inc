@@ -2,12 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="f.action" key="selection"/>
+		<item value="dependency" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="dependency"/>
+			<item value="p1"/>
+			<item value="home"/>
+			<item value="index"/>
+			<item value="view"/>
 			<item value="f.action"/>
 			<item value="form"/>
 			<item value="subject"/>
@@ -18,13 +23,9 @@
 			<item value="int"/>
 			<item value="count"/>
 			<item value="search"/>
-			<item value="c_count"/>
-			<item value="b.c"/>
-			<item value="not b.c_count"/>
-			<item value="not"/>
-			<item value="pag"/>
 		</list>
 		<list key="replacehistory">
+			<item value="p2"/>
 			<item value="&lt;input type = &quot;image&quot;"/>
 			<item value="&lt;"/>
 		</list>

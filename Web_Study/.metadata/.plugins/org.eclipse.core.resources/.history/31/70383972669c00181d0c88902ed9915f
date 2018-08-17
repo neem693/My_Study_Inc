@@ -1,8 +1,0 @@
-package action.comment;
-
-public class Snippet {
-	insert into comment_tb
-	values(comment_seq.nextVal,#{id},#{name},#{ip},#{content},sysdate,#{b_idx})
-	
-}
-

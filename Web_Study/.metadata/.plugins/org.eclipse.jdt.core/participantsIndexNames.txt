@@ -81,6 +81,8 @@ C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\6168
 \2018_0703_MyWebTest\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\682655762.index
 \2018_0817_SpringEx1\src\main\java
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\100277881.index
+\2018_0817_SpringEx1\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1614970058.index
 \2018_0731_Mybatis2\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4022988495.index

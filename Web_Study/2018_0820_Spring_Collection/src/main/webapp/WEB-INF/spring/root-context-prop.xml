@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<bean id="myPropBean" class="myutill.MyProp">
+	<property name="prop">
+	<props>
+	<prop key="단축번호1">010-111-1111</prop>
+	<prop key="단축번호2">010-222-2222</prop>
+	<prop key="단축번호3">010-333-3333</prop>
+	<prop key="단축번호4">010-4444-4444</prop>
+	
+	</props>
+	</property>
+	</bean>
+		
+</beans>

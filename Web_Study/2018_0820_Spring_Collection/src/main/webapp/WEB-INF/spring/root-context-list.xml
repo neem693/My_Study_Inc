@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<bean id="myListBean" class="myutill.MyList">
+		<property name="list">
+			<list>
+				<value>사과</value><!-- list.add("사과") -->
+				<value>참외</value>
+				<value>수박</value>
+				<value>포도</value>
+				<value>딸기</value>
+			</list>
+
+		</property>
+
+	</bean>
+
+</beans>

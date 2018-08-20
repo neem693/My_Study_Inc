@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="vo.MemberVo"/>
 <fullyQualifiedTypeName name="vo.ProductVo"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="myconst.MyConst.Board"/>
 <fullyQualifiedTypeName name="dao.Board_Dao"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
@@ -21,7 +20,6 @@
 <fullyQualifiedTypeName name="myconst.MyConst.Comment"/>
 <fullyQualifiedTypeName name="vo.BoardVo"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="org.apache.catalina.ha.backend.Sender"/>
 <fullyQualifiedTypeName name="action.interface_.Action"/>
@@ -34,4 +32,8 @@
 <fullyQualifiedTypeName name="action.MoCompAction"/>
 <fullyQualifiedTypeName name="action.CheckPwdAction"/>
 <fullyQualifiedTypeName name="action.PickOneAction"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
 </qualifiedTypeNameHistroy>

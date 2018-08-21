@@ -24,7 +24,6 @@
 <fullyQualifiedTypeName name="org.apache.catalina.ha.backend.Sender"/>
 <fullyQualifiedTypeName name="action.interface_.Action"/>
 <fullyQualifiedTypeName name="action.ListAction"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="action.DeleteAction"/>
 <fullyQualifiedTypeName name="action.InsertAction"/>
@@ -36,4 +35,17 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="myconst.MyConstant"/>
+<fullyQualifiedTypeName name="myconst.MyConstant.ParameterController"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+<fullyQualifiedTypeName name="vo.PersonVo"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestPart"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 </qualifiedTypeNameHistroy>

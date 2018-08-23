@@ -36,7 +36,7 @@ public class VisitDeleteAction extends HttpServlet {
 		System.out.println(vo.getIdx());
 
 		int res = VisitDao.getInstance().delete(vo);
-System.out.println(res);
+		System.out.println(res);
 		String redirect_page = "list.do";
 		response.sendRedirect(redirect_page);
 

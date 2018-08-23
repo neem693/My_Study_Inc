@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.5.201807030714-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+	</configs>
+	<autoconfigs>
+		<config>src/main/resources/config/spring/context/1_dataSource.xml</config>
+		<config>src/main/resources/config/spring/mvc/servlet-context.xml</config>
+		<config>src/main/resources/config/spring/context/3_dao.xml</config>
+		<config>src/main/resources/config/spring/context/4_service.xml</config>
+		<config>src/main/resources/config/spring/context/2_sqlSession_mybatis.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

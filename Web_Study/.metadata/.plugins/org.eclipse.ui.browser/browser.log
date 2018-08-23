@@ -637,3 +637,160 @@
 8월 16, 2018 19:17:51.23 [Child 5688, MediaPlayback #3] WARNING: Decoder=733289c00 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
 8월 16, 2018 19:18:15.60 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
 8월 16, 2018 19:18:15.60 [Child 7872, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+
+8월 23, 2018 16:15:14.78 NEW SESSION
+8월 23, 2018 16:15:14.78 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 23, 2018 16:15:14.86 [Parent 4232, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 16:15:14.86 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 23, 2018 16:15:14.86 [Child 2444, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 16:15:14.86 [Child 2444, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 16:35:16.44 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 23, 2018 16:35:16.45 [Child 5136, MediaPlayback #3] WARNING: a2ba35aa00 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:35:16.45 [Child 5136, MediaPlayback #3] WARNING: Decoder=a2c00df400 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:45:19.77 [Child 5136, MediaPlayback #4] WARNING: a2b94cc700 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:45:19.77 [Child 5136, MediaPlayback #4] WARNING: Decoder=a2bf7bdc00 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:55:21.36 [Child 5136, MediaPlayback #5] WARNING: a2bb67e700 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:55:21.37 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:55:36.45 [Child 5136, MediaPlayback #6] WARNING: a2b49e9d00 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:55:36.46 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:55:51.53 [Child 5136, MediaPlayback #5] WARNING: a2b8bce400 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:55:51.53 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:56:06.61 [Child 5136, MediaPlayback #5] WARNING: a2b8db4100 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:56:06.62 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:56:21.69 [Child 5136, MediaPlayback #5] WARNING: a2b8e29ac0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:56:21.70 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:56:36.78 [Child 5136, MediaPlayback #6] WARNING: a2b0d32d00 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:56:36.78 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:56:52.00 [Child 5136, MediaPlayback #6] WARNING: a2aa69f4c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:56:52.31 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:57:06.94 [Child 5136, MediaPlayback #6] WARNING: a2b8540880 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:57:06.94 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:57:22.02 [Child 5136, MediaPlayback #5] WARNING: a2aa69f340 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:57:22.02 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:57:37.10 [Child 5136, MediaPlayback #6] WARNING: a2aa69f340 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:57:37.10 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:57:52.18 [Child 5136, MediaPlayback #5] WARNING: a2b33a67c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:57:52.18 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:58:07.26 [Child 5136, MediaPlayback #6] WARNING: a2b85401c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:58:07.26 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:58:22.35 [Child 5136, MediaPlayback #5] WARNING: a2b33a6d00 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:58:22.35 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:58:37.43 [Child 5136, MediaPlayback #5] WARNING: a2b94ccac0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:58:37.43 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:58:52.51 [Child 5136, MediaPlayback #5] WARNING: a2aa69f4c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:58:52.51 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:59:07.59 [Child 5136, MediaPlayback #7] WARNING: a2b335f100 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:59:07.59 [Child 5136, MediaPlayback #7] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:59:22.67 [Child 5136, MediaPlayback #6] WARNING: a2aa69f340 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:59:22.67 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:59:37.75 [Child 5136, MediaPlayback #6] WARNING: a2b8d94b80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:59:37.75 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 16:59:52.83 [Child 5136, MediaPlayback #7] WARNING: a2b8d94ac0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 16:59:52.83 [Child 5136, MediaPlayback #7] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:00:07.92 [Child 5136, MediaPlayback #6] WARNING: a2b335f1c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:00:07.92 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:00:23.00 [Child 5136, MediaPlayback #6] WARNING: a2b8e1e700 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:00:23.00 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:00:38.08 [Child 5136, MediaPlayback #6] WARNING: a2b8e1e700 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:00:38.08 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:00:53.16 [Child 5136, MediaPlayback #5] WARNING: a2b9c0be80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:00:53.16 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:01:08.24 [Child 5136, MediaPlayback #7] WARNING: a2b9c0be80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:01:08.24 [Child 5136, MediaPlayback #7] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:01:23.32 [Child 5136, MediaPlayback #5] WARNING: a2b8dbb880 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:01:23.32 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:01:38.40 [Child 5136, MediaPlayback #7] WARNING: a2b8dbb880 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:01:38.40 [Child 5136, MediaPlayback #7] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:01:53.49 [Child 5136, MediaPlayback #5] WARNING: a2b9d93b80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:01:53.49 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:02:08.57 [Child 5136, MediaPlayback #7] WARNING: a2b9d93b80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:02:08.57 [Child 5136, MediaPlayback #7] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:02:23.65 [Child 5136, MediaPlayback #7] WARNING: a2b8f351c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:02:23.65 [Child 5136, MediaPlayback #7] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:02:38.73 [Child 5136, MediaPlayback #6] WARNING: a2b8f351c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:02:38.73 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:02:53.81 [Child 5136, MediaPlayback #6] WARNING: a2ba3721c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:02:53.81 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:03:08.89 [Child 5136, MediaPlayback #6] WARNING: a2ba3721c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:03:08.89 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:03:23.97 [Child 5136, MediaPlayback #5] WARNING: a2b8fee1c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:03:23.98 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:03:39.06 [Child 5136, MediaPlayback #7] WARNING: a2b8fee1c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:03:39.06 [Child 5136, MediaPlayback #7] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:03:54.14 [Child 5136, MediaPlayback #6] WARNING: a2ba3e61c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:03:54.14 [Child 5136, MediaPlayback #6] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:04:09.22 [Child 5136, MediaPlayback #7] WARNING: a2ba3e61c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:04:09.22 [Child 5136, MediaPlayback #7] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:04:24.30 [Child 5136, MediaPlayback #5] WARNING: a2b85401c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:04:24.30 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:04:39.38 [Child 5136, MediaPlayback #7] WARNING: a2b85401c0 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:04:39.38 [Child 5136, MediaPlayback #7] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:04:54.46 [Child 5136, MediaPlayback #5] WARNING: a2bb67ed00 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:04:54.46 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:05:09.54 [Child 5136, MediaPlayback #5] WARNING: a2baf0fe80 Can't get cubeb context!: file z:/build/build/src/dom/media/AudioStream.cpp, line 361
+8월 23, 2018 17:05:09.54 [Child 5136, MediaPlayback #5] WARNING: Decoder=a2c00e2000 [OnMediaSinkAudioError]: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3716
+8월 23, 2018 17:07:05.50 IPDL protocol error: Handler returned error code!
+8월 23, 2018 17:07:05.50 
+8월 23, 2018 17:07:05.50 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 23, 2018 17:07:05.51 
+8월 23, 2018 17:07:18.94 IPDL protocol error: Handler returned error code!
+8월 23, 2018 17:07:18.94 
+8월 23, 2018 17:07:18.94 ###!!! [Parent][DispatchAsyncMessage] Error: PAPZCTreeManager::Msg_SetTargetAPZC Processing error: message was deserialized, but the handler returned false (indicating failure)
+8월 23, 2018 17:07:18.94 
+8월 23, 2018 17:15:40.85 
+8월 23, 2018 17:15:40.85 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 23, 2018 17:15:40.85 
+8월 23, 2018 17:15:40.85 
+8월 23, 2018 17:15:40.85 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 23, 2018 17:15:40.85 
+8월 23, 2018 17:16:12.11 [Parent 4232, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 17:18:44.17 [Parent 4232, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 17:23:30.35 
+8월 23, 2018 17:23:30.35 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 23, 2018 17:23:30.35 
+8월 23, 2018 17:23:56.35 [Child 5136, MediaPlayback #2] WARNING: Decoder=a2b9b42200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:23:56.35 [Child 5136, MediaPlayback #1] WARNING: Decoder=a2b9b42200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:23:56.37 [Child 5136, MediaPlayback #4] WARNING: Decoder=a2b9b42200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:23:56.38 [Child 5136, MediaPlayback #3] WARNING: Decoder=a2b9b42200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:23:56.39 [Child 5136, MediaPlayback #3] WARNING: Decoder=a2b9b42200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:23:56.41 [Child 5136, MediaPlayback #3] WARNING: Decoder=a2b9b42200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:23:56.41 [Child 5136, MediaPlayback #4] WARNING: Decoder=a2b9b42200 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:24:09.12 
+8월 23, 2018 17:24:09.12 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 23, 2018 17:24:09.12 
+8월 23, 2018 17:25:02.31 
+8월 23, 2018 17:25:02.32 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 23, 2018 17:25:02.32 
+8월 23, 2018 17:25:29.60 
+8월 23, 2018 17:25:29.60 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 23, 2018 17:25:29.60 
+8월 23, 2018 17:27:23.00 [Child 5136, MediaPlayback #2] WARNING: Decoder=a2b8d8c020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:27:23.00 [Child 5136, MediaPlayback #2] WARNING: Decoder=a2b8d8c020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:27:23.00 [Child 5136, MediaPlayback #4] WARNING: Decoder=a2b8d8c020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:27:23.01 [Child 5136, MediaPlayback #3] WARNING: Decoder=a2b8d8c020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:27:23.03 [Child 5136, MediaPlayback #4] WARNING: Decoder=a2b8d8c020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:27:23.04 [Child 5136, MediaPlayback #4] WARNING: Decoder=a2b8d8c020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:27:23.05 [Child 5136, MediaPlayback #1] WARNING: Decoder=a2b8d8c020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:27:23.07 [Child 5136, MediaPlayback #4] WARNING: Decoder=a2b8d8c020 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3411
+8월 23, 2018 17:27:25.50 [Parent 4232, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 17:27:25.50 [Child 5136, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 17:29:30.71 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 23, 2018 17:29:30.71 [Child 5488, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 17:29:30.71 [Child 5488, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 17:29:33.03 [Parent 4232, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 17:29:33.03 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 23, 2018 17:29:33.03 [Child 8876, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 17:29:33.03 [Child 8876, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 18:45:26.63 
+8월 23, 2018 18:45:26.63 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 23, 2018 18:45:26.63 
+8월 23, 2018 18:45:26.63 
+8월 23, 2018 18:45:26.65 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 23, 2018 18:45:26.65 
+8월 23, 2018 18:46:00.99 [Parent 4232, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 23, 2018 21:12:30.43 
+8월 23, 2018 21:12:30.44 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 23, 2018 21:12:30.44 
+8월 23, 2018 21:12:30.44 
+8월 23, 2018 21:12:30.44 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 23, 2018 21:12:30.45 

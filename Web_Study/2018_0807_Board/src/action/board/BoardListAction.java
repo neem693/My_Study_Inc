@@ -57,7 +57,7 @@ public class BoardListAction extends HttpServlet {
 				voo.setName(text);
 				voo.setContent(text);
 				voo.setSubject(text);
-				query = String.format("&search=name_subject_content&&text=%s", text);
+				query = String.format("&search=name_subject_content&text=%s", text);
 			}
 		}
 

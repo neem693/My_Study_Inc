@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="photo">
+
+	<select id="photo_select" resultType="photo">
+		select * from photo order
+		by idx desc
+	</select>
+
+
+	<insert id="insert_vo" parameterType="photo">
+		insert into photo
+		values(seq_photo_idx.nextVal,#{title},#{filename},#{pwd},#{ip},sysdate)
+	</insert>
+
+	<select id="photo_select_one" parameterType="photo" resultType="photo">
+		select * from photo where idx = #{idx} and pwd = #{pwd}
+	</select>
+	
+	<select id = "photo_delete" parameterType="photo" resultType="photo">
+	delete from photo where idx =#{idx} and pwd= #{pwd}
+	</select>
+	
+	
+
+
+
+
+</mapper>

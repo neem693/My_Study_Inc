@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import dao.VisitDao;
 import myconst.MyConstant;
+import util.Paging;
 import vo.VisitVo;
 
 @Controller
@@ -52,8 +53,7 @@ public class VisitController {
 		map.put("start", start);
 		map.put("end", end);
 		
-		int count = dao.selectOne()
-		
+		System.out.println(start + " " + end);
 		
 //		String search = request.getParameter("search");
 //		String search_text = request.getParameter("search_text");
@@ -68,12 +68,20 @@ public class VisitController {
 			} else if (search.equals("content")) {
 				vo.setContent(search_text);
 			}
-			list = dao.selectList(vo);
+			map.put("vo", vo);
+			list = dao.selectList_map(map);
 		} else {
-			list = dao.selectList();
+			list = dao.selectList_map(map);
 		}
+		int count = dao.selectOne_all_count();
+		String paging = Paging.getPaging("list.do", nowpage, count, MyConstant.VisitController.BLOCK_LIST, MyConstant.VisitController.BLOCK_PAGE);
+		
 
-
+		
+		
+	
+		
+		model.addAttribute("paging",paging);
 		model.addAttribute("list", list);
 
 		// request.setAttribute("search_text", search_text);

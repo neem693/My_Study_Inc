@@ -9,20 +9,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from (select * from visit order by idx desc) v
 		where rownum between 1 and 5
 	</select>
-	<select id="select_visit_codition_list" parameterType="visit"
+	<select id="select_visit_codition_list" parameterType="java.util.Map"
 		resultType="visit">
+		select *
+		from(
 		select rownum num,v.*
 		from
 		(select * from visit
 		<trim prefix="where" prefixOverrides="or">
 			<if test="name!=null">
-				LOWER(name) like '%' || LOWER(#{name}) || '%'
+				LOWER(name) like '%' || LOWER(#{vo.name}) || '%'
 			</if>
 			<if test="content!=null">
-				or LOWER(content) like '%' || LOWER(#{content}) ||'%'
+				or LOWER(content) like '%' || LOWER(#{vo.content}) ||'%'
 			</if>
 		</trim>
 		order by idx desc) v
+		) s
+		where num between #{start} and #{end}
 
 
 	</select>
@@ -51,6 +55,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		=#{name},content=#{content},pwd=#{pwd},ip=#{ip},regdate=sysdate where
 		idx=#{idx}
 	</update>
+	<select id="all_visit" resultType="int">
+	select nvl(count(*),0)
+	from visit
+	</select>
 </mapper>
 
 

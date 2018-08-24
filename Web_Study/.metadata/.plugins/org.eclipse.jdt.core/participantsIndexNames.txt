@@ -9,6 +9,8 @@ C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2403
 \2018_0711_JSPEx\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1097560030.index
 \2018_0807_Board\src
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1579359575.index
+\2018_0824_SpringPhotoGallery\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1119863082.index
 \2018_0817_SpringEx1\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3900370101.index
@@ -23,6 +25,8 @@ C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\6168
 \2018_0703_MyWebTest\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\980800079.index
 \2018_0723_MemberTest\src
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3914864643.index
+\2018_0824_SpringFileupload\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4061138567.index
 \2018_0730_XmlTest\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4125096736.index
@@ -53,6 +57,8 @@ C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4240
 \2018_0822_SpringDB\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4038695137.index
 \2018_0822_SpringDB2\src\main\java
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3661472287.index
+\2018_0824_SpringFileupload\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\844428546.index
 \2018_0802_Visit_Ajax_Mybatis\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2554039991.index
@@ -133,6 +139,8 @@ C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\6073
 \2018_0731_MybatisTest\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\613710700.index
 \2018_0730_XmlTest\src
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1162179132.index
+\2018_0824_SpringPhotoGallery\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3504411511.index
 \2018_08_17_SpringEx1\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3916146820.index
@@ -155,6 +163,8 @@ C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2737
 \2018_0720_MoviePlayer\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1748199512.index
 \2018_0817_SpringEx1\src\main\java
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3961454748.index
+\2018_0824_SpringFileupload\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4035596687.index
 \2018_0719_AjaxTest\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1742314887.index
@@ -171,6 +181,8 @@ C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3210
 \2018_0703_MyWebTest\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\100277881.index
 \2018_0817_SpringEx1\src\main\java
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1533281736.index
+\2018_0824_SpringPhotoGallery\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3819381882.index
 \2018_0711_JSPEx\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3353208061.index

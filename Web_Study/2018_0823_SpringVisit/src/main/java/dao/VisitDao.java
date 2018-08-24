@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -129,6 +130,21 @@ public class VisitDao {
 		list = session.selectList("visit.select_visit_codition_list",vo);
 		//session.close();
 
+		return list;
+	}
+
+	public int selectOne_all_count() {
+		// TODO Auto-generated method stub
+		
+		int count = session.selectOne("visit.all_visit");
+		return count;
+	}
+
+	public List<VisitVo> selectList_map(Map map) {
+		// TODO Auto-generated method stub
+		
+		List<VisitVo> list = session.selectList("select_visit_codition_list", map);
+		
 		return list;
 	}
 

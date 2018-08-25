@@ -15,16 +15,28 @@
 		values(seq_photo_idx.nextVal,#{title},#{filename},#{pwd},#{ip},sysdate)
 	</insert>
 
-	<select id="photo_select_one" parameterType="photo" resultType="photo">
+	<select id="photo_select_one" parameterType="photo"
+		resultType="photo">
 		select * from photo where idx = #{idx} and pwd = #{pwd}
 	</select>
-	
-	<select id = "photo_delete" parameterType="photo" resultType="photo">
-	delete from photo where idx =#{idx} and pwd= #{pwd}
-	</select>
-	
-	
 
+	<select id="photo_delete" parameterType="photo"
+		resultType="photo">
+		delete from photo where idx =#{idx} and pwd= #{pwd}
+	</select>
+
+
+
+	<select id="check_filename" parameterType="photo"
+		resultType="String">
+		select * from photo where idx = #{idx} and filename =#{filename}
+	</select>
+
+
+	<update id="photo_update" parameterType="photo">
+		update photo set title = #{title},filename =#{filename},pwd=#{pwd},ip=#{ip}
+		where idx = #{idx}
+	</update>
 
 
 

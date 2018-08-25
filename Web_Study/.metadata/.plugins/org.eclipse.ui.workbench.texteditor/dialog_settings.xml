@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Dao" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="collection"/>
+			<item value="java"/>
+			<item value="comp"/>
+			<item value="java:"/>
 			<item value="dao"/>
 			<item value="/visit/"/>
 			<item value="/visit"/>
@@ -19,10 +23,6 @@
 			<item value="list"/>
 			<item value="check_pwd"/>
 			<item value="setdri"/>
-			<item value="username"/>
-			<item value="user"/>
-			<item value="set"/>
-			<item value="path"/>
 		</list>
 		<list key="replacehistory">
 			<item value="p2"/>

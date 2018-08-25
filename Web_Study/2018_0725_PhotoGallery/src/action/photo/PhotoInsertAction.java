@@ -40,6 +40,9 @@ public class PhotoInsertAction extends HttpServlet {
 		String web_path = "/image/";
 		ServletContext application = request.getServletContext();
 		String saveDir = application.getRealPath(web_path);
+		
+		System.out.println(saveDir);
+		new File(saveDir).mkdirs();
 		MultipartRequest mr = new MultipartRequest(request, saveDir, maxSize, "utf-8", new DefaultFileRenamePolicy());
 
 		String title = mr.getParameter("title");

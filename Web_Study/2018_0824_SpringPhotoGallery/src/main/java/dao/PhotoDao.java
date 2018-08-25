@@ -1,8 +1,13 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
+
 
 import vo.PhotoVo;
 
@@ -50,8 +55,34 @@ public class PhotoDao {
 		
 		return res;
 	}
+
+	public boolean check2(PhotoVo voo) {
+		// TODO Auto-generated method stub
+		boolean check = true;
+		
+		String filename = session.selectOne("photo.check_filename",voo);
+		
+		if (filename.equals(null)) {
+			check = false;
+		}
+		
+		return check;
+		
+		
+		
 	
+	}
+
+	public int update(PhotoVo voo) {
+		// TODO Auto-generated method stub
+		int res = 0;
+		
+		res = session.update("photo.photo_update",voo);
+		
+		return res;
+	}
 	
+
 
 	
 	/*

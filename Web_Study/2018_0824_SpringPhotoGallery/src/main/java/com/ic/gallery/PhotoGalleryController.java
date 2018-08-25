@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+
+
 import dao.PhotoDao;
 import myconst.MyConstant;
 import vo.PhotoVo;
@@ -90,58 +92,16 @@ public class PhotoGalleryController {
 
 			try {
 				photo.transferTo(f);
-			} catch (IllegalStateException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 		} else
 			return "redirect:list.do?insert=NoPhoto";
 
 		return "redirect:list.do?insert=success";
 
-		// int maxSize = 1024 * 1024 * 10;
-		//
-		// String web_path = "/image/";
-		// ServletContext application = request.getServletContext();
-		// String saveDir = application.getRealPath(web_path);
-		// MultipartRequest mr = new MultipartRequest(request, saveDir, maxSize,
-		// "utf-8", new DefaultFileRenamePolicy());
-		//
-		// String title = mr.getParameter("title");
-		// String pwd = mr.getParameter("pwd");
-		// String ip = request.getRemoteAddr();
-		// File f = mr.getFile("photo");
-		//
-		// String filename = "No_File";
-		// if (f != null) {
-		// filename = f.getName();
-		// }
-		//
-		// if (filename.equals("No_File")) {
-		// send(response);
-		// return;
-		// }
-		// PhotoVo vo = new PhotoVo(title, filename, pwd, ip);
-		//
-		// int res = PhotoDao.getInstance().insert(vo);
-		//
-		// if (res == 0) {
-		// System.out.println("제대로 입력되지 않았음");
-		// }
-		//
-		// send(response);
-		//
-		// }
-		//
-		// private void send(HttpServletResponse response) throws IOException {
-		// // TODO Auto-generated method stub
-		// response.sendRedirect("list.do");
-		//
-		// }
+		
 
 	}
 
@@ -277,15 +237,89 @@ public class PhotoGalleryController {
 	@RequestMapping("/photo/modify_form.do")
 	public String modify_form(String idx, String pwd,Model model) {
 		
-		
+		System.out.println("modify_form.do 호출");
 		
 		PhotoVo one = new PhotoVo(Integer.parseInt(idx), pwd);
 
 		PhotoVo vo = dao.selectOne(one);
 		
-		model.addAttribute(vo);
+		System.out.println(vo.getTitle());
 		
-		return "modify_form.jsp";
+		model.addAttribute("vo",vo);
+		
+		return MyConstant.PhotoController.VIEW_PATH +  "modify_form.jsp";
+		///2018_0824_SpringPhotoGallery/src/main/webapp/WEB-INF/views/photo/modify_form.jsp
+	}
+	
+	@RequestMapping("/photo/modify.do")
+	public String modify(PhotoVo vo) {
+		
+	 	String web_path = "/resources/image/";
+			///2018_0824_SpringPhotoGallery/src/main/webapp/resources/image
+	 	
+			String save_dir = application.getRealPath(web_path);
+			boolean check = false;
+			String filename =null;
+			
+			PhotoVo voo = new PhotoVo();
+			voo.setIdx(vo.getIdx());
+			voo.setFilename(vo.getBefore_filename());
+			check = dao.check2(voo);
+			if (check==false) {
+				System.out.println("잘못된 데이터입니다.");
+				
+
+				return "redirect:list.do?fail=wrongData";
+
+			}
+			
+			//System.out.println(is_delete);
+
+			if (vo.getIs_delete().equals("yes")) {
+				voo = new PhotoVo();
+				File f = new File(save_dir, vo.getBefore_filename());
+				f.delete();
+
+				
+				//f = mr.getFile("photo");
+				filename = vo.getPhoto().getOriginalFilename();
+				
+				//파일 생성
+				f = new File(save_dir,filename);
+				
+				while(f.exists()) {
+					int time = (int)System.currentTimeMillis();
+					filename = String.format("%d_%s", time,filename);
+				}
+				
+				try {
+					vo.getPhoto().transferTo(f);
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+			} else {
+				filename = vo.getBefore_filename();
+			}
+
+			voo = vo;
+			voo.setFilename(filename);
+			voo.setIp(request.getRemoteAddr());
+
+			int res = dao.update(voo);
+			//System.out.println(res + "수정을 완료합니다.");
+			
+
+			//response.sendRedirect("list.do");
+		
+		return "redirect:list.do?success=modify";
+	
+		
 	}
 		
 	

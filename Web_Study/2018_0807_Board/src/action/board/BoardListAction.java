@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.Board_Dao;
-import jdk.nashorn.internal.parser.JSONParser;
 import myconst.MyConst;
 import util.Paging;
 import vo.BoardVo;

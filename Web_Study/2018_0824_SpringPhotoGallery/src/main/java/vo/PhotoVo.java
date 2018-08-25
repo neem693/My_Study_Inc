@@ -9,6 +9,8 @@ public class PhotoVo {
 	String title,filename,pwd,ip,regdate;
 	Date date;
 	
+	String before_filename,is_delete;
+	
 	public PhotoVo() {
 		// TODO Auto-generated constructor stub
 	}
@@ -108,6 +110,30 @@ public class PhotoVo {
 
 	public void setPhoto(MultipartFile photo) {
 		this.photo = photo;
+	}
+
+
+
+	public String getBefore_filename() {
+		return before_filename;
+	}
+
+
+
+	public void setBefore_filename(String before_filename) {
+		this.before_filename = before_filename;
+	}
+
+
+
+	public String getIs_delete() {
+		return is_delete;
+	}
+
+
+
+	public void setIs_delete(String is_delete) {
+		this.is_delete = is_delete;
 	}
 	
 	

@@ -22,3 +22,4 @@ alter table photo
 add constraint pk_photo_idx primary key(idx);
 
 select * from photo;
+

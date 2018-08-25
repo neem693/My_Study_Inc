@@ -6,6 +6,9 @@ public class PhotoVo {
 	String title,filename,pwd,ip,regdate;
 	Date date;
 	
+	
+
+	
 	public PhotoVo() {
 		// TODO Auto-generated constructor stub
 	}

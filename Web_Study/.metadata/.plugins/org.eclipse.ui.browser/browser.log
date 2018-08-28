@@ -794,3 +794,27 @@
 8월 23, 2018 21:12:30.44 
 8월 23, 2018 21:12:30.44 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
 8월 23, 2018 21:12:30.45 
+
+8월 28, 2018 13:52:40.68 NEW SESSION
+8월 28, 2018 13:52:40.68 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 28, 2018 13:52:40.68 [Child 8740, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 28, 2018 13:52:40.68 [Child 8740, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 28, 2018 15:50:45.10 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 28, 2018 15:50:45.15 [Parent 3716, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 28, 2018 15:50:45.19 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 28, 2018 15:50:45.19 [Child 7948, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 28, 2018 17:04:06.34 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 28, 2018 17:04:06.34 [Child 7768, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 28, 2018 17:04:06.34 [Child 7768, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 28, 2018 17:04:06.35 [NPAPI 4960, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 28, 2018 17:04:06.35 [NPAPI 4960, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 28, 2018 17:04:24.79 
+8월 28, 2018 17:04:24.79 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 28, 2018 17:04:24.79 
+8월 28, 2018 17:04:24.80 
+8월 28, 2018 17:04:24.80 ###!!! [Parent][DispatchAsyncMessage] Error: PClientSourceOp::Msg___delete__ Route error: message sent to unknown actor ID
+8월 28, 2018 17:04:24.81 
+8월 28, 2018 19:59:21.27 [Parent 3716, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 28, 2018 19:59:21.62 Unable to read VR Path Registry from C:\Users\inc\AppData\Local\openvr\openvrpaths.vrpath
+8월 28, 2018 19:59:21.62 [Child 880, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+8월 28, 2018 19:59:21.62 [Child 880, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346

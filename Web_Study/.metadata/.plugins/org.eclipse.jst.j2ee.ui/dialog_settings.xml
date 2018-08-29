@@ -3,6 +3,7 @@
 	<item value="true" key="J2EE_EXPORT_OVERWRITE"/>
 	<item value="true" key="J2EE_EXPORT_SOURCE"/>
 	<list key="J2EE_IMPORT_null">
+		<item value="C:\My_Study\ckeditor\TestCKEditor_Fileupload.war"/>
 		<item value="C:\Users\inc\Desktop\output\2018_0720_Visit_Ajax.war"/>
 		<item value="C:\Users\inc\Desktop\war\2018_0718_Visit.war"/>
 	</list>

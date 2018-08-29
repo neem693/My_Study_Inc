@@ -2,12 +2,19 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="_out" key="selection"/>
+		<item value="${pageContext.request.contextPath}/resources/" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="../"/>
+			<item value="content"/>
+			<item value="/member"/>
+			<item value="SqlSession session = factory.openSession(true);"/>
+			<item value="session.close();"/>
+			<item value="SqlSession session = factory.openSession();"/>
+			<item value="&#x09;&#x09;session.close();"/>
 			<item value="_remain"/>
 			<item value="_in"/>
 			<item value="_out"/>
@@ -16,15 +23,11 @@
 			<item value="comp"/>
 			<item value="java:"/>
 			<item value="dao"/>
-			<item value="/visit/"/>
-			<item value="/visit"/>
-			<item value="visit"/>
-			<item value="?page"/>
-			<item value="page"/>
-			<item value="jsp"/>
-			<item value="page="/>
 		</list>
 		<list key="replacehistory">
+			<item value="${pageContext.request.contextPath}/resources/"/>
+			<item value="${ pageContext.request.contextPath }/resources/"/>
+			<item value=""/>
 			<item value="_out"/>
 			<item value="_in"/>
 			<item value="_remain"/>
@@ -37,7 +40,7 @@
 		<item value="288" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="1436" key="DIALOG_X_ORIGIN"/>
-		<item value="403" key="DIALOG_Y_ORIGIN"/>
+		<item value="1448" key="DIALOG_X_ORIGIN"/>
+		<item value="594" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

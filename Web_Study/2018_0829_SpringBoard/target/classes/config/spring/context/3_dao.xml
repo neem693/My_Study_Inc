@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<!-- 입고 dao -->
+
+
+	<bean id="board_dao" class="dao.Board_DaoImple">
+		<property name="session" ref="sql_template"></property>
+	</bean>
+	<bean id="comment_dao" class="dao.CommentDaoImpl">
+		<property name="session" ref="sql_template"></property>
+	</bean>
+	<bean id="memeber_dao" class="dao.Member_DaoImpl">
+		<property name="session" ref="sql_template"></property>
+	</bean>
+
+
+</beans>

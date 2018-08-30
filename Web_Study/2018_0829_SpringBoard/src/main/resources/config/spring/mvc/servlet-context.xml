@@ -29,16 +29,21 @@
 	<context:annotation-config></context:annotation-config>
 
 
-	<!-- 
-	<beans:bean class="com.ic.transaction.ProductController">
-		<beans:property name="product_service"
-			ref="product_service"></beans:property>
-	</beans:bean> -->
-	
+	<!-- <beans:bean class="com.ic.transaction.ProductController"> <beans:property 
+		name="product_service" ref="product_service"></beans:property> </beans:bean> -->
+
 	<!-- <beans:bean id= "mapToJson" class="com.ic.bbs.JSONController"></beans:bean> -->
-	<beans:bean id= "board" class="com.ic.bbs.BoardController" autowire="byType"></beans:bean>
-	<beans:bean id = "member_dao" class = "com.ic.bbs.MemberController">
-	<beans:property name="member_dao" ref="memeber_dao"></beans:property></beans:bean>
-	<beans:bean id="ckeditorFileUpload" class = "com.ic.bbs.CKEditorFileUploadController"></beans:bean>
+	<beans:bean id="board" class="com.ic.bbs.BoardController"
+		autowire="byType"></beans:bean>
+	<beans:bean id="member_dao"
+		class="com.ic.bbs.MemberController">
+		<beans:property name="member_dao" ref="memeber_dao"></beans:property>
+	</beans:bean>
+	<beans:bean id="ckeditorFileUpload"
+		class="com.ic.bbs.CKEditorFileUploadController"></beans:bean>
+	<beans:bean id="board_rmi" class="com.ic.bbs.RIMControllerTest">
+		<beans:property name="board_dao" ref="board_dao_rmi"></beans:property>
+	</beans:bean>
+
 
 </beans:beans>

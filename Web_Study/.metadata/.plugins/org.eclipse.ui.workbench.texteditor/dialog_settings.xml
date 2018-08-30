@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="${pageContext.request.contextPath}/resources/" key="selection"/>
+		<item value="board_rmi." key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="board."/>
+			<item value="resultType=&quot;vo.BoardVo&quot;"/>
+			<item value="resultType=&quot;board&quot;"/>
+			<item value="result"/>
 			<item value="../"/>
 			<item value="content"/>
 			<item value="/member"/>
@@ -19,12 +23,11 @@
 			<item value="_in"/>
 			<item value="_out"/>
 			<item value="collection"/>
-			<item value="java"/>
-			<item value="comp"/>
-			<item value="java:"/>
-			<item value="dao"/>
 		</list>
 		<list key="replacehistory">
+			<item value="board_rmi."/>
+			<item value="resultType=&quot;RMI.BoardVo&quot;"/>
+			<item value="resultType=&quot;board_rmi&quot;"/>
 			<item value="${pageContext.request.contextPath}/resources/"/>
 			<item value="${ pageContext.request.contextPath }/resources/"/>
 			<item value=""/>

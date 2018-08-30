@@ -1,0 +1,17 @@
+        <!-- interceptor처리할 객체 -->
+	<beans:bean id="login_interceptor" 
+	            class="interceptor.LoginCheckInterceptor"/>
+	
+	<!-- interceptor지정 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/adult/*"/>
+			<beans:ref bean="login_interceptor" />
+		</interceptor>
+		
+		<interceptor>
+			<mapping path="/admin/*"/>
+			<beans:ref bean="login_interceptor" />
+		</interceptor>
+		
+	</interceptors>

@@ -18,5 +18,9 @@
 		<property name="session" ref="sql_template"></property>
 	</bean>
 
+	<bean id="board_dao_rmi" class="RMI.BoardDaoImpl">
+		<property name="sqlSession" ref="sql_template"></property>
+	</bean>
+
 
 </beans>

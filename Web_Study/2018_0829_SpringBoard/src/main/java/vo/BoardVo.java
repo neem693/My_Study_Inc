@@ -1,11 +1,12 @@
 package vo;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class BoardVo {
+public class BoardVo implements Serializable {
 
 	int idx, readhit, ref, step, depth,no,del,c_count;
 	String id, name, subject, content, pwd, ip, regdate, viewdate;

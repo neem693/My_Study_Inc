@@ -34,7 +34,28 @@
 			class="com.ic.myvisit.VisitController">
 			<beans:property name="dao" ref="visit_dao"></beans:property>
 		</beans:bean>
+		<beans:bean id="login_interceptor"
+			class="interceptor.LoginCheckInterceptor" />
+		<interceptors>
+			<interceptor>
+				<mapping path="/adult/*" />
+				<beans:ref bean="login_interceptor" />
+			</interceptor>
+
+			<interceptor>
+				<mapping path="/admin/*" />
+				<beans:ref bean="login_interceptor" />
+			</interceptor>
+
+		</interceptors>
+		<beans:bean id="interceptor_con"
+			class="com.ic.myvisit.TestInerceptorController"></beans:bean>
 	</beans:beans>
+
+
+
+	<!-- interceptor지정 -->
+
 
 
 

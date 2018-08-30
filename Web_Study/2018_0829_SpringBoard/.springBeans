@@ -7,17 +7,8 @@
 	</configSuffixes>
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
-		<config>src/main/resources/config/spring/context/6_jsonConverter.xml</config>
 	</configs>
 	<autoconfigs>
-		<config>src/main/resources/config/spring/mvc/servlet-context.xml</config>
-		<config>src/main/resources/config/spring/context/3_dao.xml</config>
-		<config>src/main/resources/config/spring/context/7_aspect.xml</config>
-		<config>src/main/resources/config/spring/context/4_service.xml</config>
-		<config>src/main/resources/config/spring/context/1_1_transaction.xml</config>
-		<config>src/main/resources/config/spring/context/2_sqlSession_mybatis.xml</config>
-		<config>src/main/resources/config/spring/context/5_fileupload.xml</config>
-		<config>src/main/resources/config/spring/context/1_0_dataSource.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

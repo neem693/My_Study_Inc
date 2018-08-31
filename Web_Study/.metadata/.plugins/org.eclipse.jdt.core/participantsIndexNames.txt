@@ -37,6 +37,8 @@ C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\6452
 \2018_0822_SpringDB\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\597065610.index
 \2018_0703_MyWebTest\src
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\473307811.index
+\2018_0831_SpringAutowire\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3802934369.index
 \2018_0703_MyWebTest\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3751849212.index
@@ -105,6 +107,8 @@ C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3760
 \2018_0716_DBTest\src
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2832010918.index
 \2018_0822_SpringDBEx\src\main\java
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2004674137.index
+\2018_0831_SpringAutowire\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\541189182.index
 \2018_0821_SpringParameter\src\main\java
 C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\367541048.index

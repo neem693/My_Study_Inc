@@ -126,7 +126,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\2018_0829_SpringBoard" path="/bbs" reloadable="true" source="org.eclipse.jst.jee.server:2018_0829_SpringBoard"/></Host>
+      <Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\2018_0829_SpringBoard" path="/bbs" reloadable="true" source="org.eclipse.jst.jee.server:2018_0829_SpringBoard"/><Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\2018_0831_SpringAutowire" path="/auto" reloadable="true" source="org.eclipse.jst.jee.server:2018_0831_SpringAutowire"/></Host>
     </Engine>
   </Service>
 </Server>

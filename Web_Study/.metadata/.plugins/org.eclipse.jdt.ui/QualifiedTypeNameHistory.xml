@@ -3,7 +3,6 @@
 <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
 <fullyQualifiedTypeName name="vo.VisitVo"/>
 <fullyQualifiedTypeName name="util.Paging"/>
-<fullyQualifiedTypeName name="myconst.MyConstant.VisitController"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.Servlet"/>
 <fullyQualifiedTypeName name="vo.PhotoVo2"/>
@@ -41,7 +40,6 @@
 <fullyQualifiedTypeName name="myconst.MyConstant.MemberController"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="myconst.MyConstant"/>
 <fullyQualifiedTypeName name="myconst.MyConstant.BoardController"/>
 <fullyQualifiedTypeName name="dao.BoardDao"/>
 <fullyQualifiedTypeName name="vo.BoardVo"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="myconst.MyConstant"/>
+<fullyQualifiedTypeName name="myconst.MyConstant.VisitController"/>
 </qualifiedTypeNameHistroy>

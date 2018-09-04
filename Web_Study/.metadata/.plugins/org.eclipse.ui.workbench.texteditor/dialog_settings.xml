@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="board_rmi." key="selection"/>
+		<item value="insert" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="insert"/>
+			<item value="start"/>
+			<item value="selectList"/>
+			<item value="count"/>
 			<item value="board."/>
 			<item value="resultType=&quot;vo.BoardVo&quot;"/>
 			<item value="resultType=&quot;board&quot;"/>
@@ -19,10 +23,6 @@
 			<item value="session.close();"/>
 			<item value="SqlSession session = factory.openSession();"/>
 			<item value="&#x09;&#x09;session.close();"/>
-			<item value="_remain"/>
-			<item value="_in"/>
-			<item value="_out"/>
-			<item value="collection"/>
 		</list>
 		<list key="replacehistory">
 			<item value="board_rmi."/>

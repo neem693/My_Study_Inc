@@ -1,0 +1,45 @@
+CentOS 7 부터는 iptables 대신 firewalld를 기본으로 사용하는듯 하다.
+
+방화벽에 포트 및 서비스 추가
+
+# 서비스 추가
+# 서비스 명에는 http, https, ssh 와 같은 서비스를 넣어주면 된다.
+# $ firewall-cmd --permanent --zone=public --add-service=서비스명
+$ firewall-cmd --permanent --zone=public --add-service=http
+ 
+# 포트 추가
+# $ firewall-cmd --permanent --zone=public --add-port=포트번호/프로토콜
+$ firewall-cmd --permanent --zone=public --add-port=80/tcp
+
+
+방화벽에 포트 및 서비스 삭제
+
+# 서비스 삭제
+# 서비스 명에는 http, https, ssh 와 같은 서비스를 넣어주면 된다.
+# $ firewall-cmd --permanent --zone=public --remove-service=서비스명
+$ firewall-cmd --permanent --zone=public --remove-service=http
+ 
+# 포트 삭제
+# $ firewall-cmd --permanent --zone=public --remove-port=포트번호/프로토콜
+$ firewall-cmd --permanent --zone=public --remove-port=80/tcp
+
+
+방화벽 재시작 및 설정된 내용 확인
+
+# 위와 같이 포트 또는 서비스를 추가, 삭제한 후 방화벽을 재시작하여 설정된 내용을 적용 한다.
+$ systemctl restart firewalld
+ 
+# 방화벽 설정이 잘 되었는지 확인
+$ firewall-cmd --list-all
+public (default, active)
+  interfaces: eth01
+  sources: 
+  services: dhcpv6-client http https ssh
+  ports: 8080/tcp
+  masquerade: no
+  forward-ports: 
+  icmp-blocks: 
+  rich rules:
+
+
+

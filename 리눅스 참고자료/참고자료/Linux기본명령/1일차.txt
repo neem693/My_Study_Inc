@@ -1,0 +1,708 @@
+
+● 리눅스 설치
+
+  - 설치순서
+
+    설치언어 선택 > 키보드 선택 > 레이아웃 선택 > 파티션 설정(중요) > 부트로더 설치 
+ 
+    > 네트워크 설정 > 시간대역 선택 > 관리자 암호 입력 > 설치 프로그램 선택 > 패키지 설치
+
+    > 재부팅 > 설치 후 설정 > 로그인
+
+ ※ 리눅스는 장치 대신에 장치파일을 사용한다.
+
+   ex) SATA-0 HDD => /dev/sda
+
+ ※ 리눅스 파티션
+
+    => 파티션 : primary 파티션(4개) => 4개중 1개를 extended 파티션으로 활용
+
+                extended 파티션 => logical 파티션(24개)
+
+    => 하드디스크의 파티션도 장치파일로 인식한다.
+
+       /dev/sda1~/dev/sda3  : primary 파티션
+
+       /dev/sda4 : extended 파티션
+
+           └ /dev/sda5~ :logical 파티션             
+
+     => 리눅스의 장치파일은 반드시 디렉토리와 mount 해야만 사용가능하다.
+
+        /   ┬ boot   sda1
+      sda2  ├ home   sda3
+            ├ var 
+            ├ tmp
+            ├ usr    sda4
+               └ local
+              ...
+
+    /    => 8000M   /boot => 200M       /home => 5000M
+    /var => 5000M   /usr  => 10000M     /tmp  => 2000M	 
+    swap => 4000M 
+
+ ※ 리눅스는 가상메모리를 파티션으로 만들어 사용한다.(swap 파티션)
+
+ ※ 부트로더(Grub)는 하드디스크의 MBR(Master Boot Record - /dev/sda)에 설치한다.
+
+ ※ 네트워크 설정
+
+    IP 주소 : 192.168.0.81~
+    
+    NETMASK 주소 : 255.255.0.0    
+ 
+    GATEWAY 주소 : 192.168.0.1
+
+    DNS 주소 : 168.126.63.1
+
+
+● 시스템 종료 및 재부팅
+
+  - 시스템 종료
+
+    ]# halt   
+
+  - 시스템 재부팅
+
+    ]# reboot
+
+  ※ 프롬프트 : 명령을 입력하기 위해 대기 상태를 표시
+
+     [로그인계정@호스트명 현재디렉토리]# 명령입력
+
+     => # : 관리자    $ : 일반사용자
+
+  - shutdown 명령 : 종료 또는 재부팅 할 때 시간을 지정할 수 있으며 접속된 다른 사용자에게 메세지를 전달할 수 있다.
+
+    ]# shutdown -h 시간 "메세지"  => 종료
+
+    ]# shutdown -r 시간 "메세지"  => 재부팅
+
+    ex) ]# shutdown -h +3  => 3분 뒤에 종료합니다.
+ 
+        ]# shutdown -h 22:20 => 22시 20분에 종료합니다. 
+
+        ]# shutdown -h now  => 바로 종료합니다.
+
+
+● 명령 도움말
+
+   ]# man 명령  => 명령에 대한 메뉴얼을 보여주는 명령
+
+     - q를 눌러야 종료가 된다. 
+
+   ex) ]# man shutdown
+
+   ※ 명령의 help 기능을 사용
+
+      ]# 명령 --help 
+
+   ex) ]# shutdown help   =>  -- 생략하는 경우도 있다. 
+
+
+● 리눅스 환경설정
+
+  - 리눅스는 환경설정 파일을 읽어 프로그램을 실행
+
+     => 환경설정 파일을 수정한 경우 프로그램을 재실행
+
+  ex) SELinux 기능을 사용하지 않도록 만드는 방법
+
+       ※ SELinux : 보안 제어 기능   
+
+       ]# gedit /etc/sysconfig/selinux    => SELinux의 환경설정 파일
+       ....
+       SELINUX=disabled   => SELinux 기능 비활성
+
+       ]# setenforce 0   => 현재 SELinux 기능 비활성	
+        
+
+● 리눅스 부팅 관련 명령 및 환경설정파일
+
+  - 부팅순서
+
+      MBR에 설치된 Grub 실행(리눅스 선택 실행)  >> 리눅스 커널(vmlinuz)를 메모리에 로딩
+
+      >> init 프로그램 실행 >> 장치 mount >> 데몬(서비스 프로그램) 실행 >> 로그인 화면
+
+    ※ init 프로그램 : 부팅 및 종료를 제어하는 프로그램(명령)
+
+  - Grub 환경설정 파일
+
+     ]# gedit /etc/grub.conf
+     default=title번호      => 기본적으로 사용하고자 하는 OS의 Title 번호를 지정
+     timeout=초             => 일정 시간이 지나면 기본 Title를 사용하기 위한 초
+     splashimage=grub실행이미지    => grub이 실행될 경우 출력되는 이미지파일
+     hiddenmenu           => grub 선택 화면을 숨기는 옵션
+     title  부팅제목         => title를 지정(순서대로 0번 title, 1번 title,...) => title를 선택하면 아래 옵션을 이용하여 부팅
+           root (HDD번호,파티션번호)    => 커널이 존재하는 장치(파티션)를 지정  : /boot
+           kernel 커널파일명 옵션      => 사용커널 및 옵션을 지정
+           initrd init파일명           => 사용 init 프로그램을 지정   
+
+  ※ grub이 삭제된 경우 재설치
+
+      ]# grub-install 장치파일명   =>  ]# grub-install /dev/sda
+
+  - init 관련 파일
+
+     ]# gedit /etc/inittab  => default runlevel 정보를 저장
+
+      id:런레벨:initdefault    => init가 부팅시 기본적으로 사용하는 런레벨
+
+     ※ default runlevel : init에 의해 부팅 또는 종료를 제어하도록 지정하는 고유번호(0~6)
+
+        0 : halt(시스템 종료)
+        1 : 로그인하지 않고 사용
+        2 : CUI(네트워크 기능을 제공하지 않는다.)
+        3 : CUI          =>  기본으로 사용
+        4 : 사용하지 않음
+        5 : x-window 부팅
+        6 : reboot(시스템 재부팅)
+
+  - init 프로그램을 이용한 런레벨 사용 방법
+
+    1) 리눅스 부팅 전 원하는 런레벨로 부팅하는 방법
+
+       => /etc/inittab 파일에서 id 값을 변경
+
+       => Grub를 이용한 부팅 방법(중요) : id가 아닌 다른 런레벨로 부팅할 경우
+
+          ex) 1번 런레벨 부팅
+
+               grub 실행 >> 원하는 타이틀 선택 >> e(Edit)를 눌러 부팅 옵션으로 이동
+
+               >> kernel 옵션을 선택 후 e(Edit)를 눌러 변경화면으로 전환
+
+               >> kernel 옵션 마지막에 원한는 런레벨(1)을 추가하고 엔터
+
+               >> b(Boot)를 눌러 부팅한다.  
+
+           ※ passwd 명령을 이용하면 관리자 비밀번호 변경 가능
+
+               # passwd   =>  비밀번호 2번 입력
+	
+    2) 부팅 후 런레벨을 이용하면 환경 전환
+
+       ]# init 렌레벨
+
+       ex) ]# init 5
+
+
+● 파일 및 디렉토리 관련 명령
+
+  1. pwd => 현재 작업 디렉토리를 확인하는 명령
+
+     [root@server ~]# pwd
+     /root
+
+     ※ ~ 은 로그인 계정의 홈디렉토리를 표시하기 위한 특수기호
+
+  2. ls => 디렉토리 하위 목록을 확인하는 명령  
+
+     - 유사 명령 => dir
+
+     형식) ]# ls [옵션] 디렉토리  => 원하는 디렉토리 하위 목록을 확인
+
+                           => 디렉토리가 생략되면 현재 디렉토리 하위 목록을 확인
+
+     ex) ]# ls    =>  현재 디렉토리 하위 목록을 확인(파일명만 확인)
+
+         ]# ls -l   =>  -l : 파일의 목록을 자세하게 확인
+         -rw-r--r--  1  root  root  35241  2월 6 06:42   install.log
+        (1)   (2)   (3) (4)    (5)   (6)       (7)            (8)
+           
+        (1) - 1자리 => 파일의 종류를 표시
+
+              d  =>  디렉토리
+              -  =>  파일
+              l  =>  링크파일
+              b  =>  블럭장치파일
+              c  =>  문자장치파일
+
+        (2) - 9자리 => 파일의 권한을 표시 
+
+        (3) - 파일의 연결 갯수를 표시
+
+        (4) - 소유자 : 파일에 대한 소유권을 가지고 있는 계정
+
+        (5) - 소유그룹 : 파일에 대한 특정권한을 가지고 있는 계정의 모임
+
+        (6) - 파일의 크기(byte)
+
+        (7) - 파일의 변경 날짜
+
+        (8) - 파일의 이름
+
+         ]# ls -al   => -a : 숨겨진 파일 확인
+
+         ※ 숨겨진 파일은 파일의 이름이 .으로 시작된다. 
+
+         ]# ls -il   => -i : 파일의 inode 번호를 확인         
+
+         ]# ls -Rl   => -R : 하위 디렉토리에 존재하는 목록도 확인
+
+         ]# ls -l /var   => /var 디렉토리의 목록 확인
+
+         ]# ls -l /etc/*conf   => /etc 디렉토리에 존재하는 목록 중 conf로 끝나는 목록만 확인
+
+           ※ 메타문자 : 검색시에 사용되는 특수문자
+
+                * => 전체    ? => 문자 하나
+        
+      ※ 리눅스 디렉토리 구조 => 계층적 디렉토리 구조
+
+         /   ┬ boot : 부팅 관련 파일(vmlinuz - 커널) => 파티션(최대 200M)
+             ├ bin : Linux 명령 파일 
+             ├ sbin : Linux 명령 파일(관리자만 사용 가능) 
+             ├ dev : 장치파일
+             ├ etc : 리눅스 환경설정 파일
+             ├ home : 일반계정의 홈디렉토리가 존재   => 파티션(정책에 따른 최대용량)
+             ├ root : 관리자의 홈디렉토리
+             ├ lib : 필수 라이브러리 파일         		                                 
+             ├ opt : 옵션 라이브러리 파일    =>  파티션(최대 500M)
+             ├ usr : 응용 프로그램(패키지)이 설치된 디렉토리   => 파티션(정책에 따른 최대용량)
+             │ └ local : 소스방식의 응용 프로그램이 설치된 디렉토리   =>  파티션(정책에 따른 용량)
+             ├ mnt : 저장 장치파일을 mount 하기 위한 디렉토리
+             ├ proc : 리눅스 정보를 저장하고 있는 파일이 존재하는 가상의 디렉토리
+             ├ tmp : 입출력에 관련된 임시파일이 저장되는 디렉토리   =>  파티션(최대 5G)
+             └ var : 메일 및 로그파일등을 저장하는 디렉토리  =>  파티션(정책에 따른 최대용량)
+
+  3. cd  => 현재 작업 디렉토리를 변경하는 명령
+
+    ]# pwd
+    /root 
+
+    ]# cd ..    =>  상위 디렉토리로 이동
+    
+    ]# pwd
+    /
+
+    ]# cd home   => 하위 디렉토리로 이동
+
+    ]# pwd
+    /home
+
+    ]# cd ../usr    => 상위디렉토리로 이동 후 하위디렉토리로 이동
+
+   ※ 상대경로 디렉토리 표시 방법 => 현재 디렉토리를 기준으로 디렉토리를 표현
+
+    ]# cd /var   => /디렉토리 하위에 있는 var 디렉토리로 이동
+
+    ]# pwd
+    /var
+
+   ※ 절대경로 디렉토리 표시 방법 => / 디렉토리를 기준으로 디렉토리를 표현
+
+    ]# cd    또는   ]# cd ~     =>  로그인 계정의 홈디렉토리로 이동
+
+    ]# cd /et*     =>  메타문자를 이용한 디렉토리 이동도 가능
+
+    ※ 자동 완성 기능 => 디렉토리명 또는 파일명을 자동으로 완성하여 주는 기능 - [Tab]키를 이용
+
+       ]# cd /u[tab]/loc[tab]
+
+    ※ history 기능 => 실행된 명령을 저장하여 재사용하기 위한 기능
+
+       - 방향키(↑ 또는 ↓)를 누르면 기존의 명령을 사용할 수 있다.
+
+       - history 명령 : 현재까지 사용한 명령 목록을 출력
+
+         ]# history
+         번호     명령
+         ...
+
+         ]# !번호   => 해당 번호의 명령이 실행
+
+  4. mkdir  =>  디렉토리를 생성하는 명령
+
+    ]# cd     =>  홈디렉토리로 이동
+
+    ]# mkdir aaa    =>   현재 작업디렉토리 하위에 aaa 디렉토리가 생성
+
+      ※ ]# mkdir /aaa   => / 디렉토리 하위에 aaa 디렉토리가 생성
+
+    ]# mkdir bbb ccc ddd    => 여러 개의 디렉토리를 동시에 생성
+
+    ]# mkdir -p a1/a2/a3    => 하위 디렉토리를 연속으로 생성
+
+  5. rmdir  => 디렉토리를 삭제하는 명령
+
+    ]# rmdir aaa
+
+    ]# rmdir bbb ccc ddd
+
+    ]# rmdir a1   =>  a1 디렉토리 하위에 목록이 존재하므로 삭제가 되지 않는다. 
+
+    ※ 삭제하고자 하는 디렉토리에 파일이 하나라도 존재하면 삭제되지 않는다.
+
+    ]# rmdir -p a1/a2/a3
+
+  6. touch  =>  파일을 생성하는 명령
+
+    ]# touch aaa.txt    =>   aaa.txt 파일이 생성(파일의 내용은 존재하지 않는다.)
+
+    ※ 파일명 => 대소문자를 구분하며 확장자는 특별한 의미를 가지지 않는다.
+
+  7. cat  =>  파일의 내용을 확인하는 명령
+
+    - 유사한 명령 : more 또는 less  => 페이지 단위로 파일의 내용을 읽어들인다.    
+
+                   head 또는 tail  => 원하는 줄수만큼 확인 기능
+
+    ]# cat install.log    =>  [Shift]+[PageUp]  또는 [Shift]+[PageDown] 을 이용하여 위 또는 아래 부분의 내용을 확인
+
+    ]# more install.log 
+
+    ]# less install.log
+
+    ]# head -n 10 install.log
+
+    ]# tail -n 10 install.log
+
+   ※ 리눅스에서 사용되는 특수기호
+
+     1) |  =>  명령1 | 명령2  : 명령1의 결과로 명령2를 실행
+
+       ]# ls -l /etc | less
+
+     2) >  또는 <   =>  명령 > 파일명 : 명령의 결과를 파일에 저장
+
+       => 데이타의 이동을 표시하는 기호  ex) ]# yes > /dev/null 
+
+       ]# ls -l /etc/*conf > conf.txt   => conf.txt 파일이 없으면 파일이 생성(파일이 존재하면 OverWrite 된다.)
+
+       ]# ls -l   =>  conf.txt 파일 확인
+
+       ]# cat conf.txt        
+
+       => cat 명령을 이용한 파일 생성 방법 => 간단한 내용을 가진 파일을 생성
+
+       ]# cat > hello.txt
+       Hi~~~
+       Hello~~~
+       ^D    =>  [ctrl]+D 
+
+       ]# cat hello.txt
+       Hi~~~
+       Hello~~~
+
+       ]# cat >> hello.txt   =>  >> : append
+       Bye
+       ^D
+
+       ]# cat hello.txt
+       Hi~~~
+       Hello~~~ 
+       Bye
+
+     3) ;   =>   명령1;명령2  - 명령을 순차적으로 실행하기 위한 기호
+ 
+       ]# pwd;ls 
+
+   ※ 리눅스 콘솔에서 사용하는 단축키
+
+     [ctrl] + C   =>  명령 취소
+
+     [ctrl] + Z   =>  명령 중지
+
+     [ctrl] + D   =>  종료(로그아웃 또는 입력 종료를 하고자 할때 사용)
+
+     [ctrl] + L   =>  화면 초기화(clear 명령과 동일) 또는 vi 편집기 사용시 메세지를 삭제하는 기능
+
+  8. rm  => 파일을 삭제하는 명령
+
+    ]# rm conf.txt   =>  삭제유무를 확인
+
+    ]# rm -f aaa.txt  => 무조건 삭제
+     
+    ]# mkdir -p a1/a2/a3
+
+    ]# rm -r a1   => a1 디렉토리 및 하위 목록들 전체를 삭제(삭제 유무를 확인)
+
+    ]# rm -rf a1   => a1 디렉토리 및 하위 목록들 전체를 무조건 삭제
+
+    ※ 일반적으로 rm 명령은 -rf 옵션을 사용하여 파일 또는 디렉토리 삭제를 한다.
+
+  9. cp  => 파일을 복사하는 명령
+
+    형식) ]# cp 원본파일 대상디렉토리   
+
+    ]# cat > aaa.txt
+    Hello
+    ^D
+
+    ]# cp aaa.txt /home   => 현재 디렉토리의 aaa.txt 파일을 /home 밑에 복사    
+
+    ]# ls -l /home   =>  aaa.txt 확인
+
+    ]# cp aaa.txt /home/bbb.txt   => 현재 디렉토리의 aaa.txt 파일을 /home 밑에 bbb.txt로 이름을 변경하여 복사    
+
+    ]# ls -l /home   =>  aaa.txt 및 bbb.txt 확인    
+
+    ]# cp /home/bbb.txt .  => /home/bbb.txt 파일을 현재 디렉토리에 복사
+ 
+    ]# cp aaa.txt ccc.txt  => 현재 디렉토리의 aaa.txt를 이름을 변경하여 ccc.txt로 복사
+
+    ]# cp -R /home .   => 디렉토리 복사 : /home 디렉토리 및 하위 목록 전체를 현재 디렉토리에 복사
+
+  10. mv  => 파일 또는 디렉토리를 이동하는 명령
+
+    ]# mv ccc.txt /home  => ccc.txt 파일을 /home 디렉토리로 이동
+
+    ]# mv home /mnt  => 현재 디렉토리 하위에 있는 home 디렉토리를 /mnt 디렉토리로 이동
+
+    ]# mv /home/aaa.txt . 
+
+    ]# mv aaa.txt hi.txt  => 파일(디렉토리)의 이름을 변경
+
+  11. ln  => hard 링크파일 및 symbolic 링크파일을 생성하는 명령
+
+   1) hard 링크 => cp와 유사하지만 inode 번호도 같은 동일한 파일을 생성할 때 사용
+
+      ]# cat aaa.txt
+      Hello
+
+      ]# cp aaa.txt bbb.txt   => 복사
+
+      ]# ln aaa.txt ccc.txt   => hard 링크
+
+      ]# ls -l   => aaa.txt, bbb.txt, ccc.txt 파일의 크기가 같으며 같은 내용을 저장하고 있다.
+ 
+      ]# cat >> aaa.txt  => 내용 추가
+      Good Bye
+      ^D 
+
+      ]# cat bbb.txt   => aaa.txt와 다른 내용을 저장하고 있다. : aaa.txt와 bbb.txt는 별개의 파일이다. 
+      Hello  
+
+      ]# cat ccc.txt  => aaa.txt와 동일한 내용을 저장하고 있다. : aaa.txt와 bbb.txt는 동일한 파일이다.
+      Hello  
+      Good Bye
+
+      ]# ls -il   => aaa.txt와 bbb.txt는 inode 번호가 틀리지만 aaa.txt와 ccc.txt는 inode 번호가 같다.
+
+      ※ hard 링크는 자주 데이타가 변경되는 파일(환경설정파일)을 백업할 경우 사용되는 명령
+
+   2) Symbolic 링크 => 윈도우의 바로가기 아이콘 동일한 기능을 가지고 있는 파일을 생성
+
+     ]# ln -s /etc/sysconfig/network-scripts/ifcfg-eth0 eth0
+
+        => /etc/sysconfig/network-scripts/ifcfg-eth0 파일에 대한 Symbolic 링크파일인 eth0파일을 생성
+ 
+        => 파일의 종류는 "l"로 표시되며 파일명은 "링크파일명 -> 원본파일명" 형식으로 표시된다.
+
+     ※ Symbolic 링크파일은 원본이 없을 경우 아무런 소용이 없다.
+   
+     ]# ln -s /usr/local local   => 디렉토리도 링크 시킬 수 있다.
+
+     ※ 원본을 지정할 때 절대경로를 사용  
+
+     ※ 링크디렉토리에 접근하여 pwd 명령을 사용하면 local로 표시된다. 
+
+  
+● 필수 기본 명령
+
+  1. 검색 명령
+
+    1) grep => 파일에서 원하는 단어를 검색하여 단어가 포함된 행을 출력하는 명령   
+
+      형식) ]# grep 단어 파일명
+
+            => grep 명령 대신 egrep 명령을 사용해도 된다.
+
+       ex) ]# grep root /etc/passwd  => /etc/passwd 파일에서 root 단어가 있는 행을 출력
+
+           ]# cat > aaa.txt
+           abcdef		 
+           ABCDEF
+           abcDEF
+           XyZ
+           ^D
+  
+           ]# grep bcd aaa.txt   => 대소문자 구분
+           abcdef		 
+ 
+           ]# grep -i bcd aaa.txt   => -i : 대소문자 구분이 없이 검색
+           abcdef		 
+           ABCDEF
+           abcDEF
+
+           ]# grep -in xyz aaa.txt  => -n : 행번호를 출력
+           4:XyZ
+
+           ]# grep -n ^ab aaa.txt  => ab로 시작되는 단어 검색
+           1:abcdef      
+           3:abcDEF
+
+           ]# grep -n EF$ aaa.txt   => EF로 끝나는 단어 검색
+           2:ABCDEF
+           3:abcDEF
+
+           ]# grep -n [a-z] aaa.txt  =>  영문자 소문자가 포함 있는 단어 검색
+           1:abcdef		 
+           3:abcDEF
+           4:XyZ
+
+           ]# grep -n [^a-z] aaa.txt  =>  영문자 대문자가 포함 있는 단어 검색 (대괄호 안에 있는 꺽쇠는 '반대'를 의미함)
+           2:ABCDEF		 
+           3:abcDEF
+           4:XyZ
+
+           ]# grep -n ^[a-z] aaa.txt  =>  영문자 소문자로 시작되는 단어 검색 (대괄호 바깥에 있는 꺽쇠는 '시작'을 의미함)
+           1:abcdef		 
+           3:abcDEF
+
+           ]# grep -R root /etc   => /etc 디렉토리 및 하위 디렉토리에 존재하는 모든 파일에서 root 단어를 검색하여 출력
+
+           ]# ls -l /etc | grep conf   => /etc 디렉토리 목록에서 conf 단어가 있는 목록만 출력
+
+         ※ grep는 다른 검색 명령과 같이 사용되는 경우가 많다.    
+
+    2) whereis  => 명령을 검색하는 명령
+
+       형식) ]# whereis 명령
+
+       ex) ]# whereis ls
+
+    3) find => 원하는 위치에서 원하는 형식의 파일을 검색
+ 
+      형식) ]# find  검색디렉토리  검색옵션  검색값  검색후처리
+
+      ]# find /etc -name '*conf' -print
+
+         => /etc 디렉토리에서 파일의 이름이 conf로 끝나는 파일을 검색하여 출력
+
+         ※ -print 옵션은 생략 가능
+
+      ]# find /root -type d   =>  파일의 종류가 디렉토리를 검색하여 출력
+
+         ※ -type 옵션은 파일의 종류를 검색 => d : 디렉토리   f : 파일   l : 링크파일
+
+      ]# find /var -type d -name '*mail*'    =>  옵션은 여러 개 사용 가능하다.
+
+      ]# find /etc -type f -user root -perm 640    => 소유자가 root이고 파일권한이 750인 파일을 검색하여 출력
+
+      ]# find /etc -type f -size +10   => 파일의 크기가 10kbyte 이상되는 파일을 검색하여 출력 
+
+      ]# find /etc -type f -ctime 0   => 파일의 정보가 변경(권한 또는 소유자)된지 24시간된 파일 검색  
+
+        ※  atime : 파일을 보거나 디렉토리에 접근한 시간
+
+            mtime : 파일의 내용이 변경된 시간             
+
+      ]# find /home -type f -name '*txt' -exec rm -rf {} \;
+
+          => 파일명이 txt로 끝나는 파일을 검색하여 삭제
+
+  2. 압축 명령
+
+   - 파일 하나만 압축이 가능하다.
+
+   1) compress 명령  => 리눅스에서는 사용하지 않는다. 
+
+     ]# compress 파일명   => 파일이 압축파일(파일명.Z)로 변환  
+
+     ]# uncompress 파일명.Z   => 파일의 압축을 해제
+
+   2) gzip 명령
+
+     ]# gzip 파일명   => 파일이 압축파일(파일명.gz)로 변환  
+
+     ]# gunzip 파일명.gz   => 파일의 압축을 해제
+
+   3) bzip2 명령
+
+     ]# bzip2 파일명   => 파일이 압축파일(파일명.bz2)로 변환  
+
+     ]# bunzip2 파일명.bz2   => 파일의 압축을 해제
+
+   4) xz 명령
+
+     ]# xz 파일명    => 파일이 압축파일(파일명.xz)로 변환   
+
+     ]# unxz 파일명.xz  => 파일의 압축을 해제
+
+  3. 묶음 명령 => 파일들이나 디렉토리를 하나의 파일로 만들어 주는 명령(해제) 
+
+     ]# tar cvf 묶음파일명 대상   =>  대상(파일들 또는 디렉토리)을 파일 하나로 묶어 생성(파일명.tar)한다.
+
+     ]# tar xvf 파일명.tar   =>  명령을 입력한 디렉토리에 파일(디렉토리)이 풀린다.                        
+
+     ※ 원하는 디렉토리에 묶음파일 해제
+
+        ]# tar xvf 파일명.tar -C 해제디렉토리명
+
+     ※ tar는 압축명령과 같이 사용하기 위해 압축옵션을 사용한다.
+
+        ]# tar cvZf 압축파일명 대상   =>  compress를 이용하여 압축파일(파일명.tar.Z)을 생성
+
+        <==>  ]# tar xvZf 파일명.tar.Z     =>  파일명.tar.Z 압축 및 묶음 해제
+
+        ]# tar cvzf 압축파일명 대상   =>  gzip를 이용하여 압축파일(파일명.tar.gz)을 생성
+
+        <==>  ]# tar xvzf 파일명.tar.gz     =>  파일명.tar.gz 압축 및 묶음 해제
+
+        ]# tar cvjf 압축파일명 대상   =>  bzip2를 이용하여 압축파일(파일명.tar.bz2)을 생성
+
+        <==>  ]# tar xvjf 파일명.tar.bz2     =>  파일명.tar.bz2 압축 및 묶음 해제
+
+        ]# tar cvJf 압축파일명 대상   =>  xz를 이용하여 압축파일(파일명.tar.xz)을 생성
+
+        <==>  ]# tar xvJf 파일명.tar.xz     =>  파일명.tar.xz 압축 및 묶음 해제
+
+      ex)  ]# tar cvzf etc.tar.gz /etc
+
+           ]# tar cvjf etc.tar.bz2 /etc
+  
+           ]# ls -l    =>  압축파일 확인
+
+           ]# tar xvzf etc.tar.gz   =>  현재 디렉토리에 압축 해제
+
+           ]# tar xvjf etc.tar.bz2 -C /home   =>  /home 디렉토리에 압축 해제
+
+           ]# tar cvzf etc2.tar.gz /etc --exclude *conf
+
+              => 대상에 제외하고 싶은 파일 또는 디렉토리는 --exclude 옵션을 사용하여 제외 할 수 있다.
+
+      ※ tar 명령을 이용한 시스템 백업
+
+      ]# tar cvzf /root/backup.tar.gz --exclude=/proc --exclude=/lost+found
+       --exclude=/root/backup.tar.gz --exclude=/mnt --exclude=/sys
+       --exclude=/media --exclude=/net /
+
+      또는 ]# cat /dev/sda > /dev/sdb            => 하드디스크의 크기가 반드시 같아야 한다.
+
+
+      ※ tar 명령을 이용한 시스템 복구
+
+      ]# tar xvzf /root/backup.tar.gz -C /
+
+      ]# cd /
+
+      ]# mkdir proc mnt lost+found sys net media
+
+      => 재부팅
+
+  4. 용량 확인 명령
+
+    1) 파일 용량 확인
+
+      ]# ls -l    =>  파일의 용량을 확인할 수 있다.(단위 : byte)
+ 
+    2) 디렉토리 용량 확인
+
+      ]# du /etc   => /etc 디렉토리의 전체 용량 확인(단위 : kbyte)
+
+         ※ 디렉토리가 생략되면 현재 디렉토리의 용량을 확인한다.
+
+      ]# du -h /etc   =>  -h 옵션 : 알기 쉬운 용량 단위를 사용하여 출력
+
+      ]# du -sh /etc   =>  -s 옵션 : 대상 디렉토리의 용량만 출력
+
+    3) 현재 사용중인 저장장치의 용량을 확인 => mount 되어 있는 장치의 용량을 확인
+
+      ]# df   =>   단위 : kbyte
+
+      ]# df -h   =>  알기 쉬운 저장단위를 사용하여 출력
+
+

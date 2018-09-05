@@ -1,0 +1,104 @@
+1. 우선 ftp가 설치가 되어 있는지 확인을 한다. 
+ - 명령어 : rpm -qa vsftpd*  
+       
+    아무 반응 없이 나오면 설치 되어 있지 않은 것이다.
+
+2. 설치
+- 명령어 : # yum -y install vsftpd
+
+
+3. 다시 확인 !!
+   - 명령어 : rpm -qa vsftpd*
+ 
+
+: 설치 한 ftp의 버전이 보인다. (※ 참고 : 업데이트 명령어  # yum update vsftpd)
+
+
+4. 이제 vsftpd.conf 파일을 수정한다. (ftp의 설정 파일이다.)
+  - 명령어 : vi /etc/vsftpd/vsftpd.conf 
+  
+    vsftpd.conf 파일의 내용을 모두 삭제 하고, 밑에 내용으로 저장한다.
+    (※ 참고    vi 현재 줄 이하 모두 삭제 : 비주얼 모드(최초 기본 모드)에서 dG 입력 )
+
+ 
+#익명계정 접속허용여부
+anonymous_enable=NO 
+
+# 로컬계정 사용자의 접속허용여부
+local_enable=YES
+ 
+# 쓰기(upload) 허용여부
+write_enable=YES
+local_umask=022
+dirmessage_enable=YES
+ 
+# 파일전송 결과 로깅 여부
+xferlog_enable=YES
+connect_from_port_20=YES
+xferlog_std_format=YES
+listen=NO
+listen_ipv6=YES
+pam_service_name=vsftpd
+userlist_enable=YES
+tcp_wrappers=YES
+
+
+#
+chroot_local_user=YES
+chroot_list_enable=YES
+chroot_list_file=/etc/vsftpd/chroot_list
+
+
+4-1.사용자 등록
+ - 명령어 : vi /etc/vsftpd/chroot_list
+
+root
+test
+
+ 
+
+
+
+5. 시작, 중지, 상태 관련 명령어
+
+- 명령어 : # systemctl status vsftpd.service  :  vsftpd 상태확인
+- 명령어 : # systemctl start vsftpd.service  : vsftpd 시작
+- 명령어 : # systemctl stop vsftpd.service  : vsftpd 중지
+- 명령어 : # systemctl restart vsftpd.service : vsftpd 재시작
+?
+?6. 서버 재기동 시 vsftpd 자동실행 등록
+- 명령어 : # systemctl enable vsftpd.service
+
+
+7. ftp가 잘 접속 되는지 일단 방화벽을 중지 시키자. (포트 열기 전에 방화벽 중지 해서 접속 확인 하는 것이 센스 임)
+
+firewalld 실행 상태 확인
+- 명령어 : # systemctl status firewalld.service 
+
+firewalld 중지
+- 명령어 : # systemctl stop firewalld.service
+
+firewalld 실행
+- 명령어 : # systemctl start firewalld.service
+
+방화벽을 중지 하면 접속이 가능하나 실행하면 접속이 되질 않을 것이다. 방화벽 실행 시 포트를 열어줘야 접속이 가능하기 때문이다.
+
+
+8. 포트 21번 열기  (ftp 서버 포트 번호는 21번)
+
+  허용한 포트 목록 보기
+  - 명령어 : # firewall-cmd --list-ports 
+
+  포트 열기
+ - 명령어 : #   firewall-cmd --permanent --add-port=21/tcp
+ - 명령어 : #   firewall-cmd --permanent --zone=public --add-service=ftp
+
+ 방화벽 재실행
+- 명령어 : # firewall-cmd --reload
+
+
+9.업로드 안될시
+setsebool -P allow_ftpd_full_access on
+setsebool -P ftp_home_dir on
+
+

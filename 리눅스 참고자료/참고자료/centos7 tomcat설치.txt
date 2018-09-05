@@ -1,0 +1,34 @@
+1.download
+  http://apache.org
+
+2.지정된 위치에 압축풀기
+  /home/test/apache-tomcat_버전
+
+3.환경설정
+  .bash_profile에
+  export  CATALINA_HOME =/home/test/apache-tomcat_버전 
+
+4. CATALINA_HOME/conf/밑에
+
+  1) context.xml
+        <Context privileged="true"  reloadable="true"> 
+
+  2) server.xml  
+     -인코딩설정 
+       <Connector URIEncoding="utf-8"  port="8080" >
+     -WebApp경로설정
+       <Context baseDoc="/home/test/myapp"  path="">  
+     *** myapp폴더내에는 Webapp화일을 ftp를 통해서 넣어준다 
+          
+
+5. 포트 8080번 열기 
+
+  허용한 포트 목록 보기
+  - 명령어 : # firewall-cmd --list-ports 
+
+  포트 열기
+ - 명령어 : #   firewall-cmd --permanent --add-port=8080/tcp
+ - 명령어 : #   firewall-cmd --permanent --add-service=http
+
+ 방화벽 재실행
+- 명령어 : # firewall-cmd --reload

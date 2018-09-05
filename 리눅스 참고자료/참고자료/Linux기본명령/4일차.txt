@@ -1,0 +1,739 @@
+● 네트워크 관리
+
+  1. 네트워크 용어 및 관련 파일
+
+    - 프로토콜(Protocol) : 통신규약 - 네트워크 기능을 구현하기 위한 여러 가지 통신 약속
+
+      ]# vi /etc/protocols  =>  리눅스에서 사용 가능한 프로토콜 목록 확인  
+
+      IP(IPV4) : 컴퓨터에 부여할 네트워크 주소(ip주소)에 대한 약속
+
+             => 32bit(8bit 4개로 구분)    ex) 210.181.1.24
+
+         ※ 8bit : 0~255
+
+      IPV6 :  128bit로 구현된 네트워크 주소에 대한 약속      
+
+             => 128bit(16bit 8개로 구분)   ex) 2001:0230:abcd:ffff:0000:0000:ffff:1111
+
+      TCP : 신뢰할 수 있는 end-to-end 스트림 통신 프로토콜
+
+          => 데이타가 없어지거나 부분적으로 손상되는 상황을 막기 위한 프로토콜
+
+      UDP : 신뢰할 수 없는 end-to-end 데이타그램 서비스를 제공하는 통신 프로토콜
+
+          => 간단한 요청-응답 매커니즘을 기반으로 한 프로그램을 작성할 경우 사용하며 
+ 
+             패킷 손실 감지와 재전송은 상대편이 책임지도록 하는 프로토콜
+
+    - 네트워크 서비스 : TCP 또는 UDP에 의해 데이타 전송이 가능한 서비스 프로그램
+
+      ]# vi /etc/services   =>  리눅스에서 사용 가능한 네트워크 서비스 목록 확인
+      네트워크서비스명      port번호/프로토콜   [별명 ....]
+
+      ※ 네트워크서비스 앞에 #를 붙이면 서비스를 사용할 수 없다.
+ 
+      ※ port : 네트워크서비스가 사용하기 위한 논리적인 통로 번호       
+
+              => 포트번호(16bit)는 0부터 65535까지 사용 가능
+
+              => 0부터 511 사이의 포트는 TCP/IP 기반의 어플리케이션(HTTP, SSH, FTP등)으로 사용되도록 예약되어 있어며
+                 512부터 1023까지는 운영체제(파일공유등)에서 사용되도록 예약되어 있다.
+
+       ※ 예약되어 있는 port
+
+           ftp : 파일 전송 서비스 => 21
+
+           ssh : 원격 로그인 서비스(보안)  => 22
+
+           telnet : 원격 로그인 서비스  => 23
+
+           smtp : 메세지(메일) 송신 서비스  => 25
+
+           domain : DNS 서비스(도메인호스트을 ip주소로 변환)   =>  53
+
+           http : 웹 서비스  =>   80
+
+           pop3 : 메세지(메일) 수신 서비스  =>  110
+
+           imap : 메세지(메일) 수신 서비스  =>  143
+
+           oracle : DB 서비스  =>  1521
+
+           mysql : DB 서비스  =>  3306
+
+    - ip주소(ip Address) : 네트워크를 이용하기 위해 컴퓨터에 부여된 고유의 네트워크 주소
+
+      ※ ip주소의 종류 
+
+         공인 ip 주소 : ISP에서 부여한 ip주소
+
+         사설 ip 주소 : 내부 네트워크 통신망에서 사용 가능한 ip 주소 => ip공유기
+
+              A 클래스 => 0.0.0.0~127.255.255.255 ip 주소중 10.0.0.0~10.255.255.255 ip주소는 사설 ip주소(A클래스 1개)
+
+              B 클래스 => 128.0.0.0~191.255.255.255 ip주소중 172.16.0.0~172.31.255.255 ip주소는 사설 ip주소(B클래스 16개)
+
+              C 클래스 => 192.0.0.0~223.255.255.255 ip주소중 192.168.0.0~192.168.255.255 ip주소는 사설 ip주소(C클래스 256개)
+
+      ※ ip주소 할당
+
+         => DHCP 서버에 의해 자동 할당(동적 ip주소)
+
+         => ip주소를 직접 할당(정적 ip주소) 
+
+    - 서브넷 : 네트워크 성능을 개선하고 체계적으로 구성하기 위해 분할해 놓은 네트워크 그룹
+
+       => 서브넷을 이용하는 이유
+
+          > 지역적인 한계성을 극복
+          > 효율적인 네트워크 트래픽 제어
+          > 서로 다른 네트워크 그룹간의 보안을 강화
+          > 물리적인 네트워크 구성의 효율성 추구
+
+    - 넷마스크 주소(Netmask Address)  : 네트워크를 서브넷으로 나눌때 필요한 주소 => 네트워크 그룹 규모
+
+       A 클래스 => 255.0.0.0  : 0.0.0.0~127.255.255.255 ip주소(256*256*256개의 ip주소를 가진 네트워크그룹)
+
+       B 클래스 => 255.255.0.0  : 128.0.0.0~191.255.255.255 ip주소(256*256개의 ip주소를 가진 네트워크그룹)
+
+       C 클래스 => 255.255.255.0  :  192.0.0.0~223.255.255.255 ip주소(256개의 ip주소를 가진 네트워크그룹)
+
+    - 하드웨어 주소(Mac Address) : 이더넷 장치에 부여된 하드웨어 네트워크 주소
+
+    - 네트워크 주소(Network Address) : 네트워크 그룹에 부여되는 ip주소
+
+       => 네트워크 그룹의 첫번째 ip주소가 자동으로 할당
+
+       ex) 192.168.0.0~255의 C 클래스 그룹 => 192.168.0.0 : 네트워크 주소
+
+    - 브로드캐스트 주소(Boradcast Address) : 네트워크 그룹에서 데이타를 공유하기 위한 ip 주소
+ 
+       => 네트워크 그룹의 마지막째 ip주소가 자동으로 할당
+           
+       ex) 192.168.0.0~255의 C 클래스 그룹 => 192.168.0.255 : 브로드캐스트 주소
+
+    - 라우터(Router) : 네트워크 그룹을 연결시키기 위한 통신장비
+
+       => 다른 네트워크 그룹으로 이동할 경우 반드시 라우터를 통과해야 된다.(네트워크 그룹의 출입구)   
+
+    - 게이트웨이 주소(Gateway Address) : 네트워크 그룹에 존재하는 라우터에 부여된 ip 주소
+
+      => 네트워크 그룹내의 어떠한 ip주소를 사용해도 된다.    
+
+    - DNS 서버 : 문자로 만들어진 네트워크 컴퓨터명(domain hostname : 컴퓨터명+도메인)을 ip주소로 변환하는 서버
+
+       ex) www.naver.com  =>  202.131.30.11
+
+     ※ URL주소 => 인터넷상의 자원에 대한 고유주소
+
+        형식) 프로토콜://계정명@호스트명:port번호/경로/파일명 
+
+        ex)  http://www.naver.com   => www.naver.com 이름의 컴퓨터에게 익명계정으로 웹서비스의 80번 port을 이용해 /index.html 파일을 요청
+
+             ftp://ocj@ocj.ocj1778.com:1004/test/backup.sh
+
+     ]# vi /etc/sysconfig/network-scripts/ifcfg-eth0  
+
+         => 이더넷 장치에 설정된 네트워크 정보(ip주소,netmask주소,...)
+
+         => ifcfg-eth0 파일에서 ip주소를 변경한 경우 network 데몬을 재실행
+
+            ]# service network restart
+
+     ]# vi /etc/sysconfig/network
+
+         => 기본 네트워크 정보를 저장하고 있는 파일(Gateway 주소등)
+
+     ]# vi /etc/resolv.conf
+
+         => DNS 서버의 ip주소 저장
+
+     ※ NetworkManager 데몬이 실행된 경우 ip주소,netmask주소,gateway주소,DNS서버주소등이
+        /etc/sysconfig/network-scripts/ifcfg-eth0 모두 존재
+ 
+     ]# vi /etc/host.conf   =>   호스트명을 ip주소로 변환하기 위해 호스트명을 검색하는 순서를 지정
+     order hosts,bind
+
+      hosts => 내부 네트워크의 호스트명에 대한 정보를 가진 파일을 검색(/etc/hosts)
+
+      bind  => DNS 서버를 이용하여 검색(/etc/resolv.conf) 
+
+     ]# vi /etc/hosts    => 내부 네트워크의 호스트명에 대한 정보를 가진 파일  
+     ip주소     호스트명
+
+     ]# vi /etc/hosts.deny   =>  네트워크서비스(데몬)에 컴퓨터 차단
+     서비스명  :  ip주소 또는 그룹
+
+       => 선언된 컴퓨터는 서비스에 대한 접근이 차단되면 나머지 컴퓨터는 접근을 허용한다.
+
+     ex)  sshd : 172.16.5.0/24  =>  172.16.5로 시작되는 ip를 가진 컴퓨터에서는 sshd에 대한 접근 차단
+
+          ALL : ALL    =>  모든 네트워크 데몬에 대한 전체 컴퓨터 접근 차단
+
+     ]# vi /etc/hosts.allow    => /etc/hosts.deny의 반대파일
+         
+  2. 네트워크 명령
+
+    - ifconfig => 네트워크 인터페이스(장치)의 정보를 확인하거나 설정 변경
+
+      ]# ifconfig  => 네트워크 인터페이스 정보 확인
+
+      ]# ifconfig eth0 down  => eth0 네트워크 인터페이스를 비활성화	
+
+      ]# ifconfig eth0 up  => eth0 네트워크 인터페이스를 활성화	
+
+      ]# ifconfig eth0 172.16.5.253 netmask 255.255.255.0 up  => eth0 네트워크 인터페이스의 ip주소 및 netmask주소 변경(현재 쉴에만 적용)
+
+    - route => 라우트 테이블 정보 확인 및 라우터 테이블 정보 변경
+
+      ]# route   =>  라우트 테이블 정보 확인
+       
+      ]# route del default   => 라우트 테이블의 default gw 삭제
+
+      ]# route add default gw 172.16.7.254   => 라우트 테이블의 default gw 추가  
+
+    - nslookup  => DNS 서버을 이용하여 호스트명에 대한 ip주소를 확인
+
+      ]# nslookup www.naver.com 
+      Server:         210.181.1.24
+      Address:        210.181.1.24#53
+
+      Non-authoritative answer:
+      www.naver.com   canonical name = www.g.naver.com.
+      Name:   www.g.naver.com
+      Address: 202.131.30.12
+      Name:   www.g.naver.com
+      Address: 220.95.233.172
+
+    - ping : 컴퓨터간의 네트워크 연결 유무 확인 => 방화벽에 의해 응답이 없을 수 있다.
+
+      ]# ping www.google.com
+
+    - traceroute  :  목적지 컴퓨터까지 패킷이 제대로 전달되는지를 확인
+
+      ]# traceroute www.google.com
+
+    - netstat : 현재 사용중인 컴퓨터 네트워크 상태 정보를 확인
+
+      ]# netstat -nr    =>  라우터 테이블 확인
+
+      ]# netstat -na    =>  현재 사용중인 서비스 및 접속 정보 확인
+
+    - iptables  =>  패킷 필터링(방화벽)
+
+      ]# iptables -L   => iptable 정보 확인(/etc/sysconfig/iptables 방화벽 정책 정보를 저장한 파일)
+
+      ]# iptables -P OUTPUT DROP   =>  OUTPUT Chain의 기본 접근정책 변경
+
+      ]# iptables -F   =>  iptable 정보 초기화
+
+      ]# iptables -A INPUT -s 172.16.5.1 -p icmp -j DROP
+
+         => 출발지 주소가 172.16.5.1(-s)이 컴퓨터의  icmp 프로토콜(-p) 패킷을 거부(-j DROP) 하도록
+            INPUT Chain에 추가(-A)
+
+      ]# iptables -D INPUT -s 172.16.5.1 -p icmp -j DROP  
+
+         => 출발지 주소가 172.16.5.1(-s)이 컴퓨터의  icmp 프로토콜(-p) 패킷을 거부(-j DROP) 하도록
+            INPUT Chain에서 삭제(-D)
+
+      ]# iptables -A INPUT -p tcp --dport 21 -j DROP
+
+      ※ 레드햇 리눅스에서는 기본적인 방화벽 정책을 사용하고 있다.
+
+         => 기본적으로 모든 네트워크 서비스 port를 차단시키고 필요한 port 허용하는 정책 사용
+
+          ex) 80번 port를 사용하기 위해서는 iptables 명령을 이용하여 허용되도록 만들 수 있다.
+ 
+             => iptables 명령 사용 보다는 /etc/sysconfig/iptables 수정하는 것이 편하다.
+
+              ]# iptables -A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+
+              ]# iptables -A RH-Firewall-1-INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT              
+         
+              ]# service iptables save
+
+	      또는
+
+              ]# vi /etc/sysconfig/iptables
+              ...
+              -A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT   =>  추가
+              -A RH-Firewall-1-INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT   =>  추가
+
+            => 방화벽 정책 변경 후 데몬 재실행
+
+              ]# service iptables restart   =>  /etc/sysconfig/iptables을 이용하여 방화벽 정책 재설정
+
+      ※ iptables 명령을 이용하여 방화벽 정책을 변경한 경우 현재 쉘에만 적용되므로 반드시 파일에 저장되도록 만들어 주어야 된다.
+
+          ]# iptables -F    
+
+          ]# service iptables save   =>  iptable의 정책을 파일에 저장  
+
+          ]# service iptables restart
+          
+      ※ 방화벽 사용 유무 및 방화벽 정책은 메뉴방식의 명령을 이용해 보다 쉽게 제어 가능
+
+         ]# system-config-securitylevel-tui
+
+
+● DNS 서버 구축
+
+  - DNS 서버 : Domain HostName(ComputerName+Domain)을 ip주소로 변환하는 서버
+
+    => 외부 DNS 서버 : 도메인을 이용하여 도메인DB(.도메인)의 정보를 활용해 도메인에 대한
+                       내부 DNS 서버명과 ip 주소를 응답해 주는 서버
+
+       ex) ocj1778.com   =>  ns.ocj1778.com : 192.168.15.100
+
+    => 내부 DNS 서버 : 도메인 그룹에 등록된 ComputerName에 대한 ip 주소를 응답해 주는 서버
+         
+       ex) www.ocj1778.com    =>   www : 192.168.15.99
+
+  - DNS 서버 구축 방법
+
+    1. 도메인 구입 후 . 도메인에 도메인에 대한 정보(내부 DNS서버명과 ip주소)를 등록
+
+       ex) ocj1778.com   =>  ns.ocj1778.com : 192.168.0.80
+
+           ocj1778.co.kr  =>  ns.ocj1778.com : 192.168.0.80
+
+    2. DNS 서버 프로그램 설치 
+
+     ※ http://www.isc.org 에서 소스버전을 다운로드 받아 설치
+ 
+       ]# rpm -qa | grep bind        => 설치 유무 확인
+
+       ]# yum -y install bind        => yum 명령을 이용해 bind 설치 
+
+       ]# rpm -qa | grep bind
+       bind-9.3.6-20.P1.el5_8.6      => bind 프로그램
+       
+       ]# yum -y install caching-nameserver     =>  bind 프로그램에 필요한 환경설정 파일이 존재하는 패키지
+       
+       ]# rpm -qa | grep caching-nameserver
+
+    3. DNS 서버 환경설정 => zone(영역)을 생성
+ 
+      1) forward zone(순방향 영역) : 도메인(호스트명)을 ip 주소로 변환하는 정보를 가지고 있는 영역
+
+         => 도메인의 갯수만큼 생성
+        
+      2) reverse zone(역방향 영역) : ip 주소를 도메인(호스트명)으로 변환하는 정보를 가지고 있는 영역
+
+         => 1개만 생성(생략 가능)
+
+        ]# vi /etc/named.caching-nameserver.conf
+        options {
+                listen-on port 53 { any; };      => 127.0.0.1 - any 변경 : DNS 서비스 사용 port 지정(모든 컴퓨터에서 사용)
+                listen-on-v6 port 53 { ::1; };
+                directory       "/var/named";    =>  zone 파일을 생성하기 위한 디렉토리 지정 
+                dump-file       "/var/named/data/cache_dump.db";   => 캐쉬 덤프 파일의 위치 및 파일명 지정
+                statistics-file "/var/named/data/named_stats.txt";  => 통계파일의 위치 및 파일명 지정
+                memstatistics-file "/var/named/data/named_mem_stats.txt";   => 메모리 관련 통계 파일의 위치 및 파일명 지정
+
+                // Those options should be used carefully because they disable port
+                // randomization
+                query-source    port 53;     => //제거 : 쿼리(질의)을 받아들일 포트 
+                // query-source-v6 port 53;
+
+                allow-query     { any; };    => localhost - any 변경 : 쿼리를 사용할 수 있는 컴퓨터 지정
+                allow-query-cache { any; };  => localhost - any 변경
+        };
+        logging {                           => 실행시 오류 발생에 대한 디버깅 정보를 가진 로그파일의 위치 및 파일명 지정
+                channel default_debug {
+                        file "data/named.run";
+                        severity dynamic;
+                };
+        };
+        view localhost_resolver {
+                match-clients      { any; };   //localhost - any 변경 : 로컬 리졸버 허용 클라이언트 지정
+                match-destinations { any; };   //localhost - any 변경
+                recursion yes;                 //응답 허용 유무 
+                include "/etc/named.rfc1912.zones";   //zone(영역)을 선언하기 위한 파일 지정
+        };
+
+       ]# vi /etc/named.rfc1912.zones
+       zone "정보" IN {                   => 영역 지정
+ 	     type {hint|master|slave};    => zone의 형태 지정
+             file "파일명";               => zone에서 사용할 파일 : zone file
+             allow-update { key; };       => 2차 DNS에서 1차 DNS 참조시 인증하기 위한 key 값
+       };
+       ....
+
+        => 정보 : 도메인 - forward zone
+ 
+                  ip주소 - reverse zone                      
+
+        => type : hint - zone 파일을 다운로드 받는 zone인 경우
+ 
+                  master - zone 파일을 직접 생성하는 zone인 경우(1차 DNS 서버)
+
+                  slave - zone 파일을 1차 DNS의 zone파일을 복사하는 zone인 경우(2차 DNS 서버)
+
+        => zone 파일 : zone의 상세정보를 저장하고 있는 파일
+
+                       zone에서 설정할 값이 같은 경우 같은 zone파일을 사용해도 된다.
+ 
+    ex) ]# vi /etc/named.rfc1912.zones
+        ...
+        zone "ocj1778.com" IN {       =>  forward zond : ocj1778.com 도메인
+               type master;
+               file "ocj1778.com.zone";
+               allow-update { none; };
+         };
+ 
+         zone "ocj1778.co.kr" IN {    =>  forward zond : ocj1778.co.kr 도메인
+              type master;
+              file "ocj1778.co.kr.zone";
+              allow-update { none; };
+          };
+
+         zone "0.168.192.in-addr.arpa" IN {   => reverse zone : 192.168.15 네트워크 그룹 
+              type master;
+              file "ocj1778.rev";
+              allow-update { none; };
+         };
+
+    4. zone 파일 생성    =>  /var/named  디렉토리에서 생성
+
+       : zone 파일은 레코드 단위로 데이타를 표현
+
+     1) .도메인에 대한 zone 파일  
+
+         named.ca 파일은 다운로드  =>  wget 명령(URL 자원 다운로드 명령) 활용
+   
+         : 외부 DNS 서버 구축
+
+        ]# cd /var/named  
+
+        ]# wget ftp://ftp.internic.net/domain/named.cache 
+
+        ]# mv named.cache named.ca    => 파일명 변경  
+
+     2) reverse zone 파일  => ocj1778.rev
+
+       ※ zone 파일 맨 처음은 TTL 시간을 작성해 준다.
+
+         형식) $TTL  시간(초)  =>  zone 파일의 정보를 클라이언트가 기억하도록 요청하는 시간
+       
+       SOA 레코드 => 모든 zone 파일의 가장 먼저 선언되는 레코드
+
+                  => 도메인에 대한 권한이 있음을 알리는 레코드 및 2차 DNS가 1차 DNS를 참조하기 위한 시간 설정
+
+        형식) 도메인      IN    SOA    내부DNS서버명  도메인관리자이메일주소  (
+                                시리얼번호
+                                참조시간
+                                재참조시간
+                                포기시간
+                                정보삭제시간	)	 
+
+           => 도메인 대신 @를 사용해도 된다.
+
+           => 도메인 마지막에는 반드시 .를 붙인다.  
+
+               ex) ns.ocj1778.com.
+
+           => 도메인 관리자 이메일에는 @를 사용할 수 없다  
+
+               ex) ocj.ocj1778.com   => @ 대신 .을 사용
+
+           => 시리얼번호 :  2차 DNS 서버가 1차 DNS 서버의 Zone파일을 참조할 경우  1차 DNS 서버의 
+                            Zone 파일의 변경 유무를 확인하는 값 - 일반적으로 날짜 및 시간정보를 활용
+
+              참조시간 : 2차 DNS서버가 1차 DNS 서버를 반복적으로 참조하는 시간
+
+              재참조시간 : 2차 DNS서버가 1차 DNS 서버를 참조하기 위해 요청에 대해 응답이 없는 경우 다시 요청하기 위한 시간
+
+              포기시간 : 2차 DNS서버가 1차 DNS 서버를 참조할 경우 반복적인 요청에 응답이 계속 없을 경우 포기하는 시간 => 서버 중지
+              
+              정보삭제시간 : 1차 DNS서버의 정보를 2차 DNS 서버 cache에 저장하는 시간
+
+       NS 레코드  => 모든 zone 파일에 선언되며 SOA 레코드 아래 선언 
+
+           =>  도메인을 관리하기 위한 내부 DNS서버명 지정
+
+         형식)  도메인    IN     NS     내부DNS서버명
+
+               => 도메인은 SOA 레코드에서 @를 사용한 경우 생략 가능
+
+               => NS 레코드는 여러 개 선언 가능(1차 DNS 서버는 여러 개 선언)
+
+        PTR 레코드  =>  reverse zone에만 존재하는 레코드
+
+               => ip 주소는 호스트명으로 변경하는 정보를 가진 레코드
+
+         형식) ip주소   	IN     PTR     호스트명	
+
+       ex) ]# cd /var/named
+
+           ]# vi ocj1778.rev 
+           $TTL 86400
+           @       IN      SOA     ns.ocj1778.com. ocj.ocj1778.com.   (  
+	                   2015033014
+                           28800
+                           14400
+                           3600000
+                           86400   )
+
+                  IN      NS      ns.ocj1778.com.
+
+           80     IN      PTR     ns.ocj1778.com.
+ 
+
+     3) forward zone 파일  => ocj1778.com.zone  또는 ocj1778.co.kr.zone
+
+        ※ forward zone파일은 reverse zone 파일과 동일하게 TTL, SOA 레코드 및 NS 레코드로 시작된다. 
+
+        MX 레코드  => 일반적으로 forward zone 파일에 선언한다. 
+
+                   => 도메인을 이용한 메일 서버명을 지정(메일서버를 구축할 경우 반드시 선언해야 되는 레코드)
+
+         형식)  도메인	   IN      MX   숫자    메일서버명
+
+        ※ 숫자 : 메일 주서버 및 메일 보조서버들을 구분하는 값
+
+           => 값이 적은 것이 메일 주서버
+
+           주서버 :  메일을 받아 계정에게 전달
+
+           보조서버 : 주서버가 고장날 것을 대비하여 만든 서버
+                      주서버가 고장난 경우 메일만 받아 저장
+
+       A 레코드  => forward zone 파일에만 설정
+
+                 => 호스트명을 ip주소로 변경하기 위한 정보를 저장한 레코드
+
+         형식)  호스트명    IN      A     ip주소     
+
+       CNAME 레코드  =>  기존 호스트명에 대한 alias명을 지정
+
+         형식)  호스트명    IN     CNAME    기존호스트명 
+
+      ex) ]# vi ocj1778.com.zone 
+          $TTL 86400
+          @       IN      SOA     ns.ocj1778.com. ocj@ocj1778.com.   (
+                          2015033014
+                          28800
+                          14400
+                          3600000
+                          86400   )
+
+                  IN      NS      ns.ocj1778.com.
+
+                  IN      MX      5       mail.ocj1778.com.
+
+                  IN      A       192.168.0.80 
+          www     IN      A       192.168.0.80 
+          cafe    IN      A       192.168.0.80 
+          blob    IN      A       192.168.0.80 
+          www2    IN      CNAME   www
+          ns      IN      A       192.168.0.80 
+          mail    IN      A       192.168.0.80 
+          ftp     IN      A       192.168.0.80 
+          mysql   IN      A       192.168.0.80 
+
+          ]# vi ocj1778.co.kr.zone
+          $TTL 86400
+          @       IN      SOA     ns.ocj1778.com. ocj@ocj1778.com.   (
+                          2013091314
+                          28800
+                          14400
+                          3600000
+                          86400   )
+
+                 IN      NS      ns.ocj1778.com.
+
+          www    IN      A       192.168.0.80
+      
+    ※ 환경설정 파일 및 zone 파일 검사
+          
+    ]# named-checkconf /etc/named.caching-nameserver.conf
+    
+    ]# named-checkconf /etc/named.rfc1912.zones
+    
+    ]# named-checkzone ocj1778.com /var/named/ocj1778.com.zone
+    zone ocj1778.com/IN: loaded serial 2014042222
+    OK
+    
+    ]# named-checkzone ocj1778.co.kr /var/named/ocj1778.co.kr.zone
+    zone ocj1778.co.kr/IN: loaded serial 2014042222
+    OK
+    
+    ]# named-checkzone 0.16.192.in-addr.arpa /var/named/ocj1778.rev
+    zone 0.16.192.in-addr.arpa/IN: loaded serial 2014042222
+    OK   
+
+    5. DNS 서버 프로그램을 실행 =>  named 이용하여 관리
+
+      ]# service named start     =>  실행
+
+      ]# ps -xa | grep named     =>  실행 여부 확인
+
+      ]# chkconfig --level 2345 named on   => 부팅시 자동 실행되도록 변경
+
+      ]# chkconfig --list | grep named    
+      named           0:해제  1:해제  2:활성  3:활성  4:활성  5:활성  6:해제
+
+    6. DNS 서버에 대한 요청 응답 확인
+
+      ]# nslookup www.ocj1778.com    =>  요청
+ 
+        => ip주소로 응답  
+
+      ※ 도메인에 대한 .도메인 등록이 되어 있지 않기 때문에 응답이 없다.
+         (잘못된 응답이 발생할 수도 있다.)
+
+         ]# vi /etc/resolv.conf
+         nameserver  210.181.1.24 
+                     ------------
+                           └ 192.168.0.80으로 변경 => 현재 서버의 ip주소로 변경 
+
+         ]# nslookup www.ocj1778.com
+         Server:         192.168.0.80
+         Address:        192.168.0.80#53
+
+         Name:   www.ocj1778.com
+         Address: 192.168.0.80
+
+      ※ 응답이 없을 경우 conf 파일 또는 zone 파일에 오류가 발생된 경우
+
+          =>  변경 후 named 재실행
+
+● 메일 서버 구축     
+
+  - 메일 서버의 역활
+
+    1) 메세지(메일)를 송신하는 역활 => smtp 서비스 : 25
+
+    2) 메세지(메일)을 수신하여 계정에게 전달하는 역활 => pop3 서비스 : 110 또는 imap 서비스 : 143
+
+  - 메일서버 구축 방법
+
+    1) 메일서버 프로그램 설치 
+
+       => sendmail(smtp 서비스) 프로그램 및 dovecot(pop3 서비스 및 imap 서비스) 프로그램
+
+      ]# rpm -qa | grep sendmail  =>  sendmail 설치 유무 확인
+
+      ※ 설치되어 있지 않은 경우
+
+         ]# yum -y install sendmail   =>  sendmail 설치
+
+      ]# rpm -qa | grep dovecot   =>  dovecot 설치 유무 확인
+
+      ]# yum -y install dovecot   =>  dovecot 설치
+       
+    2) DNS 서버의 forward zone 파일에 MX 레코드 추가
+
+       ex)      IN     MX    5    mail.ocj1778.com.
+
+       ※ 도메인에 대한 메일서버명 확인
+
+         ]# nslookup
+         > set type=mx          => 응답형식 변경  (MX 지정 호스트명 출력)
+         > ocj1778.com          => 도메인
+         Server:         192.168.15.40
+         Address:        192.168.15.40#53
+  
+         ocj1778.com     mail exchanger = 5 mail.ocj1778.com.    => 메일서버명 출력
+         > exit
+
+    3) 메일서버 환경설정
+
+      ]# vi /etc/mail/sendmail.cf  => sendmail 프로그램의 환경설정 파일
+      ...
+      Cwocj1778.com     =>  89라인 : "Cwlocalhost"를 "Cw도메인"으로 변경
+                                     메일서버가 사용하기 위한 도메인을 지정
+                                     
+       ※ 도메인이 여러 개 있는 경우 Cw를 더 추가하면 된다. 또는 Fw에서 지정한 파일에 도메인을 추가하면 된다.
+
+      O DaemonPortOptions=Port=smtp, Name=MTA    =>  265라인 : ,Addr=127.0.0.1 삭제
+
+        => smtp를 사용할 수 있는 컴퓨터를 지정, Addr을 생략하면 전체 컴퓨터
+             
+      ]# vi /etc/dovecot.conf    =>  dovecot 프로그램의 환경설정 파일
+      ...
+      base_dir = /var/run/dovecot/    => 16라인 : # 제거 - dovecot 프로그램이 설치된 디렉토리
+     
+      protocols = imap imaps pop3 pop3s   =>  20라인 : # 제거 - dovecot 프로그램을 이용해 사용할 수 있는 프로토콜
+
+      listen = *    => 39라인 : # 제거 후 [::]를 *로 변경 - dovecot 프로그램을 사용할 수 있는 컴퓨터
+
+      ssl_listen = *   => 82라인 : # 제거 후 * 입력 - SSL 기능 사용 컴퓨터 지정
+
+      ssl_disable = no  =>  85라인 : # 제거 : SSL 기능 사용 유무 설정
+
+      login_dir = /var/run/dovecot/login  => 133라인 : # 제거 - dovecot 사용 계정 로그인 디렉토리 지정
+
+      login_user = dovecot   => 143라인 : # 제거 - dovecot 사용 계정 지정
+
+      mail_location = mbox:~/mail:INBOX=/var/mail/%u => 214라인 : # 제거후 파일명 지정 - 메일이 저장되는 경로 및 파일명 지정
+
+         ※ 위에 선언된 mail_location 예제 중 하나 선택
+
+      mail_access_groups = mail  =>  267라인 : # 제거 그룹명 입력 - 메일에 접근 가능한 그룹 지정
+
+      lock_method = fcntl   =>  313라인 : # 제거 - 메일 보안 기능 지정
+          
+      login_executable = /usr/libexec/dovecot/imap-login  => 511라인 : # 제거 - dovecot 로그인 후 사용 가능한 프로토콜로 지정
+
+      mail_executable = /usr/libexec/dovecot/imap  => 523라인 : #제거 - dovecot를 이용하여 imap 사용
+
+      login_executable = /usr/libexec/dovecot/pop3-login   =>  576라인  : # 제거 - dovecot 로그인 후 사용 가능한 프로토콜로 지정
+
+      mail_executable = /usr/libexec/dovecot/pop3   =>  580라인 : # 제거 - dovecot를 이용하여 pop3 사용
+ 
+      auth_executable = /usr/libexec/dovecot/dovecot-auth   =>  682라인 : # 제거 - dovecot를 이용한 계정 인증 처리 지정
+  
+    4) 메일서버 관련 데몬 실행
+
+      ]# ps -xa | grep sendmail   => 실행 확인 
+
+      ]# service sendmail restart   =>  이미 실행된 경우 재실행
+
+      ]# chkconfig --level 2345 sendmail on  =>  부팅시 자동 실행
+
+      ]# ps -xa | grep dovecot
+
+      ]# service dovecot start   =>  실행되어 있지 않는 경우 실행
+
+      ]# chkconfig --level 2345 dovecot on 
+
+    5) 메일 access 설정
+
+       => 메일 송수신에 대한 환경설정
+
+       => 메일 송신은 전체 차단되어 있으며 수신은 전체 허용을 기본 설정으로 한다.
+
+      ]# vi /etc/mail/access
+      {도메인|ip주소|이메일}          {OK|RELAY|REJECT|DISCARD}
+       
+        OK       =>  송수신 모두 허용 
+        RELAY    =>  송신 허용
+	REJECT   =>  수신 반송
+        DISCARD  =>  수신 파기
+
+      ex) ]# vi /etc/mail/access
+          192.168.15	  	RELAY 
+          ocj1778.com		RELAY
+          @yahoo.com		REJECT
+          game@			DISCARD
+
+       => 파일을 수정한 경우 메일서버의 access_db를 업데이트 해야만 된다.
+ 
+         ]# makemap hash /etc/mail/access < /etc/mail/access
+
+    ※ 메일 alias 기능
+
+       => 특정 계정에 전달된 메일을 다른 계정들에게 전송하는 기능   
+
+       ]# vi /etc/aliases
+       계정명   :     계정명,계정명,계정명,....
+
+       ex) root  :  ocj
+
+       ]# newaliases      =>  메일서버의 alias_db 업데이트
+
+    6) 메일 송수신 테스트   =>  windows의 아웃룩을 이용하여 테스트

@@ -126,7 +126,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\2018_0903_SpringVisitMysql" path="/visit" reloadable="true" source="org.eclipse.jst.jee.server:2018_0903_SpringVisitMysql"/><Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\2018_0730_XmlTest" path="/2018_0730_XmlTest" reloadable="true" source="org.eclipse.jst.jee.server:2018_0730_XmlTest"/></Host>
+      <Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\2018_0903_SpringVisitMysql" path="/visit" reloadable="true" source="org.eclipse.jst.jee.server:2018_0903_SpringVisitMysql"/><Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\2018_0730_XmlTest" path="/2018_0730_XmlTest" reloadable="true" source="org.eclipse.jst.jee.server:2018_0730_XmlTest"/><Context docBase="C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\2018_0703_MyWebTest" path="/2018_0703_MyWebTest" reloadable="true" source="org.eclipse.jst.jee.server:2018_0703_MyWebTest"/></Host>
     </Engine>
   </Service>
 </Server>

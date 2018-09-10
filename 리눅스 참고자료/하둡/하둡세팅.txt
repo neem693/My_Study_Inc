@@ -1,0 +1,371 @@
+* 방화벽 제거
+
+  하둡계정으로 로그인해서 su root->암호입력->1234
+  관리자로 전환한 뒤
+ 
+[root@localhost ~]# systemctl status firewalld.service     : 방화벽 상태 확인
+[root@localhost ~]# systemctl stop firewalld                 : 방화벽 서비스 정지
+[root@localhost ~]# systemctl mask firewalld                : 방화벽 삭제
+===============================================
+
+       slave1->slave1 10.0.2.10 (hostname->slave1)
+       slave2->터미널 hostname바꿔준다.11 적용
+                    다시 시작(10.0.2.11) (hostname->slave2)
+       slave3->10.0.2.12 (hostname->slave3)
+
+* hostname을 변경->nameserver1으로 변경한 경우
+
+[hadoop@localhost ~]$ hostnamectl set-hostname nameserver1
+
+* 모든 노드들을  등록해 준다.(Master에서 처리)
+
+[root@localhost ~]# vi /etc/hosts
+10.0.2.5        nameserver1
+10.0.2.10       slave1
+10.0.2.11       slave2
+10.0.2.12       slave3
+
+----------------------------------------------------
+
+각 서버에 접속
+ssh hadoop@slave11234
+ssh hadoop@nameserver1
+==============================
+ 장치-->가상이미지 맨 마지막 메뉴선택->프로그램을 자동으로 설치한다.
+ 복사 붙여넣기 때문에 설정을 한다.
+ 드래그 앤 드롭 을 양방향으로 설정을 한 후 
+ cd 오click->cd 꺼내기 한후 다시 재부팅을 한다.
+
+ 2.7.7을 설치
+
+-------------------------
+ls -al /etc/alternatives/java로 버전을 확인할 것.
+로 자바 버전을 확인할것.
+=================================================
+프로그램의 보조프로그램->gedit을 열어서 
+붙여넣기 할것.
+
+
+* ssh 작업
+[hadoop@nameserver1 ~]$ ssh-keygen -t rsa      #ssh 키 생성
+[hadoop@nameserver1 ~]$ cd .ssh/
+[hadoop@nameserver1.ssh]$ scp id_rsa.pub /home/hadoop/.ssh/authorized_keys  
+[hadoop@nameserver1.ssh]$ scp id_rsa.pub hadoop@slave1:/home/hadoop/.ssh/authorized_keys
+[hadoop@nameserver1.ssh]$ scp id_rsa.pub hadoop@slave2:/home/hadoop/.ssh/authorized_keys
+[hadoop@nameserver1.ssh]$ scp id_rsa.pub hadoop@slave3:/home/hadoop/.ssh/authorized_keys
+
+아래 입력하면 암호 묻는 작업을 하지 않게 된다.  1회만 실행하면 된다.
+[hadoop@nameserver1 ~]$ ssh hadoop@slave1
+[hadoop@slave1 ~]$ ssh hadoop@nameserver1
+
+
+
+* Hadoop 설치 시작 ---------------------------------------
+[hadoop@nameserver1 ~]$ wget http://apache.mirror.cdnetworks.com/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
+[hadoop@nameserver1 ~]$ tar xvzf hadoop-2.7.7.tar.gz   
+
+환경 설정
+[hadoop@nameserver1 ~]$ vi .bash_profile
+---------------------------------------------------------------------------------------------
+# User specific environment and startup programs
+#export JAVA_HOME=/usr/java/jdk1.8.0_60
+===>자바의 버전을 꼭 확인을 하고나서 실행할것.
+===================================================
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.71-2.b15.el7_2.x86_64
+export HADOOP_HOME=/home/hadoop/hadoop-2.7.7     
+ 
+PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin  
+export PATH
+--------------------------------------------------------------------------
+==>master에서 작업을 한다.
+===============================
+수정된 내용으로 등록->source명령어를 이용해서 적용을 시킨다.
+====================================
+
+[hadoop@nameserver1 ~]$ source .bash_profile     
+[hadoop@nameserver1 ~]$ cd hadoop-2.7.7/etc/hadoop/     
+[hadoop@nameserver1 hadoop$ vi hadoop-env.sh     
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.71-2.b15.el7_2.x86_64
+
+[hadoop@nameserver1 hadoop]$ vi yarn-env.sh     
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.71-2.b15.el7_2.x86_64
+============================
+->localhost대신에 아래와 같이 3개의 항목을 추가 할것.   
+============================
+[hadoop@nameserver1 hadoop]$ vi slaves     
+slave1
+slave2
+slave3
+
+[hadoop@nameserver1 hadoop]$ vi core-site.xml    
+<configuration>
+    <property>
+        <name>fs.default.name</name>->네임로드 위치를 지정하고 있다
+        <value>hdfs://nameserver1:9000</value>==>9000포트번호를 쓴다는것 잊지말것.
+    </property>
+    <property>
+         <name>hadoop.tmp.dir</name>                                  하둡서버에서 
+         <value>/home/hadoop/hadoop-2.7.7/tmp/</value>=>임시데이터를 지정하는곳
+    </property>
+</configuration>
+
+tmp디렉토리를 만들어줘야 된다.
+------------------------------------------------------------------
+[hadoop@nameserver1 hadoop]$ mkdir /home/hadoop/hadoop-2.7.7/tmp
+
+[hadoop@nameserver1 hadoop]$ vi hdfs-site.xml     
+<configuration>
+      <property>
+          <name>dfs.replication</name>
+          <value>3</value>  ==>동일한 데이터를 3개씩 복제를 하겠다는말
+     </property>
+     <property>
+          <name>dfs.permissions</name>
+          <value>false</value>==>프로그램때문에 권한에러(true주면)
+                                            ==>false를 줘야 된다.
+     </property>
+     <property>
+          <name>dfs.namenode.secondary.http-address</name>
+          <value>slave1:50090</value>=>세컨더리로 쓰고있다고 설정을 한다.
+                                                         =>예비 -master가 죽게되면 백업용으로 쓰기위해서
+     </property>
+     <property>
+          <name>dfs.namenode.secondary.https-address</name>
+          <value>slave1:50091</value>=>slave2,slave3은 데이터 노드임
+     </property>
+</configuration>
+
+[hadoop@nameserver1 hadoop]$ cp mapred-site.xml.template mapred-site.xml 
+[hadoop@nameserver1 hadoop]$ vi mapred-site.xml    
+<configuration>	
+    -------------->추가부분 맵리듀스와 설정부분을 해준다.->프레임워크로 yarn을 써준다는
+                          표시
+     <property>
+          <name>mapreduce.framework.name</name>
+          <value>yarn</value>
+     </property>
+</configuration>
+
+=>yarn-site.xml(2.x)버전에서만 사용을 한다.
+===============================
+
+[hadoop@nameserver1 hadoop]$ vi yarn-site.xml   
+<configuration>
+<!-- Site specific YARN configuration properties -->     
+     <property>
+          <name>yarn.nodemanager.aux-services</name>
+          <value>mapreduce_shuffle</value>
+     </property>
+     <property>
+          <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+          <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+     </property>
+     <property>
+          <name>yarn.resourcemanager.resource-tracker.address</name>
+          <value>nameserver1:8025</value>
+     </property>
+     <property>
+          <name>yarn.resourcemanager.scheduler.address</name>
+          <value>nameserver1:8030</value>
+     </property>
+     <property>
+          <name>yarn.resourcemanager.address</name>
+          <value>nameserver1:8040</value>
+     </property>
+</configuration>
+
+설정 사항을 Slave 서버에 배포 -----------------------------------
+=====================================
+1) 하둡 디렉토리 배포
+[hadoop@nameserver1 hadoop]$ cd
+[hadoop@nameserver1 ~]$ scp -r /home/hadoop/hadoop-2.7.7 hadoop@slave1:~
+...
+hadoop@nameserver1 ~]$ scp -r /home/hadoop/hadoop-2.7.7 hadoop@slave2:~  
+                                       slave2에도 복사를 해준다.
+hadoop@nameserver1 ~]$ scp -r /home/hadoop/hadoop-2.7.7 hadoop@slave3:~ 
+
+2) 계정 profile 배포
+[hadoop@nameserver1 ~]$ scp /home/hadoop/.bash_profile hadoop@slave1:~
+...
+[hadoop@nameserver1 ~]$ scp /home/hadoop/.bash_profile hadoop@slave2:~
+[hadoop@nameserver1 ~]$ scp /home/hadoop/.bash_profile hadoop@slave3:~
+-----------------------------------------------------------------------------
+
+[hadoop@nameserver1 ~]$ hadoop namenode -format    
+=================================
+실행방법 ) 
+하둡 시작
+
+ hdfs명령어 확인
+=================
++++ dfs 서브 명령어 +++++++++++++++++++++++++++++++++
+
+cat  : src에서 지정한 파일 시스템 상의 파일 내용을 표준출력으로 표시한다.
+
+   형식1 : $ hadoop fs -cat [-ignoreCrc] <src> …
+
+   형식2 : $ hdfs dfs -cat [-ignoreCrc] <src> …
+
+   
+   $ hdfs dfs -cat /path/to/file1
+
+   $ hdfs dfs -cat hdfs://nn.example.com/file2
+
+
+chgrp : path에서 지정한 파일의 소유 그룹을 group으로 변경한다. -R을 사용해 디렉토리 내부의 파일에 대해 재귀적으로 실행할 수 있다.
+
+   형식 : $ dfs -chgrp [-R] <group> <path> …
+
+
+chmod : 파일 접근 권한을 변경한다.
+
+   형식 : $ hdfs dfs -chmod [-R] <mode>… | <octalmode> <path> …
+
+
+
+chown : <path>에서 지정한 파일 시스템 상의 파일 소유자나 소유 그룹을 <owner>와 <group>으로 변경한다.
+
+   형식 : $ hdfs dfs -chown [-R] [<owner>][:[<group>]] <path> …
+
+
+copyFromLocal : <localsrc>에서 지정한 로컬 파일 시스템 상의 파일을 <dst>에서 지정한 파일 시스템 상의 경로로 복사한다.
+
+  형식 : $ hdfs dfs -copyFromLocal <localsrc>…<dst>
+
+
+copyToLocal : <src>에서 지정한 로컬 파일 시스템 상의 파일을 <localdst>에서 지정한 파일 시스템 상의 경로로 복사한다.
+
+  형식 : $ hdfs dfs -copyToLocal [-ignoreCrc] [-crc] <src> … <localsrc>
+
+
+count : <path>에서 지정한 로컬 파일 시스템 상의 경로 아래에 있는 파일이나 디렉토리 수 및 바이트 수를 카운트한다.
+
+ 형식 : $ hdfs dfs -count [-q] <path> …
+
+
+
+cp : <src>에서 지정한 파일 시스템 상의 파일을 <dst>에서 지정한 경로로 복사한다.
+
+  형식 : $ hdfs dfs -cp <src>…<dst>
+
+
+du : <path>에서 지정한 파일 시스템 상의 파일 및 디렉토리 크기를 표시한다.
+
+  형식 : $ hdfs dfs -du [-s] [-h] <path>
+
+
+expunge : rm 명령으로 휴지통으로 이동한 파일을 완전히 삭제한다.
+
+  형식 : $ hdfs dfs -expunge
+
+
+get : <src>에서 지정한 파일을 <localdst>에서 지정한 로컬 파일 시스템 상의 경로로 복사한다.
+
+  형식 : $ hdfs dfs -get [-ignoreCrc] [-crc] <src>…<localdst>
+
+getmerge : <src>가 가리키고 있는 경로 아래에 있는 파일들을 병합해서 <localdst>가 가리키는 로컬 파일 시스템 상의 파일로 출력한다.
+
+  형식 : $ hdfs dfs -getmerge [-nl] <src> <localdst>
+
+help : 도움말 표시
+
+ls  : 파일이나 디렉토리 상태를 표시
+
+mkdir : 디렉토리 작성
+
+moveFromLocal : 파일 이동
+mv  : 파일 이동
+put : 파일 복사
+rm : 파일 삭제
+rmdir : 디렉토리 삭제
+
+stat : 지정한 파일 또는 디렉토리의 통계정보를 출력
+
+tail : 파일 끝 부분의 1kb를 표시
+text : 파일의 내용을 텍스트 형태로 출력한다.
+
+touchz : 지정한 파일 시스템 상의 경로에, 크기가 0인 파일을 작성한다.
+============================================
+실행방법 ) 
+하둡 시작
+[hadoop@nameserver1 ~]$ start-dfs.sh
+[hadoop@nameserver1 ~]$ start-yarn.sh    
+
+===================================
+[hadoop@nameserver1 ~]$jps 명령어를 입력했을때
+
+  ReourceManager
+  NameNode
+  Jps
+====================================
+===================================================================
+ slave1로 로그인->hadoop으로로그인->jps 명령어를 입력하면 SecondNameNode가 나오는지
+ 확인할 것.
+================================================================================
+ slave2로 로그인->hdoop으로 로그인->jps->DataNode가 나오는지 확인할것.
+=============================================
+---------------------------------------------------------------------------------
+하둡 종료
+[hadoop@nameserver1 ~]$ stop-dfs.sh
+[hadoop@nameserver1 ~]$ stop-yarn.sh
+
+ 
+~}$ mr-jobhistory-daemon.sh start historyserver
+ ---------------------------------------------
+  jps명령어 jobhistory서버까지 가동이 되어야 한다.
+======================================================
+ 브라우저에서 확인
+
+ firefox
+
+                                        
+* Summary(HDFS 상태 확인)    :   http://localhost:50070/
+
+ ->DataNode의 slave1,slave2,slave3을 확인할것.
+ ===============================================
+  tmp디렉토리 확인--->하둡에 만들어진 디렉토리를 확인할 것.
+ ==========================================================
+
+===========================================================
+ nameserver1 ~] hdfs dfs -mkdir /mytest ===>웹상에서 새로고침을 해서 확인을 해본다.
+ nameserver1 ~] pwd
+                vi my.txt
+ 인터넷의 내용을 끌어서 복사->붙여넣기 할것.
+
+:wq
+============================================
+ ~] cat my.txt-->리눅스에서 만든 파일임.
+
+ ->하둡에 저장할것.
+ nameserver1 ~] hdfs dfs -put my.txt /mytest  =>mytest폴더에 저장이 되는지를 확인
+
+ ->웹상에서 새로고침해서 하둡에 저장이 되는지를 확인할것.
+==============================================================================
+slave1,slave2,slave3에 복제가 되어서 들어감을 확인할 수가 있따.(3군데에 복제를 해줌)
+-----------------------------------------------------------------------------------
+ 
+ nameserver1 ~] hdfs dfs -ls  /mytest/->목록을 보여주기
+ nameserver1 ~] hdfs dfs -cat  /mytest/my.txt =>내용을 확인해 보자
+=================================================================================
+=>속도가 느리다.---------->속도를 빠르게 할려면 오라클,MariaDB를 해줘야 된다.
+---------------------------------------------------------------------------------
+* All Applications           :   http://localhost:8088/ ==>yarn확인(노란 코끼리)를 확인할것.
+                                 Node를 확인할 것.
+-----------------------------------------------------
+ localhost:19888->JobHistory->웹상에서 확인 하수 있다.(히스토리 서버)가동 확인
+-------------------------------------------------------
+ jps명령어로  서버 
+===================================================
+* Summary(HDFS 상태 확인)    :   http://localhost:50070/
+* All Applications           :   http://localhost:8088/
+
+마스터만 제대로 서비스 종료시킨후 종료시킨다.
+===================================
+
+예제 실행
+[hadoop@nameserver1 hadoop-2.7.7]$ hdfs dfs -mkdir /test
+[hadoop@nameserver1 hadoop-2.7.7]$ hdfs dfs -copyFromLocal ./NOTICE.txt /test
+[hadoop@nameserver1 hadoop-2.7.7]$ hdfs dfs -cat /test/NOTICE.txt
+[hadoop@nameserver1 hadoop-2.7.7]$ hadoop jar /home/hadoop/hadoop-2.7.7/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.7.jar wordcount /test/NOTICE.txt /output
+[hadoop@nameserver1 hadoop-2.7.7]$ hdfs dfs -ls /output
+[hadoop@nameserver1 hadoop-2.7.7]$ hdfs dfs -cat /output/part-r-00000

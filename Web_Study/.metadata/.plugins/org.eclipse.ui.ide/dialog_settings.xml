@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\My_Study\Web_Study\HangulAnalyzer"/>
+		<item value="C:\My_Study\리눅스 참고자료\HangulAnalyzer"/>
 		<item value="C:\Users\UIO\Desktop\workplace\My_Study_Inc\Web_Study"/>
 		<item value="C:\My_Study\Web_Study"/>
 	</list>

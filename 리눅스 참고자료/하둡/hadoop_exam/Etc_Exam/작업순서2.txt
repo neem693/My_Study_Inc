@@ -14,17 +14,17 @@ $ javac -classpath hadoop-core-1.2.1.jar -d units2 ProcessUnits2.java
 $ jar -cvf units2.jar -C units2/ . 
 
 Step 4
-hdfs dfs -mkdir /input_dir2 
+hdfs dfs -mkdir /input_dir 
 
 Step 5
-hdfs dfs -put /home/hadoop/sample.txt /input_dir 
+hdfs dfs -put ./sample.txt /input_dir 
 
 
 Step 6
-hadoop jar units2.jar hadoop.ProcessUnits2 /input_dir2 /output_dir2
+hadoop jar units2.jar hadoop.ProcessUnits2 /input_dir /output_dir2
 
 Step 7
 hdfs dfs -ls /output_dir2
 
 Step 8
-hdfs dfs -cat /output_dir/part-00000
+hdfs dfs -cat /output_dir2/part-00000

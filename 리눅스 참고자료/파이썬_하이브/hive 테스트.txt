@@ -1,0 +1,71 @@
+hive>create external table test_tb(line string);
+
+hive>load data inpath 'hdfs://nameserver1:9000/mytest/my.txt' overwrite into table test_tb;
+
+hive>create table word_hive as
+     select word,count(1) cnt
+     from (select explode(split(line,' ')) as word from test_tb) w
+     group by word;
+
+
+결과확인
+hive>select * from word_hive limit  10;
+
+
+
+select split(line,"  ")[0] as year , 
+       split(line,"  ")[1] as m1, 
+       split(line,"  ")[2] as m2,
+       split(line,"  ")[3] as m3,
+       split(line,"  ")[4] as m4,
+       split(line,"  ")[5] as m5,
+       split(line,"  ")[6] as m6,
+       split(line,"  ")[7] as m7,
+       split(line,"  ")[8] as m8,
+       split(line,"  ")[9] as m9,
+       split(line,"  ")[10] as m10,
+       split(line,"  ")[11] as m11,
+       split(line,"  ")[12] as m12
+from test_tb;
+
+
+select m1,sum(m1)
+from (
+       select split(line,"  ")[0] as year , 
+       split(line,"  ")[1] as m1, 
+       split(line,"  ")[2] as m2,
+       split(line,"  ")[3] as m3,
+       split(line,"  ")[4] as m4,
+       split(line,"  ")[5] as m5,
+       split(line,"  ")[6] as m6,
+       split(line,"  ")[7] as m7,
+       split(line,"  ")[8] as m8,
+       split(line,"  ")[9] as m9,
+       split(line,"  ")[10] as m10,
+       split(line,"  ")[11] as m11,
+       split(line,"  ")[12] as m12
+from test_tb
+    ) t
+group by m1
+
+
+
+
+
+select sum(m1) s1,sum(m2) s2,sum(m3) s3
+from (
+       select split(line,"  ")[0] as year , 
+       split(line,"  ")[1] as m1, 
+       split(line,"  ")[2] as m2,
+       split(line,"  ")[3] as m3,
+       split(line,"  ")[4] as m4,
+       split(line,"  ")[5] as m5,
+       split(line,"  ")[6] as m6,
+       split(line,"  ")[7] as m7,
+       split(line,"  ")[8] as m8,
+       split(line,"  ")[9] as m9,
+       split(line,"  ")[10] as m10,
+       split(line,"  ")[11] as m11,
+       split(line,"  ")[12] as m12
+       from test_tb
+    ) 

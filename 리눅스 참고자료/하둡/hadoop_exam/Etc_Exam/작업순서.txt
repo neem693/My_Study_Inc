@@ -17,7 +17,7 @@ Step 4
 hdfs dfs -mkdir /input_dir 
 
 Step 5
-hdfs dfs -put /home/hadoop/sample.txt /input_dir 
+hdfs dfs -put ./sample.txt /input_dir 
 
 
 Step 6

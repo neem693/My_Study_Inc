@@ -1,0 +1,57 @@
+
+
+http://markmail.org/message/4laajtjub7aolte5
+
+
+
+1. 하이브 2.1.1 설치 파일을 다운받은 후, 압축을 해제합니다.
+ $ wget http://mirror.apache-kr.org/hive/hive-2.3.3/apache-hive-2.3.3-bin.tar.gz
+ $ tar xvfz apache-hive-2.3.3-bin.tar.gz
+ 
+
+2. hive-env.sh 파일을 준비합니다.
+ $ cd apache-hive-2.0.0-bin
+ $ cp conf/hive-env.sh.template conf/hive-env.sh
+
+3. hive-env.sh 에 하둡 설치 경로를 설정합니다.
+ $ vi conf/hive-env.sh
+ HADOOP_HOME=/home/hadoop/hadoop-2.7.7
+
+
+4. 하이브 메타스토어를 초기화합니다. 이 과정은 하이브 2.0.0 버전부터 추가된 과정으로 하이브를 처음 실행할 때, 반드시 선행되어야 하는 과정입니다.  
+   -dbType의 파라미터값으로 메타스토어로 사용할 데이터베이스 타입을 명시하며, 
+   Derby 외에 다른 데이터베이스를 사용하는 경우에도 반드시 이 과정을 진행해야 합니다.  
+   참고로 schematool은 메타스토어 초기화 기능외에도 기존에 번거로웠던 업그레이드 기능도 편리하게 처리해줍니다.
+ $ ./bin/schematool -initSchema -dbType derby
+ SLF4J: Class path contains multiple SLF4J bindings.
+ (중략)
+ Metastore connection URL:	 jdbc:derby:;databaseName=metastore_db;create=true
+ Metastore Connection Driver :	 org.apache.derby.jdbc.EmbeddedDriver
+ Metastore connection User:	 APP
+ Starting metastore schema initialization to 2.0.0
+ Initialization script hive-schema-2.0.0.derby.sql
+ Initialization script completed
+ schemaTool completed
+
+5. 하이브 쉘을 실행합니다.
+ $ ./bin/hive
+ (중략)
+ Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark,  tez) or using Hive 1.X releases.
+ hive> 
+
+만약 4번 단계(initSchema)를 실행하지 않았을 경우, 다음과 같은 오류가 발생합니다.  
+이때 Derby로 사용할 경우에는 하이브 설치 경로에 생성된 metastore_db 디렉터리를 삭제한 후 initSchema를 실행해줍니다. 
+참고로 conf/hive-site.xml에 별도의 메타스토어 정보를 설정을 추가하지 않는 경우, 
+하이브는 Derby를 메타스토어로 사용합니다.
+
+ $ ./bin/hive
+ (중략)
+ Exception in thread "main" java.lang.RuntimeException: Hive metastore database is not initialized. Please use schematool (e.g.  ./schematool -initSchema -dbType ...) to create the schema. If needed, don't forget to include the option to auto-create the underlying  database in your JDBC connection string (e.g. ?createDatabaseIfNotExist=true for mysql)
+
+6. HiveQL을 실행합니다. 데이터베이스 목록을 조회하면, 기본 데이터베이스인 default가 출력됩니다. 
+ $ ./bin/hive
+ (중략)
+ hive> show databases;
+ OK
+ default
+ Time taken: 0.021 seconds, Fetched: 1 row(s)

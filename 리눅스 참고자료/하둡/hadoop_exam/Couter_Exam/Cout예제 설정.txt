@@ -1,0 +1,20 @@
+####### pom.xml                
+                <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-core -->
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-core</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+
+                <!-- maven install시 외부 jar파일을 인식시켜서 실행화일 생성 -->
+		<dependency>
+			<groupId>arirang-morph</groupId>
+			<artifactId>arirang-morph</artifactId>
+			<version>1.0.3</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/arirang-morph-1.0.3.jar</systemPath>
+		</dependency>
+
+####### M/R Program을 구동시 명령
+hadoop jar mymapreducer-0.0.1-SNAPSHOT.jar com.ic.mymapreducer.CountDriver \
+ -libjars arirang-morph-1.0.3.jar /mytest /output_dir2

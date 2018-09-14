@@ -1,0 +1,105 @@
+[Python] CentOS 7 Python 3.5.1 자동 설치 가이드
+
+아래 순서대로 진행하면  Python3.5.1 설치가 자동으로 진행 됩니다.
+
+1. 사용자 생성
+
+[root@localhost ~]# useradd python
+[root@localhost ~]# passwd python
+2. 스크립트 생성
+[root@localhost opt]# cd /opt
+[root@localhost opt]# vi centos_python_env_setup.sh
+
+2.1 스크립트 작성 내용
+#!/bin/bash
+#####################################################################
+# DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
+# Version 2, December 2004 
+# Copyright (C) 2015 Ivan Rivera
+ 
+# Everyone is permitted to copy and distribute verbatim or modified 
+# copies of this license document, and changing it is allowed as long 
+# as the name is changed. 
+ 
+#            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
+#   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION 
+ 
+#  0. You just DO WHAT THE FUCK YOU WANT TO.
+######################################################################
+                  ## IMPORTANT ##
+# Run this script with root (sudo su -), wont work if run as sudo.
+# Change the variables as needed. 
+######################################################################
+USER=python # User that will have ownership (chown) to /usr/local/bin and /usr/local/lib
+USERHOME=/home/${USER} # The path to the users home, in this case /home/youruser
+PYSHORT=3.5 # The Python short version, e.g. easy_install-${PYSHORT} = easy_install-3.5
+PYTHONVER=3.5.1 # The actual version of python that you want to download from python.org
+ 
+cd ${USERHOME}
+# Install development tools and some misc. necessary packages
+yum -y groupinstall "Development tools"
+yum -y install zlib-devel  # gen'l reqs
+yum -y install bzip2-devel openssl-devel ncurses-devel  # gen'l reqs
+yum -y install mysql-devel  # req'd to use MySQL with python ('mysql-python' package)
+yum -y install libxml2
+-devel libxslt-devel  # req'd by python package 'lxml'
+yum -y install unixODBC-devel  # req'd by python package 'pyodbc'
+yum -y install sqlite sqlite-devel xz-devel 
+yum -y install readline-devel tk-devel gdbm-devel db4-devel 
+yum -y install libpcap-devel xz-devel # you will be sad if you don't install this before compiling python, and later need it.
+yum -y install wget # Wget
+# Alias shasum to == sha1sum (will prevent some people's scripts from breaking)
+echo 'alias shasum="sha1sum"' >> ${USERHOME}/.bashrc
+echo 'alias python=/usr/local/bin/python'${PYSHORT} >> ${USERHOME}/.bashrc
+# Install Python ${PYTHONVER} (do NOT remove 2.7, by the way)
+wget --no-check-certificate https://www.python.org/ftp/python/${PYTHONVER}/Python-${PYTHONVER}.tgz
+tar -zxvf Python-${PYTHONVER}.tgz 
+cd ${USERHOME}/Python-${PYTHONVER}
+./configure --prefix=/usr/local LDFLAGS="-Wl,-rpath /usr/local/lib" --with-ensurepip=install
+make && make altinstall
+# Install virtualenv and virtualenvwrapper
+cd ${USERHOME}
+chown -R ${USER} /usr/local/bin
+chown -R ${USER} /usr/local/lib
+easy_install-${PYSHORT} virtualenv
+easy_install-${PYSHORT} virtualenvwrapper
+echo "export WORKON_HOME=${USERHOME}/.virtualenvs" >> ${USERHOME}/.bashrc # Change this directory if you don't like it
+echo "export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python"${PYSHORT} >> ${USERHOME}/.bashrc
+echo "export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv" >> ${USERHOME}/.bashrc
+echo 'source /usr/local/bin/virtualenvwrapper.sh' >> ${USERHOME}/.bashrc # Important, don't change the order.
+source ${USERHOME}/.bashrc
+mkdir -p ${WORKON_HOME}
+chown -R ${USER} ${WORKON_HOME}
+chown -R ${USER} ${USERHOME}
+ 
+# Done!
+# Now you can do: `mkvirtualenv foo`
+
+
+
+
+3. 스크립트 실행 권한
+
+[root@localhost opt]# chmod 755 centos_python_env_setup.sh
+
+4. 스크립트 실행
+
+[root@localhost opt]# ./centos_python_env_setup.sh
+
+5. Python 실행 및 테스트
+
+[root@localhost opt]# su - python
+마지막 로그인: 화  4월  5 15:00:12 KST 2016 일시 pts/4
+[python@localhost ~]$ python -V
+Python 3.5.1
+
+[python@localhost ~]$ python
+Python 3.5.1 (default, Apr  5 2016, 15:01:37) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-4)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print ("TEST Python")
+TEST Python
+>>> quit()
+
+
+출처: http://estenpark.tistory.com/347 [전문가로가는길]

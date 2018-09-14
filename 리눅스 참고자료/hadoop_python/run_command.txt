@@ -1,0 +1,1 @@
+hadoop jar /home/hadoop/hadoop-2.7.7/share/hadoop/tools/lib/hadoop-streaming-2.7.1.jar -input /python_input -output /python_output   -mapper "python ./wordcount_mapper.py"  -reducer 'python ./wordcount_reducer.py' -file wordcount_mapper.py -file wordcount_reducer.py 

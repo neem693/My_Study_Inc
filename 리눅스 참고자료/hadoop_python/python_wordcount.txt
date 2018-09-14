@@ -1,0 +1,1419 @@
+
+
+
+하둡 스트리밍을 활용한 파이썬 word counting 예제~ :: 미니의 프로그래밍 이야기
+
+
+
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25278252-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+
+		
+		
+			var needCommentCaptcha = true;
+			var commentCaptchaType = 'bottom';
+		
+
+
+	
+		.another_category { border: 1px solid #E5E5E5; padding: 10px 10px 5px; margin:10px 0; clear: both; }
+		.another_category h4 { font-size: 12px !important; margin: 0 !important; border-bottom: 1px solid #E5E5E5 !important; padding: 2px 0 6px !important; }
+		.another_category h4 a { font-weight: bold !important; }
+		.another_category table { table-layout: fixed; border-collapse: collapse; width: 100% !important; margin-top: 10px !important; }
+		* html .another_category table { width: auto !important; }
+		*:first-child+html .another_category table { width: auto !important; }
+		.another_category th, .another_category td { padding: 0 0 4px !important; }
+		.another_category th { text-align: left; font-size: 12px !important; font-weight: normal;  word-break: break-all; overflow: hidden; line-height: 1.5; }
+		.another_category td { text-align: right; width: 80px; font-size: 11px; }
+		.another_category th a { font-weight: normal; text-decoration: none; border: none !important; }
+		.another_category th a.current{ font-weight: bold; text-decoration: none !important; border-bottom: 1px solid !important; }
+		.another_category th span { font-weight: normal; text-decoration: none; font: 10px Tahoma, Sans-serif; border: none !important; }
+
+		.another_category_color_gray, .another_category_color_gray h4 { border-color: #E5E5E5 !important; }
+		.another_category_color_gray * { color: #909090 !important; }
+		.another_category_color_gray th a.current{border-color:#909090 !important;}
+		.another_category_color_gray h4, .another_category_color_gray h4 a { color: #737373 !important; }
+
+
+		.another_category_color_red, .another_category_color_red h4 { border-color: #F6D4D3 !important;  }
+		.another_category_color_red * { color: #E86869 !important; }
+		.another_category_color_red th a.current{border-color:#E86869 !important;}
+		.another_category_color_red h4, .another_category_color_red h4 a { color: #ED0908 !important; }
+
+
+		.another_category_color_green, .another_category_color_green h4 { border-color: #CCE7C8 !important; }
+		.another_category_color_green * { color: #64C05B !important; }
+		.another_category_color_green th a.current{border-color:#64C05B !important;}
+		.another_category_color_green h4, .another_category_color_green h4 a { color: #3EA731 !important; }
+
+
+		.another_category_color_blue, .another_category_color_blue h4 { border-color: #C8DAF2 !important; }
+		.another_category_color_blue * { color: #477FD6 !important; }
+		.another_category_color_blue th a.current{border-color:#477FD6 !important;}
+		.another_category_color_blue h4, .another_category_color_blue h4 a { color: #1960CA !important; }
+
+
+		.another_category_color_violet, .another_category_color_violet h4 { border-color: #E1CEEC !important;  }
+		.another_category_color_violet * { color:#9D64C5 !important; }
+		.another_category_color_violet th a.current{border-color:#9D64C5 !important;}
+		.another_category_color_violet h4, .another_category_color_violet h4 a { color: #7E2CB5 !important; }
+	
+
+        window.TistoryBlog = {
+            url: "http://blog.acronym.co.kr",
+            tistoryUrl: "http://xmlmanager.tistory.com"
+        };
+        var servicePath = "";
+        var blogURL = "";
+    
+        
+        
+
+
+
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=322830174435529&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+	
+		
+	(function() {
+		if (!window.T) {
+			window.T = {}
+		}
+		window.T.config = {"TOP_SSL_URL":"https:\/\/www.tistory.com","PREVIEW":false,"ROLE":"guest","PREV_PAGE":"\/607","NEXT_PAGE":"\/605","BLOG":{"isDormancy":false,"title":"\ubbf8\ub2c8\uc758 \ud504\ub85c\uadf8\ub798\ubc0d \uc774\uc57c\uae30"},"NEED_COMMENT_LOGIN":false,"COMMENT_LOGIN_CONFIRM_MESSAGE":"","LOGIN_URL":"https:\/\/www.tistory.com\/auth\/login\/?redirectUrl=http%3A%2F%2Fblog.acronym.co.kr%2F606","DEFAULT_URL":"http:\/\/blog.acronym.co.kr","USER":{"name":null,"homepage":null}};
+	})();
+
+
+
+	
+
+			
+				
+					
+					미니의 프로그래밍 이야기
+					프로젝트 관리, 프로그래밍 관련 이야기들을 나누는 곳입니다.
+					by 미니~
+				
+			
+
+			
+
+			
+				
+					
+						
+							미니주요글
+							미니가 읽은 책
+							미니홈페이지
+							
+미니페이스북
+							
+방문후기
+							관리자
+						
+						
+					
+					
+				
+			
+
+			
+				
+				
+
+				
+				
+
+				
+				
+				
+				
+
+				
+				
+
+				
+				
+
+				
+				
+
+
+				
+				
+					
+						
+							하둡 스트리밍을 활용한 파이썬 word counting 예제~ |
+							
+								Cloud&BigData/하둡(Hadoop) 2016.01.15 07:07
+							
+						
+						
+							
+							
+								Posted by 미니~
+							
+						
+						
+
+
+
+
+
+
+
+
+
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-6108463942613145"
+     data-ad-slot="5000759579">
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+
+
+							하둡 스트리밍을 활용하면 맵리듀스 잡을 실행가능한 스크립트, 쉘 프로그래밍/파이썬/자바/R 등으로 처리할 수 있다. 
+하둡 스트리밍에 대해서는 Apache Hadoop Streaming을 참고하면 된다. 
+
+이번 강의에서는 기본 하둡 예제인 Word Count를 파이썬으로 구성한 후, 하둡 스트리밍으로 맵리듀스를 적용하는 예제를 살펴보기로 한다. 
+하둡 스트리밍 명령어는 다음과 같이 사용법을 확인할 수 있다. 
+
+ &gt; hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar --help
+
+
+
+1. 먼저 파이썬으로 맵 함수를 만들어 보자. 
+WordCount에서 맵 함수는 파일의 각 라인별로 읽어서 공백으로 자른 다음, Key: 단어, Value: 1로 출력하면 된다. 
+
+ &gt; gedit wordcount_mapper.py
+ 
+#!/usr/bin/env python  
+ 
+import sys 
+ 
+for line in sys.stdin:     line = line.strip()     keys = line.split()    for key in keys:         value = 1         print('{0}\t{1}'.format(key, value) )
+
+
+
+2. 이어서 파이썬으로 리듀스 함수를 만들어 보자. 
+리듀서로 넘어올 때는 이미 정렬과 그룹핑이 되어 있기 때문에 키 값인 단어를 이전과 비교해서 총합을 구하면 된다. 
+
+ &gt; gedit wordcount_reducer.py
+ 
+#!/usr/bin/env python
+
+import sys
+
+last_key      = None              
+running_total = 0
+
+for input_line in sys.stdin:    input_line = input_line.strip()
+    this_key, value = input_line.split("\t", 1)	    value = int(value)    
+    if last_key == this_key:     	        running_total += value   	
+    else:        if last_key:                  print( "{0}\t{1}".format(last_key, running_total) )         running_total = value    	        last_key = this_key
+
+if last_key == this_key:    print( "{0}\t{1}".format(last_key, running_total)) 
+
+
+
+3. 작성한 파이썬 소스코드를 실행가능한 모드로 변경한다. 
+
+ &gt; chmod +x wordcount_mapper.py
+ &gt; chmod +x wordcount_reducer.py 
+ &gt; ls
+
+
+
+4. Word Count를 테스트할 파일을 생성한다. 
+
+ &gt; echo "A long time ago in a galaxy far far away" &gt; /home/cloudera/testfile1
+ &gt; echo "Another episode of Star Wars" &gt; /home/cloudera/testfile2
+
+
+
+5. 생성한 테스트 파일을 하둡 파일 시스템에 올린다. 
+만약 이전 강의를 따라하면서 똑같은 파일명이 있다면 해당 파일을 먼저 지우고 올리면 된다. 
+
+ &gt; hdfs dfs -mkdir /user/cloudera/input 
+ &gt; hdfs dfs -put /home/cloudera/testfile1 /user/cloudera/input 
+ &gt; hdfs dfs -put /home/cloudera/testfile2 /user/cloudera/input 
+ &gt; hdfs dfs -ls /user/cloudera/input
+
+
+
+6. 하둡 스트리밍을 활용하여 생성한 테스트 파일 기반으로 파이썬 맵퍼와 리듀서를 실행한다. 
+
+ &gt; hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar \  -input /user/cloudera/input \   -output /user/cloudera/output_new \  -mapper /home/cloudera/wordcount_mapper.py \  -reducer /home/cloudera/wordcount_reducer.py
+
+
+
+7. 결과를 확인하면 테스트 파일의 단어와 개수가 정렬되어 있는 것을 볼 수 있다. 
+
+ &gt; hdfs dfs -cat /user/cloudera/output_new/part-00000
+ &gt; hdfs dfs -ls /user/cloudera/output_new
+
+
+
+8. 이번에는 리듀스를 포함하지 않고 적용해보자. 마지막에 numReduceTasks를 0으로 세팅했다. 
+
+ &gt; hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar \  -input /user/cloudera/input \  -output /user/cloudera/output_new_0 \  -mapper /home/cloudera/wordcount_mapper.py \  -reducer /home/cloudera/wordcount_reducer.py \  -numReduceTasks 0
+
+
+
+9. 결과를 살펴보면 다음과 같이 세 개의 파일로 나누어져 있는 것을 확인할 수 있다. 
+또한 리듀서를 적용하지 않았기 때문에 동일한 단어에 대해서 개수를 통합하지 못한 것을 far를 보면 알 수 있다. 
+
+ &gt; hdfs dfs -ls /user/cloudera/output_new_0
+ &gt; hdfs dfs -cat /user/cloudera/output_new_0/part-00000
+ &gt; hdfs dfs -cat /user/cloudera/output_new_0/part-00001 
+ &gt; hdfs dfs -cat /user/cloudera/output_new_0/part-00002 
+
+
+
+10. 여러개의 파일로 결과가 나올 경우, getmerge를 통해 하나의 파일로 합쳐서 로컬에 가져올 수 있다. 
+
+ &gt; hdfs dfs -getmerge /user/cloudera/output_new_0/* wordcount_num0_output.txt
+ &gt; ls
+ &gt; cat wordcount_num0_output.txt
+
+
+
+11. 만약 numReducerTasks를 2로 설정하면 어떻게 될까? 
+참고로 맵리듀스 결과가 저장될 곳을 기존 디렉토리를 지정하면 이미 파일이 존재한다는 에러가 난다. 
+&gt; hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar \  -input /user/cloudera/input \  -output /user/cloudera/output_new_1 \  -mapper /home/cloudera/wordcount_mapper.py \  -reducer /home/cloudera/wordcount_reducer.py \  -numReduceTasks 2
+
+
+12. 리듀서를 2개를 사용하면 결과값이 글로벌하게 정렬되지 않는 점을 제외하고는 Word Count는 제대로 실행되는 것을 확인할 수 있다. 
+&gt; hdfs dfs -ls /user/cloudera/output_new_1&gt; hdfs dfs -cat /user/cloudera/output_new_1/part-00000&gt; hdfs dfs -cat /user/cloudera/output_new_1/part-00001
+
+
+본 강의의 예제는 University of California, San Diego의 폴 로드리게즈(Paul Rodriguez) 교수의 자료를 참고했다. 크리에이티브 커먼즈 라이선스이 저작물은 크리에이티브 커먼즈 코리아 저작자표시-비영리-변경금지 2.0 대한민국 라이선스에 따라 이용하실 수 있습니다.
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			 -->
+'Cloud&amp;BigData > 하둡(Hadoop)' 카테고리의 다른 글
+
+
+
+하둡 맵리듀스 Join 활용 퀴즈!!  (0)
+
+
+2016.01.20
+
+
+
+하둡 맵리듀스 Join 활용 예제  (0)
+
+
+2016.01.18
+
+
+
+하둡 스트리밍을 활용한 파이썬 word counting 예제~  (0)
+
+
+2016.01.15
+
+
+
+HDFS 명령어 테스트~  (0)
+
+
+2016.01.13
+
+
+
+Pig 두번째 예제 살펴보기~  (0)
+
+
+2016.01.11
+
+
+
+HBase 예제 살펴보기~  (0)
+
+
+2016.01.08
+
+
+
+
+
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-6108463942613145"
+     data-ad-slot="0436959149">
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+
+
+
+
+
+
+
+  window.___gcfg = {lang: 'ko'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+
+
+
+						
+
+						
+							
+								 Hadoop,
+Python,
+wordcount,
+파이썬,
+하둡
+							
+						
+
+						
+							Trackback 0 And
+							Comment 0
+						
+
+						
+							
+								
+									Trackback
+								
+								
+							
+						
+
+						
+					
+				
+
+				
+				
+					
+						
+							
+							|  1
+							
+							|  &middot;&middot;&middot;
+							
+							|  13
+							
+							|  14
+							
+							|  15
+							
+							|  16
+							
+							|  17
+							
+							|  18
+							
+							|  19
+							
+							|  20
+							
+							|  21
+							
+							|  &middot;&middot;&middot;
+							
+							|  590
+							
+						| 
+					
+				
+			
+
+			
+
+			
+				
+					
+						
+							
+								
+									Article Category
+									
+	//<![CDATA[
+	var expanded = false;
+	function expandTree() {
+								expandFolder(483608, true);
+											expandFolder(398101, true);
+											expandFolder(395069, true);
+											expandFolder(332197, true);
+											expandFolder(39294, true);
+											expandFolder(350798, true);
+											expandFolder(256055, true);
+											expandFolder(39296, true);
+											expandFolder(350235, true);
+											expandFolder(535790, true);
+						}
+
+	function expandFolder(category, expand) {
+		var oLevel1 = document.getElementById("category_" + category);
+		var oImg = oLevel1.getElementsByTagName("img")[0];
+		switch (expand) {
+			case true:
+				oImg.src = "//t1.daumcdn.net/tistory_admin/blogs/image/tree/folder_gray/tab_opened.gif";
+				showLayer("category_" + category + "_children");
+				return true;
+			case false:
+				oImg.src = "//t1.daumcdn.net/tistory_admin/blogs/image/tree/folder_gray/tab_closed.gif";
+				hideLayer("category_" + category + "_children");
+				return true;
+		}
+		return false;
+	}
+
+	function toggleFolder(category) {
+		var oLevel1 = document.getElementById("category_" + category);
+		var oImg = oLevel1.getElementsByTagName("img")[0];
+		switch (oImg.src.substr(oImg.src.length - 10, 6)) {
+			case "isleaf":
+				return true;
+			case "closed":
+				oImg.src = "//t1.daumcdn.net/tistory_admin/blogs/image/tree/folder_gray/tab_opened.gif";
+				tt_showLayer("category_" + category + "_children");
+				expanded = true;
+				return true;
+			case "opened":
+				oImg.src = "//t1.daumcdn.net/tistory_admin/blogs/image/tree/folder_gray/tab_closed.gif";
+				tt_hideLayer("category_" + category + "_children");
+				expanded = false;
+				return true;
+		}
+		return false;
+	}
+	var selectedNode = 0;
+	function selectNode(category) {
+
+		try {
+			var root = document.getElementById('treeComponent');
+			var prevSelectedNode= root.getAttribute('currentselectednode');
+			var oLevel = document.getElementById("category_" + selectedNode);
+			var oChild = oLevel.getElementsByTagName("table")[0];
+
+			oChild.style.color = "#b9b7b0";
+						oChild.style.backgroundColor = "#transparent"
+			root.setAttribute('currentselectednode',category);
+			document.getElementById('text_'+selectedNode).style.color="#b9b7b0";
+
+			var oLevel = document.getElementById("category_" + category);
+			var oChild = oLevel.getElementsByTagName("table")[0];
+			oChild.style.color = "#b9b7b0";
+						oChild.style.backgroundColor = "#transparent"
+			document.getElementById('text_'+category).style.color="#b9b7b0";
+
+			selectedNode = category;
+		} catch(e) {
+		}
+	}
+
+	function setTreeStyle(skin) {
+		try {
+			treeNodes = document.getElementsByName("treeNode");
+			for(var i=0; i<treeNodes.length; i++) {
+				if( ('category_'+selectedNode) == (treeNodes[i].getAttribute('id').value) ) {
+					var oLevel = document.getElementById('category_'+i);
+					var oChild = oLevel.getElementsByTagName("table")[0];
+					oChild.style.color ='#'+skin['activeItemColor'];
+					if (skin['activeItemBgColor'] != '' && skin['activeItemBgColor'] != undefined) {
+						oChild.style.backgroundColor ='#'+skin['activeItemBgColor'];
+					} else {
+						oChild.style.backgroundColor ="";
+					}
+				} else{
+					var oLevel = document.getElementById("category_" + i);
+					var oChild = oLevel.getElementsByTagName("table")[0];
+					oChild.style.color ='#'+skin['colorOnTree'];
+					oChild.style.backgroundColor ='#'+skin['bgColorOnTree'];
+					var oLevel = document.getElementById('text_'+i).style.color='#'+skin['colorOnTree'];
+				}
+			}
+		} catch(e) {
+		}
+	}
+	//]]>
+
+
+
+
+	
+		
+			
+			
+				
+										
+						분류 전체보기						(590)						
+					
+				
+			
+		
+
+					
+					
+					
+						
+								미니칼럼 (11)
+							
+					
+				
+			
+									
+							
+							
+								
+										빅데이터분석 (11)
+									
+							
+						
+								
+						
+					
+					
+						
+								Cloud&amp;BigData (92)
+							
+					
+				
+			
+									
+							
+							
+								
+										BigData Modeling (5)
+									
+							
+						
+										
+							
+							
+								
+										하둡(Hadoop) (22)
+									
+							
+						
+										
+							
+							
+								
+										구글앱엔진 (1)
+									
+							
+						
+										
+							
+							
+								
+										NoSQL (3)
+									
+							
+						
+										
+							
+							
+								
+										Fingra.ph (2)
+									
+							
+						
+										
+							
+							
+								
+										R (23)
+									
+							
+						
+										
+							
+							
+								
+										BigData (13)
+									
+							
+						
+										
+							
+							
+								
+										Machine Learing (20)
+									
+							
+						
+										
+							
+							
+								
+										Lean Startup (3)
+									
+							
+						
+								
+						
+					
+					
+						
+								Beginner (5)
+							
+					
+				
+			
+									
+							
+							
+								
+										웹표준 (5)
+									
+							
+						
+								
+						
+					
+					
+						
+								XML Developer (42)
+							
+					
+				
+			
+									
+							
+							
+								
+										SCORM (9)
+									
+							
+						
+										
+							
+							
+								
+										XML기초 (8)
+									
+							
+						
+										
+							
+							
+								
+										HTML5 (7)
+									
+							
+						
+										
+							
+							
+								
+										디자인 패턴 (12)
+									
+							
+						
+										
+							
+							
+								
+										XSL (6)
+									
+							
+						
+								
+						
+					
+					
+						
+								프로젝트관리론 (34)
+							
+					
+				
+			
+									
+							
+							
+								
+										프로젝트지침 (9)
+									
+							
+						
+										
+							
+							
+								
+										프로젝트관리 (7)
+									
+							
+						
+										
+							
+							
+								
+										프로젝트수행 (9)
+									
+							
+						
+										
+							
+							
+								
+										인력관리 (7)
+									
+							
+						
+										
+							
+							
+								
+										기획 (2)
+									
+							
+						
+								
+						
+					
+					
+						
+								컴퓨터공학 (39)
+							
+					
+				
+			
+									
+							
+							
+								
+										전산보안론 (7)
+									
+							
+						
+										
+							
+							
+								
+										소프트웨어공학 (5)
+									
+							
+						
+										
+							
+							
+								
+										디지털서비스 (18)
+									
+							
+						
+										
+							
+							
+								
+										디지털네트워크 (1)
+									
+							
+						
+										
+							
+							
+								
+										통계학 (8)
+									
+							
+						
+								
+						
+					
+					
+						
+								프로그래밍 (146)
+							
+					
+				
+			
+									
+							
+							
+								
+										아이폰 (15)
+									
+							
+						
+										
+							
+							
+								
+										안드로이드 (24)
+									
+							
+						
+										
+							
+							
+								
+										바다 (1)
+									
+							
+						
+										
+							
+							
+								
+										리눅스 (17)
+									
+							
+						
+										
+							
+							
+								
+										MySQL (11)
+									
+							
+						
+										
+							
+							
+								
+										Java (26)
+									
+							
+						
+										
+							
+							
+								
+										윈도우 (4)
+									
+							
+						
+										
+							
+							
+								
+										Web (35)
+									
+							
+						
+										
+							
+							
+								
+										Oracle (1)
+									
+							
+						
+										
+							
+							
+								
+										Mac (5)
+									
+							
+						
+								
+						
+					
+					
+						
+								리뷰 (193)
+							
+					
+				
+			
+									
+							
+							
+								
+										도서 (100)
+									
+							
+						
+										
+							
+							
+								
+										세미나 (18)
+									
+							
+						
+										
+							
+							
+								
+										블로그 (65)
+									
+							
+						
+								
+						
+					
+					
+						
+								미니이야기 (24)
+							
+					
+				
+			
+									
+							
+							
+								
+										아이디어 (3)
+									
+							
+						
+										
+							
+							
+								
+										마인드 (6)
+									
+							
+						
+										
+							
+							
+								
+										학습하기 (2)
+									
+							
+						
+										
+							
+							
+								
+										아이들 (8)
+									
+							
+						
+										
+							
+							
+								
+										스포츠 (1)
+									
+							
+						
+										
+							
+							
+								
+										사회 (1)
+									
+							
+						
+								
+						
+					
+					
+						
+								마케팅디자인 (4)
+							
+					
+				
+			
+									
+							
+							
+								
+										마케팅 (2)
+									
+							
+						
+										
+							
+							
+								
+										디자인 (2)
+									
+							
+						
+								
+				
+
+								
+							
+							
+								
+									Recent Article
+									
+										
+											
+												 시사경제독설 - 현재와..
+												
+											
+										
+
+											
+												 통계적 가설 검정(Stat..
+												
+											
+										
+
+											
+												 클라우드슈밥의 제4차..
+												
+											
+										
+
+											
+												 햄릿
+												
+											
+										
+
+											
+												 빅데이터가 만드는 세..
+												
+											
+										
+
+											
+												 TF-IDF와 유사도로 알..
+												
+											
+										
+
+											
+												 TF-IDF와 유사도로 알..
+												
+											
+										
+
+											
+												 데이터 모델링이란 무..
+												
+											
+										
+
+											
+												 지중해 부자 - 부자가..
+												
+											
+										
+
+											
+												 빅데이터 가치 창출을..
+												
+											
+										
+									
+								
+							
+							
+								
+									My Link
+									
+										
+											
+												 미니의 XMLDeveloper
+											
+										
+
+											
+												 Color 코드표
+											
+										
+
+											
+												 수식입력_latex
+											
+										
+
+											
+												 HTML 유효성 검사
+											
+										
+
+											
+												 W3Schools Online Web..
+											
+										
+
+											
+												 전자정보센터
+											
+										
+
+											
+												 iPhone Library
+											
+										
+
+											
+												 영어 학습 사이트
+											
+										
+
+											
+												 New business ideas, t..
+											
+										
+
+											
+												 고급 Bash 스크립팅 가..
+											
+										
+									
+								
+							
+							
+								
+									Calendar
+									
+												
+			
+				&laquo;
+				 
+				<a href="/archive/201705"
+				   title="현재 달의 달력을 보여줍니다.">2017/05
+				 
+				&raquo;
+			
+			
+			
+				일
+				월
+				화
+				수
+				목
+				금
+				토
+			
+			
+			
+					
+			 
+			1
+			2
+			3
+			4
+			5
+			6
+		
+		
+			7
+			8
+			9
+			10
+			11
+			12
+			13
+		
+		
+			14
+			15
+			16
+			17
+			18
+			19
+			20
+		
+		
+			21
+			22
+			23
+			24
+			25
+			26
+			27
+		
+		
+			28
+			29
+			30
+			31
+			 
+			 
+			 
+		
+			
+		
+		
+									
+								
+							Subscribe미니의 프로그래밍 이야기이메일 구독하기구독하실 이메일 주소를 입력해주세요
+
+ RSS FEED
+					
+					
+
+					
+
+					
+						
+							
+							티스토리 가입하기!
+							 RSS FEED
+						
+
+						
+							태그 :
+							미디어로그 :
+							지역로그 :
+							방명록 :
+							관리자 :
+							글쓰기
+						
+
+						
+							 미니~의 프로그래밍 이야기 is powered by Daum  / Designed by Tistory
+						
+					
+				
+			
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    dp.SyntaxHighlighter.ClipboardSwf = 'http://tistory1.daumcdn.net/tistory/59183/skin/images/clipboard.swf';
+    dp.SyntaxHighlighter.HighlightAll('code');
+
+
+ document.oncontextmenu = new Function ('return false');
+ document.ondragstart = new Function ('return false');
+ document.onselectstart = new Function ('return false');
+  document.body.style.MozUserSelect = 'none';
+
+
+
+(function($) {
+	$("body").bind('copy', function (e) {
+	    var url = document.location.href,
+			decodedUrl = decodeURI(url),
+			selection = window.getSelection();
+
+
+		if (typeof window.getSelection == "undefined") {//IE8 or earlier...
+			event.preventDefault();
+
+			var pagelink = '\n\n 출처: ' + decodedUrl,
+				copytext =  selection + pagelink;
+
+			if (window.clipboardData) {
+				window.clipboardData.setData('Text', copytext);
+			}
+			return;
+		}
+		var body_element = document.getElementsByTagName('body')[0];
+
+		//if the selection is short let's not annoy our users
+		if (("" + selection).length < 30) return;
+
+		//create a div outside of the visible area
+		var newdiv = document.createElement('div');
+		newdiv.style.position = 'absolute';
+		newdiv.style.left = '-99999px';
+		body_element.appendChild(newdiv);
+		newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+		//we need a  tag workaround
+		//otherwise the text inside "pre" loses all the line breaks!
+		if (selection.getRangeAt(0).commonAncestorContainer.nodeName == "PRE") {
+			newdiv.innerHTML = "" + newdiv.innerHTML + "";
+		}
+
+		newdiv.innerHTML += '출처: ' + decodedUrl + ' [미니의 프로그래밍 이야기]';
+
+		selection.selectAllChildren(newdiv);
+		window.setTimeout(function () { body_element.removeChild(newdiv); }, 200);
+	});
+})(tjQuery);
+
+	
+	    lightbox.option({
+			"fadeDuration": 200,
+		    "resizeDuration": 200,
+		    "wrapAround": false,
+			"albumLabel": "%1 / %2",
+			"fitImagesInViewport":true ,
+			"stopEvent": false
+	    })
+	
+var _tiq = 'undefined' !== typeof _tiq ? _tiq : []; // Global Variables
+_tiq.push(["__setParam", "title", "미니의 프로그래밍 이야기 :: 하둡 스트리밍을 활용한 파이썬 word counting 예제~"]);
+_tiq.push(["__setParam", "svcdomain", "user.tistory.com"]);
+_tiq.push(["__setParam", "category", ""]);
+_tiq.push(["__setParam", "articleno", "606"]);
+_tiq.push(["__setParam", "plink", "http://blog.acronym.co.kr/606"]);
+_tiq.push(["__setParam", "date", "2016-01-15 07:07:01"]);
+_tiq.push(["__setParam", "author", "xmlmanager"]);
+_tiq.push(["__setParam", "length", "10427"]);
+_tiq.push(["__setParam", "isauthor", "N"]);
+_tiq.push(["__setParam", "ishidden", "1"]);
+_tiq.push(["__setParam", "comments", "0"]);
+_tiq.push(["__setParam", "param1", "0"]);
+_tiq.push(["__setParam", "param2", "e"]);
+_tiq.push(["__setParam", "param3", ""]);
+_tiq.push(["__setParam", "like_ex", "{'serviceId': 'tistory', 'uniqueId': '59183_606', 'serviceCategories': '401,blogId_59183'}"]);
+_tiq.push(["__trackPageview"]);
+(function(d) {
+	var se = d.createElement('script'); se.type = 'text/javascript'; se.async = true;
+	se.src = location.protocol + '//m2.daumcdn.net/tiara/js/td.min.js';
+	var s = d.getElementsByTagName('head')[0]; s.appendChild(se);
+})(document);
+
+
+var __TiaraObj = __TiaraObj || {}; if ('undefined' === typeof __TiaraObj.startTime) { __TiaraObj.startTime = new Date(); }
+var addEvent = function (evt, fn) { window.addEventListener ? window.addEventListener(evt, fn, false) : window.attachEvent('on' + evt, fn); };
+var ua = navigator.userAgent.toLowerCase(); var isIOS = /iP[ao]d|iPhone/i.test(ua); var contentStat = function() {
+_tiq.push(['__content', 't_content', {
+"c_id":"59183_606", 
+"c_title":"미니의 프로그래밍 이야기 :: 하둡 스트리밍을 활용한 파이썬 word counting 예제~", 
+"type":"article", 
+"author":"미니~", 
+"author_id":"71684", 
+"cp":"xmlmanager", 
+"cp_id":"59183", 
+"regdata":"2016-01-15 07:07:01", 
+"plink":"http://blog.acronym.co.kr/606", 
+"media":"pcweb", 
+"comment_cnt":0, 
+"duration": (new Date()).getTime() - __TiaraObj.startTime.getTime()
+}]); };
+addEvent(isIOS ? "pagehide" : "beforeunload", contentStat);
+
+window.roosevelt_params_queue = window.roosevelt_params_queue || []; window.roosevelt_params_queue.push({channel_id: "dk", channel_label: "tistory"});
+if(window.console!=undefined){setTimeout(console.log.bind(console,"%cTISTORY","font:8em Arial;color:#EC6521;font-weight:bold"),0);setTimeout(console.log.bind(console,"%c  나를 표현하는 블로그","font:2em sans-serif;color:#333;"),0);}
+
+

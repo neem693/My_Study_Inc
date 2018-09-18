@@ -65,7 +65,21 @@ for i in range(10):
     print(random.randrange(5), end=' ')
 
 # 문제
+print()
+print('-'*30)
+lotto = []
 
+count =6
+while (count>0):
+    no = random.randrange(1,46)
+    lotto.append(no)
+    for i in range(len(lotto)-1):
+        if no==a[i]:
+            continue
+    count = count-1
+
+
+print(lotto)
 
 
 

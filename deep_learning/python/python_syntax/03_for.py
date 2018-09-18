@@ -4,6 +4,19 @@
 # 2 4 6 8 10        2, 10, 2
 # 5 4 3 2 1         5, 1, -1
 
+
+n_list = range(1,11,1)
+
+print('-' * 30)
+
+for i in n_list:
+    print(i,end='')
+print()
+print('-' * 30)
+for i in range(11):
+    print(i,end='')
+print()
+
 for i in range(1, 11, 2):
     print(i, end=' ')
 print()
@@ -124,6 +137,11 @@ print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
 
 
 
+
+for i in range(2,10,1):
+    for j in range(1,10,1):
+        print('{}x{}={}'.format(i,j,i*j),end=' ')
+    print()
 
 
 

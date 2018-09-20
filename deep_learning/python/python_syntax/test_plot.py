@@ -21,3 +21,11 @@ for i in range(360):
 plt.plot(x,y,'r')
 plt.plot(x,y1,'b')
 plt.show()
+
+
+
+
+def cost(x,y,W):
+    loss =0
+    for i in range(len(x)):
+        hx = W * x[i]

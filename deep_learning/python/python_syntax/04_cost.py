@@ -9,8 +9,8 @@ def cost(x, y, W):
     return loss / len(x)
 
 # H(x) = Wx + b   --> W=1, b=0
-x = [1, 2, 3]
-y = [1, 2, 3]
+x = [60, 61, 63, 68, 71]
+y = [789, 890, 1100, 2100,2300]
 
 xx, yy = [], []
 for i in range(-30, 50):
